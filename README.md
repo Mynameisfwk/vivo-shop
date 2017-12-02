@@ -30,7 +30,7 @@ PS：浏览器请切换手机模式打开效果会更好 ~~~
 
 # 效果截图演示
 
-![](https://github.com/Mynameisfwk/vivo-shop/blob/master/img/1.gif)
+![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/1.0.gif)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/img/%E6%88%AA%E5%9B%BE00.png)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/img/%E6%88%AA%E5%9B%BE01.png)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/img/%E6%88%AA%E5%9B%BE02.png)
