@@ -4,7 +4,7 @@
 初学vue.js框架也有一两个月了，心想做个小Dome案例来测试下我的水平，这不撸起袖子就是干，用vue+vuex+vue-router+vue-resource+Mint UI仿了个vivo的购物商城，在做这个案例过程中遇到了几个对于我来说比较棘手问题不过后来还是解决了，如果这个小项目对你有帮助给我star鼓励下 谢谢了！
 
 # 技术栈
-vue2 + vuex + vue-router + vue-resource + webpack 
+vue2 + vuex + vue-cli  vue-router + vue-resource + webpack 
 
 # 基本功能
 * 首页轮播图效果
@@ -19,8 +19,6 @@ vue2 + vuex + vue-router + vue-resource + webpack
 * 商品订单删除
 * 模拟订单付款成功生成订单
 * Localstorage本地存储数据
-
-
 
 
 # 项目预览
