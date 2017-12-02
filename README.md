@@ -22,7 +22,7 @@ vue2 + vuex + vue-cli + vue-router + vue-resource + webpack
 
 
 # 项目预览
-联想商城  [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>
+vivo商城  [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>
 PS：浏览器请切换手机模式打开效果会更好 ~~~
 
 # 手机端扫描二维码
