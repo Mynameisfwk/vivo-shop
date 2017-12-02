@@ -1,0 +1,107 @@
+{
+    "list":[
+        {
+            "id":"8",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/20/4020_1481558694236_250x250.png",
+            "name":"vivo原装闪充充电器-9V/2A快充",
+            "nametwo":"vivo原装旅行充电头，支持双引擎闪充，不含数据线（ 不支持X9Plus/X20Plus低压闪充）",
+            "price":"85.00"
+        },
+        {
+            "id":"9",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/82/1882_1481558960471_250x250.png",
+            "name":"vivo XE600i 原装音乐耳机",
+            "nametwo":"【直降10元，限时促销】vivo原装HiFi耳机，适配全部vivo机型；三频均衡，让音乐更震撼；入耳式设计，有效阻隔噪音，尽享音乐时光；轻量化设计，佩戴舒适！",
+            "price":"89.00"
+        },
+        {
+            "id":"10",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/59/4459_1506593158905hd_250x250.png",
+            "name":"vivo原装闪充数据线—2A电流输出",
+            "nametwo":"【限时包邮】原装闪充数据线（适配机型：X6/X6Plus/X7/X7Plus/Xplay5/Xplay6/X9/X9s/X9s Plus/X20）",
+            "price":"29.00"
+        },
+        {
+            "id":"11",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/73/4273_1491007460873hd_250x250.png",
+            "name":"原装低压闪充数据线",
+            "nametwo":"【限时包邮】X9Plus、X20Plus专用原装闪充数据线，闪充功能需搭配原装低压闪充充电器使用。温馨提示：除X9Plus、X20Plus外其他机型无闪充功能",
+            "price":"29.00"
+        }
+        ,
+        {
+            "id":"12",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/83/4183_1482921083765_250x250.png",
+            "name":"vivo X9原装柔性钢化膜",
+            "nametwo":"【限时包邮】X9原装柔性钢化膜，两片装，平面贴膜，2.5D弧面位置不在贴膜覆盖范围，适用X9s、X9机型",
+            "price":"29.00"
+        }
+        ,
+        {
+            "id":"13",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/81/4181_1482720908043_250x250.png",
+            "name":"vivo Xplay6原装3D高清保护膜",
+            "nametwo":"【限时包邮】【两片装】请先观看详情中贴膜教程视频，按照教程贴膜",
+            "price":"39.00"
+        }
+        ,
+        {
+            "id":"14",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/68/4068_1481558920994_250x250.png",
+            "name":"vivo XE100耳机",
+            "nametwo":"vivo原装耳机，Y系列机型标配耳机，适配全部vivo机型。由vivo自主设计，品牌原装，三频均衡，音域广阔！",
+            "price":"39.00"
+        }
+
+        ,
+        {
+            "id":"15",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/35/4535_1511511335809hd_250x250.png",
+            "name":"OVEVO欧雷特 无线蓝牙耳机Q62",
+            "nametwo":"【新品上市】Q62无线蓝牙耳机，Hi-Fi音质，震撼立体声，智能降噪，还原CD级原音；支持蓝牙4.2版本，通话无卡顿；旋转收纳，舒适佩戴，长达10H超级续航。",
+            "price":"499.00"
+        }
+    ],
+    "charger":[
+        {
+            "id":"8",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/20/4020_1481558694236_250x250.png",
+            "name":"vivo原装闪充充电器-9V/2A快充",
+            "nametwo":"vivo原装旅行充电头，支持双引擎闪充，不含数据线（ 不支持X9Plus/X20Plus低压闪充）",
+            "price":"85.00"
+        }
+    ],
+    "protect":[
+        {
+            "id":"12",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/83/4183_1482921083765_250x250.png",
+            "name":"vivo X9原装柔性钢化膜",
+            "nametwo":"【限时包邮】X9原装柔性钢化膜，两片装，平面贴膜，2.5D弧面位置不在贴膜覆盖范围，适用X9s、X9机型",
+            "price":"29.00"
+        }
+        ,
+        {
+            "id":"13",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/81/4181_1482720908043_250x250.png",
+            "name":"vivo Xplay6原装3D高清保护膜",
+            "nametwo":"【限时包邮】【两片装】请先观看详情中贴膜教程视频，按照教程贴膜",
+            "price":"39.00"
+        }
+    ],
+    "headset":[
+        {
+            "id":"9",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/82/1882_1481558960471_250x250.png",
+            "name":"vivo XE600i 原装音乐耳机",
+            "nametwo":"【直降10元，限时促销】vivo原装HiFi耳机，适配全部vivo机型；三频均衡，让音乐更震撼；入耳式设计，有效阻隔噪音，尽享音乐时光；轻量化设计，佩戴舒适！",
+            "price":"89.00"
+        },
+        {
+            "id":"14",
+            "image":"https://shopstatic.vivo.com.cn/vivoshop/commodity/68/4068_1481558920994_250x250.png",
+            "name":"vivo XE100耳机",
+            "nametwo":"vivo原装耳机，Y系列机型标配耳机，适配全部vivo机型。由vivo自主设计，品牌原装，三频均衡，音域广阔！",
+            "price":"39.00"
+        }
+    ]
+}

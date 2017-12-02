@@ -1,0 +1,573 @@
+{
+    "todos":[
+        {
+         "id":0,
+         "img":"/static/img/list1.jpg",
+         "name":"小新 潮7000 14.0英寸轻薄笔记本 花火银 81BM0002CD",
+         "Price":"5999"
+        },
+        {
+            "id":1,
+            "img":"/static/img/list2.jpg",
+            "name":"小新 潮7000 14.0英寸轻薄笔记本 玫瑰金 学生专用办公电脑",
+            "Price":"6999"
+        },
+        {
+            "id":2,
+            "img":"/static/img/sj.jpg",
+            "name":"moto 青柚手机  玫瑰金",
+            "Price":"1599"
+        },
+        {
+         "id":3,
+         "img":"/static/img/sj2.jpg",
+         "name":"moto z 2018手机  鎏金黑",
+         "Price":"3999"
+     }
+
+    ],
+    
+    "articles": [
+        {
+            "id": "1",
+            "name":"白头老",
+            "time":"2017/11/15",
+            "tou":"/static/img/tou.jpg",
+            "title": "谷歌近日上线了Files Go这款APP，一款文件管理器应用",
+            "Pone": "　　谷歌近日上线了Files Go这款APP，一款文件管理器应用。",
+            "Ptwo": "　　File Go是谷歌Android Go计划的“佐菜”之一，后者服务于内存512MB级别内存的手机，目的在于让它们也可以流畅运行安卓系统。",
+            "Pthree": " 　　所以，在我们手中的多数手机上安装,Files Fo的运行速度都是杠杠的,功能方面,底部只分为两个标签,一是存储管理，包括已用/可用容量、缓存清理、APP使用分析、大文件过滤等实用功能，二就是最常见的文件目录，默认划分出了下载/接收/图片/视频/音频/文档六类，与此同时，还加入了蓝牙邻近设备查找和快速共享功能，由于不涉及云服务、网盘等，国区用户也可以正常使用，APP下载（需Android 5.0以上安装，5.86MB）:Play商店、国内商店",
+            "imgone":"/static/img/find_00.jpg",
+            "imgtwo":"/static/img/list_find_01.jpg"
+
+            
+        },
+        {
+            "id": "2",
+            "name":"作者：印度阿三杰",
+            "title": "双11后菜鸟裹裹APP彻底火了：一键查取 2小时送达预测",
+            "time":"2017/11/15",
+            "tou":"/static/img/find_01.jpg",
+            "Pone": "　　双11到来，在买买买超过8亿天量订单后，剁手党们最关心的是快递到哪儿了,由于菜鸟裹裹APP能够查询全网包裹的物流信息,还能方便在菜鸟驿站、自提柜一键领取包裹，即使在双11期间也能预约快递员两小时上门取件,双11后成为剁手党刚需,此外,菜鸟裹裹里别人给我寄了两个神秘的包裹,这种带着好奇的期待,真是时刻挠着我的小心心,近期，有用户在APP里发现了小惊喜。",
+            "Ptwo": "　　File Go是谷歌Android Go计划的“佐菜”之一，后者服务于内存512MB级别内存的手机，目的在于让它们也可以流畅运行安卓系统。",
+            "Pthree": " 　　所以，在我们手中的多数手机上安装,Files Fo的运行速度都是杠杠的,功能方面,底部只分为两个标签,一是存储管理，包括已用/可用容量、缓存清理、APP使用分析、大文件过滤等实用功能，二就是最常见的文件目录，默认划分出了下载/接收/图片/视频/音频/文档六类，与此同时，还加入了蓝牙邻近设备查找和快速共享功能，由于不涉及云服务、网盘等，国区用户也可以正常使用，APP下载（需Android 5.0以上安装，5.86MB）:Play商店、国内商店",
+            "imgone":"/static/img/list_find01_00.jpg",
+            "imgtwo":"/static/img/list_find01_01.jpg"
+        }
+    ],
+    "chooses":[
+        {
+            "id":4,
+            "ImageOne":"/static/img/motoz2.jpg",
+            "name":"moto 第二代 青柚手机 玫瑰金",
+            "Price":"1599"
+        },
+        {
+            "id":5,
+            "ImageOne":"/static/img/motoplay.jpg",
+            "name":"moto z² play手机 黑色全像素双核•智能AI体验",
+            "Price":"3299"
+        },
+        {
+            "id":6,
+            "ImageOne":"/static/img/sj2.jpg",
+            "name":"moto z 流金黑 标准版",
+            "Price":"2499"
+        }
+    ],
+
+    "motos":[
+        {
+            "id":4,
+            "ImageOne":"/static/img/motoz2.jpg",
+            "name":"moto 学生 青柚手机 玫瑰金",
+            "Price":"1599"
+        }
+    ],
+
+    "MotoZs":[
+        {
+            "id":6,
+            "ImageOne":"/static/img/sj2.jpg",
+            "name":"moto z 流金黑 标准版",
+            "Price":"2499"
+        }
+    ],
+
+    
+    "z2s":[
+        {
+            "id":5,
+            "ImageOne":"/static/img/motoplay.jpg",
+            "name":"moto z² play手机 黑色全像素双核•智能AI体验",
+            "Price":"3299"
+        }
+    ],
+    "finds":[
+        {
+            "id":"1",
+            "findImage":"/static/img/tou.jpg",
+            "title":"谷歌近日上线了Files Go这款APP，一款文件管理器应用",
+            "name":"白头老",
+            "time":"2017/11/15"
+        },
+        {
+            "id":"2",
+            "findImage":"/static/img/find_01.jpg",
+            "title":"双11后菜鸟裹裹APP彻底火了：一键查取 2小时送达预测",
+            "name":"印度阿三杰",
+            "time":"2017/11/15"
+        },
+        {
+            "id":"1",
+            "findImage":"/static/img/tou.jpg",
+            "title":"谷歌近日上线了Files Go这款APP，一款文件管理器应用",
+            "name":"白头老",
+            "time":"2017/11/15"
+        },
+        {
+            "id":"2",
+            "findImage":"/static/img/find_01.jpg",
+            "title":"双11后菜鸟裹裹APP彻底火了：一键查取 2小时送达预测",
+            "name":"印度阿三杰",
+            "time":"2017/11/15"
+        },
+        {
+            "id":"1",
+            "findImage":"/static/img/tou.jpg",
+            "title":"谷歌近日上线了Files Go这款APP，一款文件管理器应用",
+            "name":"白头老",
+            "time":"2017/11/15"
+        },
+        {
+            "id":"2",
+            "findImage":"/static/img/find_01.jpg",
+            "title":"双11后菜鸟裹裹APP彻底火了：一键查取 2小时送达预测",
+            "name":"印度阿三杰",
+            "time":"2017/11/15"
+        }
+    ],
+    "goodDetails":[
+        {
+            "id":0,
+            "name":"小新 潮7000 14.0英寸轻薄笔记本 花火银",
+            "price":"5999",
+            "imgone":"/static/img/list1_00.jpg",
+            "imgtwo":"/static/img/list1_01.jpg",
+            "imgThree":"/static/img/list1_02.jpg",
+            "value":"1",
+            "Peizhis":[
+                {
+                    "left":"颜色",
+                    "right":"黑色"
+                },{
+                    "left":"CPU",
+                    "right":"第七代Kabylake智能英特尔® 酷睿™ i7 处理器"
+                },{
+                    "left":"CPU型号",
+                    "right":"i7-7500U"
+                },{
+                    "left":"CPU主频",
+                    "right":"2.7 GHz"
+                },{
+                    "left":"最高睿频",
+                    "right":"3.5 GHz"
+                },{
+                    "left":"操作系统",
+                    "right":"Windows 10 家庭版"
+                },{
+                    "left":"屏幕尺寸",
+                    "right":"14.0英寸"
+                },{
+                    "left":"物理分辨率",
+                    "right":"1920x1080"
+                },{
+                    "left":"屏幕类型",
+                    "right":"全高清IPS屏幕"
+                },{
+                    "left":"内存容量",
+                    "right":"8GB"
+                },{
+                    "left":"内存类型",
+                    "right":"DDR4"
+                },{
+                    "left":"硬盘类型",
+                    "right":"机械硬盘+固态硬盘"
+                },{
+                    "left":"硬盘容量",
+                    "right":"1TB+128GB SSD"
+                },{
+                    "left":"显卡类型",
+                    "right":"独立显卡"
+                },{
+                    "left":"显示芯片",
+                    "right":" NVIDIA GeForce 940MX"
+                },{
+                    "left":"显存容量",
+                    "right":"2GB"
+                },{
+                    "left":"显存类型",
+                    "right":"GDDR5"
+                },{
+                    "left":"光驱类型",
+                    "right":"无光驱"
+                },{
+                    "left":"USB2.0",
+                    "right":"1个"
+                },{
+                    "left":"USB3.0",
+                    "right":"1个"
+                },{
+                    "left":"音频接口",
+                    "right":"耳机、麦克风二合一接口"
+                },{
+                    "left":"摄像头",
+                    "right":"720p HD 摄像头"
+                },{
+                    "left":"type-c 接口",
+                    "right":"有"
+                },{
+                    "left":"读卡器",
+                    "right":"4合1读卡器"
+                },{
+                    "left":"预装软件",
+                    "right":"正版office家庭和学生版2016"
+                }
+            ],
+            "Images":[
+                { "one":"/static/img/list_details_00.jpg" },
+                { "one":"/static/img/list_details_01.jpg" },
+                { "one":"/static/img/list_details_02.jpg" },
+                { "one":"/static/img/list_details_03.jpg" },
+                { "one":"/static/img/list_details_04.jpg" },
+                { "one":"/static/img/list_details_05.jpg" },
+                { "one":"/static/img/list_details_06.jpg" },
+                { "one":"/static/img/list_details_07.jpg" },
+                { "one":"/static/img/list_details_08.jpg" },
+                { "one":"/static/img/list_details_09.jpg" }
+            ]
+        },
+        {
+            "id":1,
+            "name":"小新 潮7000 14.0英寸轻薄笔记本 玫瑰金 学生专用办公电脑",
+            "price":"6999",
+            "imgone":"/static/img/list2_00.jpg",
+            "imgtwo":"/static/img/list2_01.jpg",
+            "imgThree":"/static/img/list2_02.jpg",
+            "value":"1",
+            "Images":[
+                { "one":"/static/img/list_details.jpg" },
+                { "one":"/static/img/list_details_01.jpg" },
+                { "one":"/static/img/list_details_02.jpg" },
+                { "one":"/static/img/list_details_03.jpg" },
+                { "one":"/static/img/list_details_04.jpg" },
+                { "one":"/static/img/list_details_05.jpg" },
+                { "one":"/static/img/list_details_06.jpg" },
+                { "one":"/static/img/list_details_07.jpg" },
+                { "one":"/static/img/list_details_08.jpg" },
+                { "one":"/static/img/list_details_09.jpg" }
+            ],
+            "Peizhis":[
+                {
+                    "left":"颜色",
+                    "right":"玫瑰金"
+                },{
+                    "left":"CPU",
+                    "right":"第七代Kabylake智能英特尔® 酷睿™ i7 处理器"
+                },{
+                    "left":"CPU型号",
+                    "right":"i7-7500U"
+                },{
+                    "left":"CPU主频",
+                    "right":"2.7 GHz"
+                },{
+                    "left":"最高睿频",
+                    "right":"3.5 GHz"
+                },{
+                    "left":"操作系统",
+                    "right":"Windows 10 家庭版"
+                },{
+                    "left":"屏幕尺寸",
+                    "right":"14.0英寸"
+                },{
+                    "left":"物理分辨率",
+                    "right":"1920x1080"
+                },{
+                    "left":"屏幕类型",
+                    "right":"全高清IPS屏幕"
+                },{
+                    "left":"内存容量",
+                    "right":"8GB"
+                },{
+                    "left":"内存类型",
+                    "right":"DDR4"
+                },{
+                    "left":"硬盘类型",
+                    "right":"机械硬盘+固态硬盘"
+                },{
+                    "left":"硬盘容量",
+                    "right":"1TB+128GB SSD"
+                },{
+                    "left":"显卡类型",
+                    "right":"独立显卡"
+                },{
+                    "left":"显示芯片",
+                    "right":" NVIDIA GeForce 940MX"
+                },{
+                    "left":"显存容量",
+                    "right":"2GB"
+                },{
+                    "left":"显存类型",
+                    "right":"GDDR5"
+                },{
+                    "left":"光驱类型",
+                    "right":"无光驱"
+                },{
+                    "left":"USB2.0",
+                    "right":"1个"
+                },{
+                    "left":"USB3.0",
+                    "right":"1个"
+                },{
+                    "left":"音频接口",
+                    "right":"耳机、麦克风二合一接口"
+                },{
+                    "left":"摄像头",
+                    "right":"720p HD 摄像头"
+                },{
+                    "left":"type-c 接口",
+                    "right":"有"
+                },{
+                    "left":"读卡器",
+                    "right":"4合1读卡器"
+                },{
+                    "left":"预装软件",
+                    "right":"正版office家庭和学生版2016"
+                }
+            ]    
+        },
+        {
+            "id":2,
+            "name":"moto 青柚手机  玫瑰金",
+            "price":"1599",
+            "imgone":"/static/img/sj.jpg",
+            "imgtwo":"/static/img/sj_00.jpg",
+            "imgThree":"/static/img/sj_01.jpg",
+            "value":"1",
+            "Images":[
+                { "one":"/static/img/sj_details_00.jpg" },
+                { "one":"/static/img/sj_details_01.jpg" },
+                { "one":"/static/img/sj_details_02.jpg" },
+                { "one":"/static/img/sj_details_03.jpg" },
+                { "one":"/static/img/sj_details_04.jpg" },
+                { "one":"/static/img/sj_details_05.jpg" },
+                { "one":"/static/img/sj_details_06.jpg" },
+                { "one":"/static/img/sj_details_07.jpg" },
+                { "one":"/static/img/sj_details_08.jpg" },
+                { "one":"/static/img/details.jpg"}
+            ],
+            "Peizhis":[
+                {
+                    "left":"颜色",
+                    "right":"玫瑰金"
+                },{
+                    "left":"型号",
+                    "right":"标准版"
+                },{
+                    "left":"系统",
+                    "right":"基于Android™ 7.1.1开发的ZUI3.1"
+                },{
+                    "left":"CPU型号",
+                    "right":"Qualcomm® 骁龙™ 8937八核处理器，主频1.4GHz"
+                },{
+                    "left":"相机",
+                    "right":"前后1600W像素拍照"
+                },{
+                    "left":"电池",
+                    "right":"大电池涡轮快充"
+                }
+            ]    
+        },
+        {
+            "id":3,
+            "name":"moto z 2018手机  鎏金黑",
+            "price":"3999",
+            "imgone":"/static/img/sj2.jpg",
+            "imgtwo":"/static/img/sj2_00.jpg",
+            "imgThree":"/static/img/sj2_01.jpg",
+            "value":"1",
+            "Images":[
+                { "one":"/static/img/sj2_details_00.jpg" },
+                { "one":"/static/img/sj2_details_01.jpg" },
+                { "one":"/static/img/sj2_details_02.jpg" },
+                { "one":"/static/img/sj2_details_03.jpg" },
+                { "one":"/static/img/sj2_details_04.jpg" },
+                { "one":"/static/img/sj2_details_05.jpg" },
+                { "one":"/static/img/sj2_details_06.jpg" },
+                { "one":"/static/img/sj2_details_07.jpg" },
+                { "one":"/static/img/sj2_details_08.jpg" },
+                { "one":"/static/img/details.jpg"}
+            ],
+            "Peizhis":[
+                {
+                    "left":"颜色",
+                    "right":"鎏金黑"
+                },{
+                    "left":"型号",
+                    "right":"标准版"
+                },{
+                    "left":"系统",
+                    "right":"基于Android™ 7.1.1开发的ZUI3.1"
+                },{
+                    "left":"CPU型号",
+                    "right":"Qualcomm® 骁龙™ 8937八核处理器，主频1.4GHz"
+                },{
+                    "left":"相机",
+                    "right":"前后1600W像素拍照"
+                },{
+                    "left":"电池",
+                    "right":"大电池涡轮快充"
+                }
+            ]
+        },
+
+        {
+            "id":4,
+            "name":"moto 学生 青柚手机  玫瑰金",
+            "price":"1599",
+            "imgone":"/static/img/motoz2.jpg",
+            "imgtwo":"/static/img/motoz2.jpg",
+            "imgThree":"/static/img/motoz2.jpg",
+            "value":"1",
+            "Images":[
+                { "one":"/static/img/sj_details_00.jpg" },
+                { "one":"/static/img/sj_details_01.jpg" },
+                { "one":"/static/img/sj_details_02.jpg" },
+                { "one":"/static/img/sj_details_03.jpg" },
+                { "one":"/static/img/sj_details_04.jpg" },
+                { "one":"/static/img/sj_details_05.jpg" },
+                { "one":"/static/img/sj_details_06.jpg" },
+                { "one":"/static/img/sj_details_07.jpg" },
+                { "one":"/static/img/sj_details_08.jpg" },
+                { "one":"/static/img/details.jpg"}
+            ],
+            "Peizhis":[
+                {
+                    "left":"颜色",
+                    "right":"鎏金黑"
+                },{
+                    "left":"型号",
+                    "right":"标准版"
+                },{
+                    "left":"系统",
+                    "right":"基于Android™ 7.1.1开发的ZUI3.1"
+                },{
+                    "left":"CPU型号",
+                    "right":"Qualcomm® 骁龙™ 8937八核处理器，主频1.4GHz"
+                },{
+                    "left":"相机",
+                    "right":"前后1600W像素拍照"
+                },{
+                    "left":"电池",
+                    "right":"大电池涡轮快充"
+                }
+            ]
+            
+        },
+
+        {
+            "id":5,
+            "name":"moto z2 play手机 黑色全像素双核•智能AI体验",
+            "price":"3299",
+            "imgone":"/static/img/motoplay.jpg",
+            "imgtwo":"/static/img/motoplay00.jpg",
+            "imgThree":"/static/img/motoplay01.jpg",
+            "value":"1",
+            "Images":[
+                { "one":"/static/img/motoplay_00.jpg" },
+                { "one":"/static/img/motoplay_01.jpg" },
+                { "one":"/static/img/motoplay_02.jpg" },
+                { "one":"/static/img/motoplay_03.jpg" },
+                { "one":"/static/img/motoplay_04.jpg" },
+                { "one":"/static/img/motoplay_05.jpg" },
+                { "one":"/static/img/motoplay_06.jpg" },
+                { "one":"/static/img/motoplay_07.jpg" },
+                { "one":"/static/img/motoplay_08.jpg" },
+                { "one":"/static/img/motoplay_09.jpg" },
+                { "one":"/static/img/details.jpg"}
+            ],
+            "Peizhis":[
+                {
+                    "left":"颜色",
+                    "right":"鎏金黑"
+                },{
+                    "left":"型号",
+                    "right":"标准版"
+                },{
+                    "left":"系统",
+                    "right":"基于Android™ 7.1.1开发的ZUI3.1"
+                },{
+                    "left":"CPU型号",
+                    "right":"Qualcomm® 骁龙™ 8937八核处理器，主频1.4GHz"
+                },{
+                    "left":"相机",
+                    "right":"前后1600W像素拍照"
+                },{
+                    "left":"电池",
+                    "right":"大电池涡轮快充"
+                }
+            ]
+        },
+
+        {
+            "id":6,
+            "name":"moto z 流金黑 标准版",
+            "price":"2499",
+            "imgone":"/static/img/sj2.jpg",
+            "imgtwo":"/static/img/sj2_00.jpg",
+            "imgThree":"/static/img/sj2_01.jpg",
+            "value":"1",
+            "Images":[
+                { "one":"/static/img/motoZ_00.jpg" },
+                { "one":"/static/img/motoZ_01.jpg" },
+                { "one":"/static/img/motoZ_02.jpg" },
+                { "one":"/static/img/motoZ_03.jpg" },
+                { "one":"/static/img/motoZ_04.jpg" },
+                { "one":"/static/img/motoZ_05.jpg" },
+                { "one":"/static/img/motoZ_06.jpg" },
+                { "one":"/static/img/motoZ_07.jpg" },
+                { "one":"/static/img/motoZ_08.jpg" },
+                { "one":"/static/img/details.jpg"}
+            ],
+            "Peizhis":[
+                {
+                    "left":"颜色",
+                    "right":"流金黑"
+                },{
+                    "left":"型号",
+                    "right":"标准版"
+                },{
+                    "left":"系统",
+                    "right":"Android 6.0.1 Marshmallow"
+                },{
+                    "left":"CPU型号",
+                    "right":"高通晓龙820 (MSM8996, 64 位，四核)"
+                },{
+                    "left":"相机",
+                    "right":"前后1600W像素拍照"
+                },{
+                    "left":"蜂窝网络",
+                    "right":"UMTS (联通）, TD-SCDMA（移动）, EVDO Rev. A （电信）"
+                }
+            ]
+        }
+    ],
+    "vibes":[
+        {
+            "id":4,
+            "ImageOne":"/static/img/VIBE .jpg",
+            "name":"55",
+            "Price":"6599"
+        }
+    ]
+ }
