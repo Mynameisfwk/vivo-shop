@@ -51,8 +51,6 @@ npm run dev
 # 编译打包
 npm run build
 
-ps:如果启动服务报错安装下 npm install vue-resource
-
 ```
 
 
