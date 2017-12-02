@@ -26,6 +26,8 @@ vue2 + vuex + vue-router + vue-resource + webpack
 # 项目预览
 联想商城  [在线预览](www.fangwenkang.xyz/#/ "在线预览")<br>
 PS：浏览器请切换手机模式打开效果会更好 ~~~
+## 手机端扫描二维码
+![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/vue.png)
 
 
 # 效果截图演示
