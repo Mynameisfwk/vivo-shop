@@ -29,7 +29,7 @@ vue2 + vuex + vue-cli + vue-router + vue-resource + webpack
 
 # 项目预览
 :point_right: [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>
-PS：浏览器请切换手机模式打开效果会更好 ~~~
+建议在手机或F12手机模式下浏览
 
 # 手机端扫描二维码
 
