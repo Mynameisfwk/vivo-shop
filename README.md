@@ -7,7 +7,7 @@
 
 写完这个项目我学到了很多收获了很多知识尤其对vue组件指令、渲染数据、计算属性、绑定事件以及vuex状态管理、vue-router路由的使用有了一定了解。
 
-另外欢迎fork、star:blush:
+另外欢迎fork、star :blush:
 
 # 技术栈
 vue2 + vuex + vue-cli + vue-router + vue-resource + webpack 
