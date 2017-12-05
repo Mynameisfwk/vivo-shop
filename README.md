@@ -22,6 +22,15 @@
 
 > [Mint UI](http://mint-ui.github.io/#!/zh-cn) 由饿了么前端团队推出的 Mint UI 是一个基于 vue.js 的移动端组件库
 
+
+# 项目预览
+:point_right: [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>
+建议在手机或F12手机模式下浏览
+
+<h2手机端扫描二维码</h2>
+
+![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/vue.png)
+
 # 基本功能
 * 首页轮播图效果
 * 首页轮播图实现链接跳转
@@ -35,15 +44,6 @@
 * 商品订单删除
 * 模拟订单付款成功生成订单
 * Localstorage本地存储数据
-
-
-# 项目预览
-:point_right: [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>
-建议在手机或F12手机模式下浏览
-
-# 手机端扫描二维码
-
-![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/vue.png)
 
 
 # 效果截图演示
