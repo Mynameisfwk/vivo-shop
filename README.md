@@ -11,6 +11,8 @@
 
 # 技术栈
 vue2 + vuex + vue-cli + vue-router + vue-resource + webpack 
+> Vue.js是一个提供MVVM数据双向绑定的库，专注于UI层面，核心思想是：数据驱动、组件系统。<br>
+> Vue.js是一个提供MVVM数据双向绑定的库，专注于UI层面，核心思想是：数据驱动、组件系统。<br>
 
 # 基本功能
 * 首页轮播图效果
