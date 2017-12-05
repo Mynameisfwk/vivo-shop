@@ -27,7 +27,7 @@
 :point_right: [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>
 建议在手机或F12手机模式下浏览
 
-<h2手机端扫描二维码</h2>
+<h2>手机端扫描二维码</h2>
 
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/vue.png)
 
