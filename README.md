@@ -16,7 +16,7 @@
 
 > [vue-router](https://router.vuejs.org/zh-cn/)是官方提供的路由器，使用vue.js构建单页面应用程序变得轻而易举
 
-> [vue-resource](https://www.npmjs.com/package/vue-resource)请求数据，服务器通讯，但现在官方不在对[vue-resource](https://www.npmjs.com/package/vue-resource)进行维护，官方推荐[axioc](https://www.npmjs.com/package/axios)请求数据，本项目后期改用[axioc](https://www.npmjs.com/package/axios)
+> [vue-resource](https://www.npmjs.com/package/vue-resource)请求数据，服务器通讯，但现在官方不在对[vue-resource](https://www.npmjs.com/package/vue-resource)进行维护，官方推荐[axios](https://www.npmjs.com/package/axios)请求数据，本项目后期改用[axios](https://www.npmjs.com/package/axios)
 
 > [vuex](https://vuex.vuejs.org/zh-cn/) 是一个专为 vue.js 应用程序开发的状态管理模式，简单来说Vuex就是管理数据的。
 
