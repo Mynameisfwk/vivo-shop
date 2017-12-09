@@ -24,7 +24,7 @@
 
 
 # 项目预览
-:point_right: [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>
+:point_right: [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>  目前打不来域名正在实名
 建议在手机或F12手机模式下浏览
 <h3>手机端扫描二维码</h3>
 
