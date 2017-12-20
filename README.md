@@ -1,13 +1,13 @@
-
-
 # 前言
-初学vue2.0也有一两个月的心想想做个小项目来测试下我的水平，这不撸起袖子就是干，看了vivo移动商城挺简洁的就仿了个vivo商城，之所以选择vivo商城，是因为商城涉及到购物车操作、订单管理、其次就是网上也有很多的案例但都是音乐播放器，外卖手机端，千篇一律，所以我就选择了商城。
+初学vue2.0也有一两个月的心想想做个小项目来测试下我的水平，这不撸起袖子就是干，看了vivo移动商城挺简洁的就仿了个vivo商城，之所以选择vivo商城，是因为商城涉及到购物车操作、订单管理、其次就是网上也有很多的案例但都是音乐播放器，外卖手机端，千篇一律，所以我就选择了商城.
 
-该项目是由(vue2.0+vuex+vue-router+vue-resource+webpack)完成的，后期会用axios代替vue-resource 因为是第一次做手机端有些地方做的还不是那么完美还存在一些小BUG，不过后期我会努力完善的。:crying_cat_face:
+该项目是由(vue2.0+vuex+vue-router+vue-resource+webpack)完成的，后期会用axios代替vue-resource 因为是第一次做手机端有些地方做的还不是那么完美还存在一些小BUG，不过后期我会努力完善的.
 
-写完这个项目我学到了很多收获了很多知识尤其对vue组件指令、渲染数据、计算属性、绑定事件以及vuex状态管理、vue-router路由的使用有了一定了解。
+写完这个项目我学到了很多收获了很多知识尤其对vue组件指令、渲染数据、计算属性、绑定事件以及vuex状态管理、vue-router路由的使用有了一定了解.
 
-另外欢迎各位fork、star :blush:
+如果你想学微信小程序可以来看看我写的一个商城项目 [地址点这里](https://github.com/Mynameisfwk/wechat-app-vivo)
+这个项目后期会重构，到时候会加上MongoDB+node.js来写后台，毕竟是毕业项目，欢迎大家踊跃 [提出建议](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=dkRERU9AQ0FAQ0I2BwdYFRkb)
+另外如果这小项目对你有帮助欢迎各位fork、star，谢谢 
 
 # 技术栈
 > [vue.js](https://cn.vuejs.org/) 构建用户界面的 MVVM 框架，核心思想是：数据驱动、组件系统。
@@ -65,6 +65,7 @@ npm run dev
 npm run build
 
 ```
+
 
 
 
