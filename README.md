@@ -5,8 +5,8 @@
 
 写完这个项目我学到了很多收获了很多知识尤其对vue组件指令、渲染数据、计算属性、绑定事件以及vuex状态管理、vue-router路由的使用有了一定了解.
 
-如果你想学微信小程序可以来看看我写的一个商城项目 [地址点这里](https://github.com/Mynameisfwk/wechat-app-vivo)
-这个项目后期会重构，到时候会加上MongoDB+node.js来写后台，毕竟是毕业项目，欢迎大家踊跃 [提出建议](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=dkRERU9AQ0FAQ0I2BwdYFRkb)
+如果你想学微信小程序可以来看看我写的一个商城项目 [地址点这里](https://github.com/Mynameisfwk/wechat-app-vivo)<br>
+这个项目后期会重构，到时候会加上MongoDB+node.js来写后台，毕竟是毕业项目，欢迎大家踊跃 [提出建议](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=dkRERU9AQ0FAQ0I2BwdYFRkb)<br>
 另外如果这小项目对你有帮助欢迎各位fork、star，谢谢 
 
 # 技术栈
