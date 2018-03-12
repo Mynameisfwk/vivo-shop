@@ -24,11 +24,8 @@
 
 
 # 项目预览
-:point_right: [在线预览](http://www.fangwenkang.xyz/#/ "在线预览")<br>
+:point_right: [在线预览](http://fwk01.top/#/ "在线预览")<br>
 建议在手机或F12手机模式下浏览
-<h3>手机端扫描二维码</h3>
-
-![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/vue.png)
 
 # 基本功能
 * 首页轮播图效果
