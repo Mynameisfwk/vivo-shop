@@ -33,7 +33,7 @@ export default {
   data(){
       return{
         // lists:[]
-        my:"我的",
+        my:"个人中心",
         myName:"Chen Zi"
       }
   },
