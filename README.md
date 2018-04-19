@@ -7,7 +7,7 @@
 
 如果你想学微信小程序可以来看看我写的一个商城项目 [地址点这里](https://github.com/Mynameisfwk/wechat-app-vivo)<br>
 刚出来的快应用，可以看看我写的商城项目 [地址点这里](https://github.com/Mynameisfwk/shop-quickapp)<br>
-这个项目后期会重构，~~到时候会加上MongoDB+node.js来写后台~~，欢迎大家踊跃 [提出建议](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=dkRERU9AQ0FAQ0I2BwdYFRkb)<br>
+这个项目后期会重构，到时候会加上MongoDB+node.js来写后台，欢迎大家踊跃 [提出建议](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=dkRERU9AQ0FAQ0I2BwdYFRkb)<br>
 另外如果这个项目对你有帮助欢迎各位fork、star，谢谢
 
 # 项目正在重构中～～～
