@@ -10,7 +10,7 @@
 这个项目后期会重构，~~到时候会加上MongoDB+node.js来写后台~~，欢迎大家踊跃 [提出建议](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=dkRERU9AQ0FAQ0I2BwdYFRkb)<br>
 另外如果这个项目对你有帮助欢迎各位fork、star，谢谢
 
-# 项目正在重构中～～～
+# 项目正在重构中 2018/4/20～～～
 
 # 技术栈
 > [vue.js](https://cn.vuejs.org/) 构建用户界面的 MVVM 框架，核心思想是：数据驱动、组件系统。
