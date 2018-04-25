@@ -11,7 +11,7 @@
 另外如果这个项目对你有帮助欢迎各位fork、star，谢谢
 
 # 项目正在重构中 2018/4/20～～～
-# 正在重构需要加什么功能请移步issues给出建议[点这里> issues](https://github.com/Mynameisfwk/vivo-shop/issues)
+## 正在重构需要加什么功能请移步issues给出建议[点这里> issues](https://github.com/Mynameisfwk/vivo-shop/issues)
 
 # 技术栈
 > [vue.js](https://cn.vuejs.org/) 构建用户界面的 MVVM 框架，核心思想是：数据驱动、组件系统。
