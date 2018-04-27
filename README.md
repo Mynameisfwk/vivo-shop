@@ -10,7 +10,7 @@
 这个项目后期会重构，~~到时候会加上MongoDB+node.js来写后台~~，欢迎大家踊跃issues [提出建议](https://github.com/Mynameisfwk/vivo-shop/issues)<br>
 另外如果这个项目对你有帮助欢迎各位fork、star，谢谢
 
-# 项目正在重构中 2018/4/20～～～
+## 项目正在重构中会加上很多功能！有想知道进展的———>>>>  qq2239657654
 ## 正在重构需要加什么功能请移步issues给出建议[点这里> issues](https://github.com/Mynameisfwk/vivo-shop/issues)
 
 # 技术栈
