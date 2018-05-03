@@ -49,9 +49,6 @@
 # 效果截图演示
 
 
-![](http://p6563v2ck.bkt.clouddn.com/1.png)
-
-
 # 重构之后的效果展示
 
 
