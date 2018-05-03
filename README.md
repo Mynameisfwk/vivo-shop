@@ -54,7 +54,7 @@
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/4.0.png)
 
 # 重构之后的效果展示
-![](http://p6563v2ck.bkt.clouddn.com/111.jpg)
+![](http://p6563v2ck.bkt.clouddn.com/git-1.png)
 
 
 ## 项目安装及运行
