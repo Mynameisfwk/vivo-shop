@@ -48,13 +48,14 @@
 
 # 效果截图演示
 
-
-# 重构之后的效果展示
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/1.0.gif)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/2.0.png)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/3.0.png)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/4.0.png)
-![](https://p6563v2ck.bkt.clouddn.com/121.png)
+![](http://p6563v2ck.bkt.clouddn.com/White%20App%20Promo%20MockUps%20Pack%20-%20Scene%2006.png)
+
+# 重构之后的效果展示
+
 
 ## 项目安装及运行
 
