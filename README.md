@@ -52,9 +52,9 @@
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/2.0.png)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/3.0.png)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/4.0.png)
-![](http://p6563v2ck.bkt.clouddn.com/1_gaitubao_com_1200x608.png)
 
 # 重构之后的效果展示
+![](http://p6563v2ck.bkt.clouddn.com/111.jpg)
 
 
 ## 项目安装及运行
