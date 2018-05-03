@@ -44,6 +44,7 @@
 * 商品订单删除
 * 模拟订单付款成功生成订单
 * Localstorage本地存储数据
+![](http://p6563v2ck.bkt.clouddn.com/1.png)
 
 
 # 效果截图演示
@@ -52,7 +53,6 @@
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/2.0.png)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/3.0.png)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/4.0.png)
-![](http://p6563v2ck.bkt.clouddn.com/1.png)
 
 
 # 重构之后的效果展示
