@@ -54,6 +54,7 @@
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/4.0.png)
 
 # 重构之后的效果展示
+## 加了很多东西还有功能 这几张只是改了样式，过段时间传上去
 ![](http://p6563v2ck.bkt.clouddn.com/git-1.png)
 
 
