@@ -44,7 +44,6 @@
 * 商品订单删除
 * 模拟订单付款成功生成订单
 * Localstorage本地存储数据
-![](http://p6563v2ck.bkt.clouddn.com/1.png)
 
 
 # 效果截图演示
