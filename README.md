@@ -12,6 +12,7 @@
 
 ## 项目正在重构中会加上很多功能！有想知道进展的———>>>>  qq2239657654
 ## 正在重构需要加什么功能请移步issues给出建议[点这里> issues](https://github.com/Mynameisfwk/vivo-shop/issues)
+## 前端交流群 740625675
 
 # 技术栈
 > [vue.js](https://cn.vuejs.org/) 构建用户界面的 MVVM 框架，核心思想是：数据驱动、组件系统。
