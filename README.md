@@ -56,7 +56,9 @@
 
 # 重构之后的效果展示
 ## 加了很多东西还有功能 这几张只是改了样式，过段时间传上去
-![](http://p6563v2ck.bkt.clouddn.com/git-1.png)
+![](https://user-gold-cdn.xitu.io/2018/5/17/1636bc5f88e890e3?w=1555&h=608&f=png&s=251220)
+![](https://user-gold-cdn.xitu.io/2018/5/17/1636bb0a57c224a2?w=1555&h=608&f=png&s=305775)
+
 
 
 ## 项目安装及运行
