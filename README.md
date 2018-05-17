@@ -55,7 +55,8 @@
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/4.0.png)
 
 # 重构之后的效果展示
-## 加了很多东西还有功能 这几张只是改了样式，过段时间传上去
+## 加了很多东西还有功能 先放上来看看吧，还有一点没写完 写完就传上来
+![](https://user-gold-cdn.xitu.io/2018/5/17/1636ba09e546a28f?w=1555&h=608&f=png&s=419439)
 ![](https://user-gold-cdn.xitu.io/2018/5/17/1636bc5f88e890e3?w=1555&h=608&f=png&s=251220)
 ![](https://user-gold-cdn.xitu.io/2018/5/17/1636bb0a57c224a2?w=1555&h=608&f=png&s=305775)
 
