@@ -63,9 +63,6 @@
 #### 商品详情、提交订单、订单详情
 ![](https://user-gold-cdn.xitu.io/2018/5/17/1636bb0a57c224a2?w=1555&h=608&f=png&s=305775)
 
-#### 文章列表、文章详情、文章收藏
-![](https://user-gold-cdn.xitu.io/2018/5/18/16371fa7f4ceb8e2?w=1555&h=608&f=png&s=247923)
-
 #### 我的订单、我的收藏、我的购物车
 ![](https://user-gold-cdn.xitu.io/2018/5/18/16371fa7f4ceb8e2?w=1555&h=608&f=png&s=247923)
 
