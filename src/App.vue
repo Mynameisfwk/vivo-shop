@@ -1,27 +1,36 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <v-footer></v-footer>
+    <router-view/>
   </div>
 </template>
 
 <script>
 import rem from './rem/rem.js'
-import footer from './components/footer'
 export default {
   name: 'app',
-  components:{
-    "v-footer":footer,
+   data(){
+    return{
+      transitionName:''
+    }
   }
 }
 </script>
 
 <style>
  /* @import  "//at.alicdn.com/t/font_337147_rz7i21pv98fzjjor.css"; */
- @import "./font/font.css";
+ /* @import "./font/font.css"; */
+ @import 'styles/style.css';
+ @import './fon/iconfont.css';
 body{
-  padding-bottom:1.56rem; 
-  font-family: '微软雅黑';
-  background: #F4F4F4;;
+  /* padding-bottom:1.56rem; */
+  background: #F4F4F4;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+}
+.mint-swipe-indicator{
+  background: #000;
+  border: 1px solid black
+}
+.mint-swipe-indicator.is-active{
+  background: #ddd;
 }
 </style>

@@ -1,0 +1,22 @@
+{
+        "home":{
+            "homedata":[
+                {
+                    "id":1,
+                    "homeImg":"https://shopstatic.vivo.com.cn/vivoshop/commodity/71/4171_1496689409434hd_530x530.png",
+                    "homeName":"X9Plus 全网通",
+                    "homeNametwo":"优惠200元|限量促销",
+                    "homePrice":"2798"
+                },
+                {
+                    "id":2,
+                    "homeImg":"https://shopstatic.vivo.com.cn/vivoshop/commodity/40/4440_1508723830538hd_530x530.png",
+                    "homeName":"X20Plus 全面屏",
+                    "homeNametwo":"6.43英寸大屏|0.1s快速解锁",
+                    "homePrice":"3498"
+                }
+            ]
+      
+    }
+   
+}

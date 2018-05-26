@@ -1,0 +1,193 @@
+{
+    "data": {
+        "left": [
+            {
+                "id":"0",
+                "name":"全部分类"
+            },
+            {
+                "id":"1",
+                "name": "Xplay系列"
+            },
+            {
+                "id":"2",
+                "name": "X系列"
+            },
+            {
+                "id":"3",
+                "name": "Y系列"
+            },
+            {
+                "id":"4",
+                "name": "充电器"
+            },
+            {
+                "id":"5",
+                "name": "保护膜"
+            },
+            {
+                "id":"6",
+                "name": "耳机音响"
+            },
+            {
+                "id":"7",
+                "name": "智能外设"
+            }
+        ],
+        "rigth":[
+            {
+                "ce":[
+                    {
+                        "id": 1,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/71/4171_1496689409434hd_530x530.png",
+                        "name": "X9Plus"
+                    },
+                    {
+                        "id": 2,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/40/4440_1508723830538hd_530x530.png",
+                        "name": "X20Plus"
+                    },
+                    {
+                        "id": 3,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/95/4495_1509454710945hd_530x530.png",
+                        "name": "Y69"
+                    },
+                    {
+                        "id": 4,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/66/4266_1496689781362hd_530x530.png",
+                        "name": "Xplay6"
+                    },
+                    {
+                        "id": 5,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/11/4111_1492998667334hd_530x530.png",
+                        "name": "Y55"
+                    },
+                    {
+                        "id": 6,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/80/4180_1496689544465hd_530x530.png",
+                        "name": "Y66"
+                    },
+                    {
+                        "id":7,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/27/5027_1526972514378hd_250x250.png",
+                        "name":"乐心手环"
+                    },
+                    {
+                        "id":8,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/20/4020_1481558694236_530x530.png",
+                        "name":"闪充充电器"
+                    },
+                    {
+                        "id":9,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/82/1882_1481558960471_530x530.png",
+                        "name":"原装音乐耳机"
+                    },
+                    {
+                        "id":10,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/73/4273_1491007460873hd_250x250.png",
+                        "name":"原装数据线"
+                    },
+                    {
+                        "id":11,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/83/4183_1482921083765_530x530.png",
+                        "name":"原装钢化膜"
+                    },
+                    {
+                        "id":12,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/81/4181_1482720908043_250x250.png",
+                        "name":"3D高清保护膜"
+                    }
+                ]
+            },
+            {
+                "ce":[
+                    {
+                        "id": 4,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/66/4266_1496689781362hd_530x530.png",
+                        "name": "Xplay6"
+                    }
+                ]
+            },
+            {
+                "ce":[
+                    {
+                        "id": 1,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/71/4171_1496689409434hd_530x530.png",
+                        "name": "X9Plus"
+                    },
+                    {
+                        "id": 2,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/40/4440_1508723830538hd_530x530.png",
+                        "name": "X20Plus"
+                    },{
+                        "id": 4,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/66/4266_1496689781362hd_530x530.png",
+                        "name": "Xplay6"
+                    }
+                ]
+            },
+            {
+                "ce":[
+                    {
+                        "id": 3,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/95/4495_1509454710945hd_530x530.png",
+                        "name": "Y69"
+                    },
+                    {
+                        "id": 5,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/11/4111_1492998667334hd_530x530.png",
+                        "name": "Y55"
+                    },
+                    {
+                        "id": 6,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/80/4180_1496689544465hd_530x530.png",
+                        "name": "Y66"
+                    }
+                ]
+            },
+            {
+                "ce":[
+                    {
+                        "id":8,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/20/4020_1481558694236_530x530.png",
+                        "name":"闪充充电器"
+                    }
+                ]
+            },
+            {
+                "ce":[
+                    {
+                        "id":11,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/83/4183_1482921083765_530x530.png",
+                        "name":"原装钢化膜"
+                    },
+                    {
+                        "id":12,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/81/4181_1482720908043_250x250.png",
+                        "name":"3D高清保护膜"
+                    }
+                ]
+            },
+            {
+                "ce":[
+                    {
+                        "id":9,
+                        "img":"https://shopstatic.vivo.com.cn/vivoshop/commodity/82/1882_1481558960471_530x530.png",
+                        "name":"原装音乐耳机"
+                    }
+                ]
+            },
+            {
+                "ce":[
+                    {
+                        "id":7,
+                        "img": "https://shopstatic.vivo.com.cn/vivoshop/commodity/27/5027_1526972514378hd_250x250.png",
+                        "name":"乐心手环"
+                    }
+                ]
+            }
+         
+         
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+body,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,html,input,li,ol,p,select,td,textarea,th,ul{margin:0;padding:0}
+*{box-sizing:border-box;list-style:none}
+body,html{min-height:100%;font-size:50px}
+body{font-family:"microsoft yahei,HanHei SC,PingHei,PingFang SC,STHeitiSC-Light,Helvetica Neue,Helvetica,Arial,sans-serif";font-size:14px;color:#333}
+h1,h2,h3,h4,h5,h6{font-weight:400}
+ol,ul{list-style:none}
+img{border:0;vertical-align:middle}
+a{text-decoration:none;color:#232323}
+table{border-collapse:collapse;table-layout:fixed}
+input,textarea{outline:0;border:0}
+textarea{resize:none;overflow:auto}
+.clearfix{zoom:1}
+.clearfix:after{content:".";width:0;height:0;visibility:hidden;display:block;clear:both;overflow:hidden}
+.fl{float:left}
+.fr{float:right}
+.tl{text-align:left}
+.tc{text-align:center}
+.tr{text-align:right}
+.ellipse{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inline{display:inline-block}
+/* .container{padding-top: 1.45rem} */
