@@ -4,6 +4,7 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 
 ## 开头
 
+<<<<<<< HEAD
 ### 在线预览
 旧的版本：[vivo移动端商城](http://fwk01.top)<br>
 新的版本：[vivo移动端商城](http://fwk02.top)<br>
@@ -14,6 +15,19 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 ### 废话
 项目源码地址：[vivo-shop](https://github.com/Mynameisfwk/vivo-shop)，觉得还可以的话给个star 在这先谢谢了~<br>
 刚出来实习两个月 所以没有那么的时间来写，只有周六周日有时间！所以帮忙赞下这篇文章感谢了！🙏
+=======
+如果你想学微信小程序可以来看看我写的一个商城项目 [地址点这里](https://github.com/Mynameisfwk/wechat-app-vivo)<br>
+刚出来的快应用，可以看看我写的商城项目 [地址点这里](https://github.com/Mynameisfwk/shop-quickapp)<br>
+这个项目后期会重构，~~到时候会加上MongoDB+node.js来写后台~~，欢迎大家踊跃issues [提出建议](https://github.com/Mynameisfwk/vivo-shop/issues)<br>
+另外如果这个项目对你有帮助欢迎各位fork、star，谢谢
+
+## 项目正在重构中会加上很多功能！有想知道进展的———>>>>  qq2239657654
+## 正在重构需要加什么功能请移步issues给出建议[点这里> issues](https://github.com/Mynameisfwk/vivo-shop/issues)
+## 前端交流群 740625675
+
+# 技术栈
+> [vue.js](https://cn.vuejs.org/) 构建用户界面的 MVVM 框架，核心思想是：数据驱动、组件系统。
+>>>>>>> ece6bd9133a1a0d8d3a8a45069906c3dfc5ebb65
 
 ## 写在前面
 
@@ -42,8 +56,14 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 ![](https://user-gold-cdn.xitu.io/2018/5/26/1639add2f11ba68d?w=1555&h=608&f=png&s=127953)
 
 
+<<<<<<< HEAD
 ## 开发目的
 想着写一个案例放在开源网站上，时不时更新、完善、修改来提高自己技术能力，当然我也需要你们的建议有你们的建议我的作品也会更加完美
+=======
+# 项目预览
+:point_right: [在线预览](http://fwk01.top/#/ "链接已失效,请自行下载预览")<br>
+建议在手机或F12手机模式下浏览
+>>>>>>> ece6bd9133a1a0d8d3a8a45069906c3dfc5ebb65
 
 ## 技术栈
 > [vue-cli](https://www.npmjs.com/package/vue-cli) 是vue的脚手架工具，目录结构、本地调试、代码部署、热加载、单元测试。
@@ -56,7 +76,25 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 
 > [better-scroll](http://ustbhuangyi.github.io/better-scroll/doc/options.html)：解决移动端各种滚动场景需求的插件，使移动端滑动体验更加流畅
 
+<<<<<<< HEAD
 > [axios](https://www.npmjs.com/package/axios)：用来请求后端api数据
+=======
+# 重构之后的效果展示
+## 加了很多东西还有功能 先放上来看看吧，还有一点没写完 写完就传上来
+
+#### 首页、分类、动态、我的
+![](https://user-gold-cdn.xitu.io/2018/5/17/1636ba09e546a28f?w=1555&h=608&f=png&s=419439)
+
+#### 商品详情、提交订单、订单详情
+![](https://user-gold-cdn.xitu.io/2018/5/17/1636bb0a57c224a2?w=1555&h=608&f=png&s=305775)
+
+#### 我的订单、我的收藏、我的购物车
+![](https://user-gold-cdn.xitu.io/2018/5/18/16371fa7f4ceb8e2?w=1555&h=608&f=png&s=247923)
+
+
+
+## 项目安装及运行
+>>>>>>> ece6bd9133a1a0d8d3a8a45069906c3dfc5ebb65
 
 ## 实现功能
 商品详情、文章详情、订单详情、订单提交、分类管理、商品搜索、商品/文章收藏、购物车功能(增、删、单全选)、积分动态获取、订单管理、收货地址管理、localstorage储存等功能
