@@ -3,6 +3,7 @@ const actions={
     setCart({commit},data){
         commit('SET_CARTS',data)
     },
+    
     //文章收藏
     setArticle({commit},data){
         commit('SET_ARTICLE',data)
@@ -19,8 +20,6 @@ const actions={
     setOrders({commit},data){
         commit('SET_ORDERS',data)
     }
-    
 }
-
 
 export default actions
