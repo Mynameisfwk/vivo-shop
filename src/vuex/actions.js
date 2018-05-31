@@ -19,6 +19,7 @@ const actions={
     setOrders({commit},data){
         commit('SET_ORDERS',data)
     }
+    
 }
 
 
