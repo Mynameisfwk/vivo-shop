@@ -12,7 +12,6 @@
     }
   }
   setBodyFontSize();
-
   // set 1rem = viewWidth / 10
   function setRemUnit () {
     var rem = docEl.clientWidth / 10
