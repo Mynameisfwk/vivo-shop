@@ -19,7 +19,6 @@ const actions={
     setOrders({commit},data){
         commit('SET_ORDERS',data)
     }
-
 }
 
 export default actions
