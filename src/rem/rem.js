@@ -26,7 +26,7 @@
       setRemUnit()
     }
   })
-
+  
   // detect 0.5px supports
   if (dpr >= 2) {
     var fakeBody = document.createElement('body')

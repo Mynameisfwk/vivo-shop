@@ -24,7 +24,7 @@
                          
                             <div class="order-div">
                                 <h3>{{list.name}}</h3>
-                                <p class="order-div-color">颜色:黑</p>
+                                <!-- <p class="order-div-color">颜色:黑</p> -->
                                 <p class="order-div-price">￥{{list.price}}</p>
                             </div>
                             <div class="order-div-2">
@@ -171,6 +171,8 @@ export default {
             margin .3rem
             line-height .7rem
             float left
+            h3
+                font-size .5rem
             .order-div-price
                 color red
                 font-size .4rem
@@ -178,6 +180,7 @@ export default {
             display inline-block
             float right
             margin .3rem .6rem
+            font-size .4rem
     .order-2 
         width 100%
         height 1.7rem
@@ -200,6 +203,7 @@ export default {
             .order-2-two
                 color #666
                 padding-top .2rem
+                font-size .35rem
     .order-3
         width 100%
         height 1.1rem
@@ -216,5 +220,7 @@ export default {
             margin-right .3rem
             margin-top .1rem
             border 1px solid #dcdcdc
+            font-size .3rem
+            
 </style>
 
