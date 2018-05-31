@@ -52,7 +52,7 @@
 <style lang="stylus" scoped>
   #bottom
     width: 100%;
-    height: 1.4rem;
+    // height: 1.4rem;
     background: yellow;
     position: fixed;
     bottom: 0;
@@ -69,6 +69,8 @@
         justify-content: center;
         flex-direction: column;
         text-align center
+        span
+          font-size .3rem
         i 
           font-size .55rem
       .router-link:hover,.router-link-active

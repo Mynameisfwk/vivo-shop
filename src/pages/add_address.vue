@@ -65,7 +65,7 @@ export default {
           zone: this.zone,
           detail: this.detail
         };
-        this.$store.commit("SET_ADDRESS", data);
+        this.$store.dispatch("setAddress",data)
         this.$router.back();
       }
     }

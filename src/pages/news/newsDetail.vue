@@ -48,24 +48,30 @@ export default {
       var date = new Date();
       var fh1 = "-";
       var fh2 = ":";
+      var fh3 = "";
       var year = date.getFullYear(); // 年
       var month = date.getMonth() + 1; // 月
       var day = date.getDate(); // 日
       var hour = date.getHours(); // 时
       var minutes = date.getMinutes(); // 分
-      //如果时间中只有个位话那么十位加0
-      if (month >= 1 && month <= 9) {
-        month = "0" + month;
-      }else if(day >= 1 && day <= 9){
-        day = "0" + day;
-      }else if(hour>=1 && hour<=9){
-        hour = "0" + hour;
-      }else if(minutes>=1 && minutes<=9){
-        minutes = "0" + minutes;
-      }
-      
+
+      //三元运算了解下！
+      month = month < 10 ? ('0' + month) : month;
+      day = day < 10 ? ('0' + day) : day;
+      hour = hour < 10 ? ('0' + hour) : hour;
+      minutes = minutes < 10 ? ('0' + minutes) : minutes;
+
+      // if (month >= 1 && month <= 9) {
+      //   month = "0" + month;
+      // }else if(day >= 1 && day <= 9){
+      //   day = "0" + day;
+      // }else if(hour>=1 && hour<=9){
+      //   hour = "0" + hour;
+      // }else if(minutes>=1 && minutes<=9){
+      //   minutes = "0" + minutes;
+      // }
       var currentdate =
-        year + fh1 + month + fh1 + day + " " + hour + fh2 + minutes;
+        year + fh1 + month + fh1 + day + fh3 + hour + fh2 + minutes;
 
       var idExist = this.$store.state.article.find(data => {
         return data.id == list.id;
@@ -81,7 +87,7 @@ export default {
           message: "收藏成功",
           duration: 950
         });
-        this.$store.commit("SET_ARTICLE", data);
+        this.$store.dispatch("setArticle",data)
       } else {
         Toast({
           message: "您已经收藏过了",

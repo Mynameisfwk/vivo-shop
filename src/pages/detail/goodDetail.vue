@@ -14,8 +14,8 @@
                     <div class="goodDetailMain">
                         <div class="gooDetailNumber">商品编号：{{goodDetail.number}}</div>
                         <div class="goodDetailName">{{goodDetail.homeName}}</div>
-                        <div style="text-align: justify;">
-                            <span style="margin-left:-.2rem;color:#FF4B3D">【{{goodDetail.homeBright}}】</span>
+                        <div style="text-align: justify;font-size: 0.348rem;">
+                            <span style="margin-left:-.2rem;color:#FF4B3D;">【{{goodDetail.homeBright}}】</span>
                             {{goodDetail.homeTitle}}
                         </div>
                         <div class="goodDetailColor">{{goodDetail.color}}</div>
@@ -171,9 +171,7 @@ export default {
            name:index.homeName,
            price:index.homePrice
        }
-        // index.ces=!index.ces
-        // index.ces=!this.$store.state.ces
-    this.$store.commit("SET_GOODS", data);
+        this.$stor.dispatch("setGoods",data)
     },
     // 点击按钮时，首先判断该商品是否在购物车已存在，如果存在则不再加入
     add: function(index) {
@@ -191,7 +189,8 @@ export default {
           img:index.homeImg,
           danx1uan: ""
         };
-        this.$store.commit("SET_CARTS",data);
+        this.$store.dispatch('setCart', data);
+        // this.$store.commit("SET_CARTS",data);
         this.cartlength = this.$store.state.carts.length;
         Toast({
           message: "加入购物车成功！",
@@ -374,7 +373,7 @@ export default {
         width: 45%;
         float: left;
         position: relative;
-
+        font-size: .35rem;
         .cart {
             width: 33%;
             display: flex;
@@ -430,6 +429,7 @@ export default {
 
             .collection-box {
                 text-align: center;
+                
             }
 
             i {
@@ -552,6 +552,7 @@ table td {
 ._Value {
     float: left;
     margin-top: 0.2rem;
+    font-size 0.35rem
 }
 
 .goodDetailColor {

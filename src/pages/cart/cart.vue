@@ -237,6 +237,7 @@ export default {
   position: fixed;
   width: 100%;
   height: 1.18rem;
+  font-size: 0.35rem;
   background: white;
   bottom: 0;
   display: block;

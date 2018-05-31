@@ -134,6 +134,7 @@ export default {
     display block
     margin-bottom .15rem
     margin-top .15rem
+    font-size 0.35rem
     .container-order-1{
         width 100%
         height 1.5rem
@@ -207,6 +208,7 @@ export default {
         }
 
         p {
+            font-size 0.35rem;
             color: #ffffff;
         }
     }

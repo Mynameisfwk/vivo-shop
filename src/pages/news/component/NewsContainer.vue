@@ -50,7 +50,7 @@ export default {
        
         .container-box
             width 100%
-            height 8rem
+            height 8.4rem
             background white
             border-bottom: 1px dotted #CCCCCC;
         .container-title
@@ -80,5 +80,6 @@ export default {
             width: 95%;
             margin: auto;
             padding-top: .2rem
+            font-size .3rem
             color #696969
 </style>

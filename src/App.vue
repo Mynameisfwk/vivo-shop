@@ -17,8 +17,6 @@ export default {
 </script>
 
 <style>
- /* @import  "//at.alicdn.com/t/font_337147_rz7i21pv98fzjjor.css"; */
- /* @import "./font/font.css"; */
  @import 'styles/style.css';
  @import './fon/iconfont.css';
 body{

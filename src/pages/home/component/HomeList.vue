@@ -10,24 +10,28 @@
 </template>
 
 <style lang="stylus" scoped>
+//rem 
 .HomeList
     width 100%;
-    height 2.5rem;
+    height 2rem;
     background white;
-    border-bottom 1px solid #cccccc;
+    border-bottom 1px solid #f4f4f4;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     li
         width: 25%;
+        height 100%;
         float: left;
         margin: auto;
         div
-            width: 1.7rem;
-            height: 1.68rem;
+            width: 1.58rem;
+            height: 1.59rem;
             margin: auto;
         img 
             display: block;
             width: 100%;
-            height: 100%;
-            margin: 15px auto
+            height: 100%
 </style>
 
 <script>
