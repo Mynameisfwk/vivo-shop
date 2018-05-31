@@ -170,6 +170,7 @@ export default {
         color: #666;
         font-size: 0.38rem;
     }
+    
 }
 
 .details-list {

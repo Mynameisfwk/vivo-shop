@@ -11,6 +11,7 @@
       document.addEventListener('DOMContentLoaded', setBodyFontSize)
     }
   }
+  
   setBodyFontSize();
   // set 1rem = viewWidth / 10
   function setRemUnit () {
@@ -26,7 +27,7 @@
       setRemUnit()
     }
   })
-  
+
   // detect 0.5px supports
   if (dpr >= 2) {
     var fakeBody = document.createElement('body')
