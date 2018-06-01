@@ -5,6 +5,11 @@
         <div class="upper">
             <span v-for="(list,index) in PartsUpper" class="list" :class="{active:index===partsIndex}" :key="index" @click="btn(index)" >{{list.name}}</span>
         </div>
+        <div class="sort">
+            <p @click="rise">价格升序</p>
+            <p @click="drop">价格降序</p>
+            <p>销量优先</p>
+        </div>
         <div class="lower">
             <div class="lower_list" v-for="(list,index) in PartsLower.PartsLower_data" :key="index" @click="goDetails(list.id)">
             <img v-bind:src="list.homeImg">
@@ -14,6 +19,7 @@
         </div>
         </div>
     </div>
+    
   </div>
 </template>
 
@@ -56,14 +62,21 @@ export default {
       var _this = this;
       _this.partsIndex = index;
       _this.PartsLower = _this.list[index];
+    },
+    rise(){
+        var _this = this;
+        var data = _this.PartsLower.PartsLower_data;
+        data.sort((a, b) => {
+            return a.homePrice > b.homePrice;
+        });
+    },
+    drop(){
+        var _this = this;
+        var data = _this.PartsLower.PartsLower_data;
+        data.sort((a, b) => {
+            return a.homePrice < b.homePrice;
+        });
     }
-    // btn(){
-    //     this.charger.sort((a,b)=>{
-    //         // return a.price>b.price
-    //         console.log(b.homePrice)
-    //         return a.homePrice>b.homePrice
-    //     })
-    // }
   }
 };
 </script>
@@ -71,19 +84,41 @@ export default {
 
 <style lang="stylus" scoped>
 .active {
-  color: #25b5fe;
-  border-bottom: 2px solid #25b5fe;
+    color: #25b5fe;
+    border-bottom: 2px solid #25b5fe;
 }
-.upper{
+
+.sort {
+    width: 100%;
+    height: 1rem;
+    background: #f4f4f4;
+    position: relative;
+    top: 1.3rem;
+    display: flex;
+    justify-content: center;
+
+    p {
+        line-height: 1rem;
+        font-size: 0.35rem;
+        float: left;
+        width: 33%;
+        text-align: center;
+    }
+}
+
+.upper {
     width: 100%;
     height: 1.2rem;
     line-height: 1.2rem;
     position: fixed;
     background: #ffffff;
+    z-index: 1;
 }
-.lower{
-  padding-top:1.2rem;
-  border-bottom: 1px solid #f4f4f4;
+
+.lower {
+    position: relative;
+    top: 1.2rem;
+    border-bottom: 1px solid #f4f4f4;
 }
 
 .list {
@@ -101,7 +136,7 @@ export default {
 
 .parts {
     position: absolute;
-    background: white;
+    background #ffffff;
     width: 100%;
     height: 100%;
     top: 0;
@@ -146,7 +181,7 @@ export default {
     border-right: 1px solid #f4f4f4;
     border-bottom: 1px solid #f4f4f4;
     float: left;
-    margin-top: 1px;
+    margin-top: 0.1rem;
     list-style: none;
 
     img {

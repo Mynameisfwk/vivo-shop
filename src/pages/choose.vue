@@ -5,6 +5,11 @@
           <div class="upper">
             <span v-for="(list,index) in upper" :key="index" class="list" @click="btn(index)" :class="{active:index===phoneIndex}">{{list.name}}</span>
           </div>
+          <div class="sort">
+              <p @click="rise">价格升序</p>
+              <p @click="drop">价格降序</p>
+              <p>销量优先</p>
+          </div>
           <div class="lower">
             <div v-for="(list,index) in lower.lower_data" :key="index" class="lower_list" @click="goDetails(list.id)">
               <img v-bind:src="list.ImageOne" alt="图片">
@@ -55,6 +60,20 @@ export default {
       var _this = this;
       _this.phoneIndex = index;
       _this.lower = this.list[index];
+    },
+    rise() {
+      var _this = this;
+      var data = _this.lower.lower_data;
+      data.sort((a, b) => {
+        return a.Price > b.Price;
+      });
+    },
+    drop(){
+      var _this = this;
+      var data = _this.lower.lower_data;
+      data.sort((a, b) => {
+        return a.Price < b.Price;
+      });
     }
   }
 };
@@ -65,15 +84,36 @@ export default {
   color: #25b5fe;
   border-bottom: 2px solid #25b5fe;
 }
-.upper{
-    width: 100%;
-    height: 1.2rem;
-    line-height: 1.2rem;
-    position: fixed;
-    background: #ffffff;
+
+.sort {
+  width: 100%;
+  height: 1rem;
+  background: #f4f4f4;
+  position: relative;
+  top: 1.3rem;
+  display: flex;
+  justify-content: center;
+
+  p {
+    line-height: 1rem;
+    font-size: 0.35rem;
+    float: left;
+    width: 33%;
+    text-align: center;
+  }
 }
-.lower{
-  padding-top:1.2rem;
+
+.upper {
+  width: 100%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  position: fixed;
+  background: #ffffff;
+  z-index: 1;
+}
+
+.lower {
+  padding-top: 1.2rem;
   border-bottom: 1px solid #f4f4f4;
 }
 
@@ -130,11 +170,11 @@ export default {
   border-right: 1px solid #f4f4f4;
   border-bottom: 1px solid #f4f4f4;
   float: left;
-  margin-top: 1px;
+  margin-top: 0.1rem;
   list-style: none;
 
   img {
-   height: 3.9rem;
+    height: 3.9rem;
     width: 4rem;
     display: block;
     margin: auto;

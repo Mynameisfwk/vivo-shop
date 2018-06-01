@@ -11,7 +11,7 @@
         </div>
         <div class="calssify-rigth" ref="wrapper2">
             <ul class="calssify-left-ul">
-                <li v-for="(list,index) in rigth.ce" :key="index" @click="goDetails(list.id)">
+                <li v-for="(list,index) in right.rigth_data" :key="index" @click="goDetails(list.id)">
                      <img v-lazy="list.img">
                     <span>{{list.name}}</span>
                 </li>
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import BScroll from "better-scroll";
 import ClassifyHeader from "../../common/header";
 import footer from "../../pages/footer";
 import axios from "axios";
@@ -55,18 +54,18 @@ export default {
   },
   created() {
     var _this = this;
-    axios.get("/static/fel.json").then(function(res) {
-      // console.log(res.data.data.rigth[0])
-      _this.left = res.data.data.left;
-      _this.list = res.data.data.rigth;
-      _this.rigth = _this.list[0];
+    axios.get("/static/ceshi.json").then(function(res) {
+      console.log(res)
+     _this.left = res.data.data.classify.left;
+      _this.list = res.data.data.classify.right;
+      _this.right = _this.list[0];
     });
   },
   methods: {
     qiehuan(index) {
       var _this = this;
       _this.classifyIndex = index;
-      _this.rigth = _this.list[index];
+      _this.right = _this.list[index];
     },
     goDetails(id) {
       console.log(id);
