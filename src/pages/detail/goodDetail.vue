@@ -153,9 +153,9 @@ export default {
     });
 
     axios.get("/static/ceshi.json").then(res => {
-      for (var i = 0; i < res.data.data.list.length;i++){
-        if (res.data.data.list[i].id == id ) {
-            _this.goodDetails.push(res.data.data.list[i]);
+      for (var i = 0; i < res.data.data.set.length;i++){
+        if (res.data.data.set[i].id == id ) {
+            _this.goodDetails.push(res.data.data.set[i]);
         }
       }
     });

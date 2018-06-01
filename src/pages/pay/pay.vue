@@ -443,18 +443,16 @@ export default {
     var id = this.$route.query.id;
     var value = this.$route.query.value;
     axios.get("/static/ceshi.json").then(function(res) {
-      var list = res.data.data.list;
-      for (var i = 0; i < list.length; i++) {
-        if (list[i].id == id) {
-          _this.pay.push(list[i]);
+      for (var i = 0; i < res.data.data.set.length; i++) {
+        if (res.data.data.set[i].id == id) {
+          _this.pay.push(res.data.data.set[i]);
         }
       }
     });
     axios.get("/static/ceshi.json").then(function(res) {
-      var data = res.data.data.home;
-      for (var i = 0; i < data.length; i++) {
-        if (data[i].id == id) {
-          _this.pay.push(data[i]);
+      for (var i = 0; i < res.data.data.home.length; i++) {
+        if (res.data.data.home[i].id == id) {
+          _this.pay.push(res.data.data.home[i]);
         }
       }
     });

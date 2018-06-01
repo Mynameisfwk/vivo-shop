@@ -152,12 +152,16 @@ export default {
 
         span {
           padding-left: 0.1rem;
+          font-size .36rem
         }
       }
 
       .collection {
         display: flex;
         justify-content: center;
+        span{
+          font-size .36rem
+        }
       }
     }
   }
