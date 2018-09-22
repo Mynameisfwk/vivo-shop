@@ -4,6 +4,8 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 
 ## 开头
 
+## 2018/09/22 如果发现图片打不开 ，我七牛云的那边域名出问题了 ！
+
 ### 在线预览
 旧的版本：[vivo移动端商城](http://fwk01.top)<br>
 新的版本：[vivo移动端商城](http://fwk02.top)<br>
