@@ -7,6 +7,7 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 ## 2018/09/22 如果发现图片打不开 ，我七牛云的那边域名出问题了 ！
 ## 2019/01/08 最近在用TP5 写后台，持续关注哦 这个项目也会更新一些功能的，先放两张后台图！！！！！！！😊😊😊😊
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/img/D246F738D61254CF43058771EB0C256B.jpg)
+![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/img/E2CF505C13B27427AA8B7173161F9736.jpg)
 
 
 ### 在线预览
