@@ -12,9 +12,9 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 
 ### 在线预览
 
-旧的版本：[vivo移动端商城]<del>(http://fwk01.top)</del><br>
-新的版本：[vivo移动端商城]<del>(http://fwk02.top)</del><br>
-项目演示地址：[vivo移动端商城]<del>(http://fwk02.top)</del><br>
+旧的版本：<del>[vivo移动端商城](http://fwk01.top)</del><br>
+新的版本：<del>[vivo移动端商城](http://fwk02.top)</del><br>
+项目演示地址：<del>[vivo移动端商城](http://fwk02.top)</del><br>
 建议Chrome调试手机模式下预览<br>
 因为刚买的域名主机所以要解析，实名认证才可以浏览，所以你们还是下把项目给下载下来本地运行看把！😊
 
