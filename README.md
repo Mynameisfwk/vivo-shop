@@ -1,6 +1,15 @@
 # vue2.0全家桶实现vivo商城 shop
 vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 
+## 反馈
+如果运行报错 
+A complete log of this run can be found in:   
+/Users/xxx/.npm/_logs/2019-05-09T01_36_59_916Z-debug.log
+
+ npm install webpack -g 
+ vue init webpack 项目名 
+ npm run dev
+ 即可
 
 ## 开头
 
