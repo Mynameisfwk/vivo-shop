@@ -5,8 +5,8 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库
 
 ### 2019/05/12 为什么4个月后台才写了这么点 那是因为公司项目比较多 没时间写 只有闲下来抽空可以更新下！
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/1.png)
-![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/2.png)
 <img style='wdith:400px' src='https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/2.png'>
+<br>
 
 ### 2019/01/08 最近在用TP5 写后台，持续关注哦 这个项目也会更新一些功能的，先放两张图 ！
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/img/D246F738D61254CF43058771EB0C256B.jpg)
