@@ -1,6 +1,9 @@
 # vue2.5+ThinkPHP5.0 全栈开发 vivo商城
 vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库 <br>
 后台 ThinkPHP5.0+Mysql 正在写～～
+
+更新中
+
 ## 开头
 
 ### 2019/05/12 为什么4个月后台才写了这么点 那是因为公司项目比较多 没时间写 只有闲下来抽空可以更新下！
