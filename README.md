@@ -4,8 +4,6 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件库 <br>
 # vivo-shop后台管理系统地址 [🔗 传送地址](https://github.com/Mynameisfwk/tp5-vivo-admin)
 
 ## 开头
-
-### 2019/05/12 为什么4个月后台才写了这么点 那是因为公司项目比较多 没时间写 只有闲下来抽空可以更新下！
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/1.png)
 <img style='wdith:400px' src='https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/2.png'>
 <br>
