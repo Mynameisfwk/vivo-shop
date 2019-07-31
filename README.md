@@ -3,13 +3,12 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
 
 # vivo-shop后台管理系统地址 [🔗 传送地址](https://github.com/Mynameisfwk/tp5-vivo-admin) 
 
-
 ## 开头
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/1.png)
 <img style='wdith:400px' src='https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/2.png'>
 <br>
 
-### 2019/01/08 最近在用TP5 写后台，持续关注哦 这个项目也会更新一些功能的，先放两张图 ！
+### 2019/01/08 最近在用TP5 写后台，持续关注哦 这个项目也会更新一些功能的，先放两张图 
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/img/D246F738D61254CF43058771EB0C256B.jpg)
 ![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/img/E2CF505C13B27427AA8B7173161F9736.jpg)
 
