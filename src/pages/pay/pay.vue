@@ -1,24 +1,24 @@
 <template>
     <div>
-        <Pay-Header title="结算"></Pay-Header>
-        <div to="address" class="pay-address" >
+        <Pay-Header title="确认订单"></Pay-Header>
+        <div @click="go_Xzaddress" class="pay-address">
              <p class="address-box">
-                <span class="name">收货人：myfwk</span>
-                <span class="phone">15255460858</span>
+                <span class="name">收货人：{{address_name}}</span>
+              <span class="phone">{{address_phone}}</span>
             </p>
             <p class="address-details">
-                收货地址：安徽省合肥市蜀山区金寨路立基大厦B座 中科大对面
+                收货地址：{{address}}{{xz_address}}
             </p>
         </div>
         <div class="pay-shop" v-for="(list,index) in pay" :key="index">
             <div class="pay-shop-list">
                 <p class="pay-shop-1">商品清单</p>
                 <p class="pay-shop-2">
-                    <img :src="list.homeImg">
+                    <img :src="'http://www.vivo-admin.com/static/image/'+list.fm_img" />
                     <p class="pay-shop-2-box">
-                        <span class="name">{{list.homeName}}<p>× {{$route.query.value}}</p></span>
+                        <span class="name">{{list.name}}<p>× 1</p></span>
                         <!-- <span>颜色：冰钻黑</span> -->
-                        <span class="price">¥ {{list.homePrice}}</span>
+                        <span class="price">¥{{list.price}}</span>
                     </p>
                 </p>
             </div>
@@ -27,9 +27,9 @@
                 <p class="pay-invoice-1">发票信息</p>
                 <div class="pay-invoice-2">
                     <div class="pay-invoice-2-2">
-                        <div v-show="invoiceIndex===0">
+                        <div>
                             <p>*请输入发票抬头:</p>
-                            <input type="text" id="input" v-model="list.text" placeholder="请输入发票信息">
+                            <input type="text" id="input" v-model="invoice"  placeholder="请输入发票信息">
                             
                         </div>
                     </div>
@@ -58,21 +58,17 @@
             <div class="pay-shop-liuyan">
                 <p class="pay-liuyan-1">订单留言</p>
                 <div class="pay-liuyan-2">
-                    <textarea v-model="list.ly" rows="5" placeholder="限300字（若有特殊需求，请联系商城在线客服)" maxlength="300"></textarea>
-                    <p>商品总金额：¥{{$route.query.value*list.homePrice}}</p>
+                    <textarea rows="5" v-model="content" placeholder="限300字（若有特殊需求，请联系商城在线客服)" maxlength="300"></textarea>
+                    <p>商品总金额：¥{{list.price}}</p>
                     <p>运费：0.00</p>
                     <p>优惠：¥0.00</p>
-                    <p>赠送积分：{{$route.query.value*list.homePrice}}</p>
-                   
+                    <p>赠送积分：{{list.price * 0.05 | integral}}</p>
                 </div>
             </div>
            
-            <!-- <span>{{list.id}}</span>
-            <span>{{list.homeName}}</span> -->
-
             <div class="pay-shop-footer">
-                <p class="price">订单总金额：<span>¥{{$route.query.value*list.homePrice}}</span></p>
-                <a class="order" @click="addOrder(list,index)">立即结算</a>
+                <p class="price">订单总金额：<span>¥{{list.price}}</span></p>
+                <a class="order" @click="addOrder(list,index)">提交订单</a>
             </div>
         </div>
     </div>
@@ -366,6 +362,7 @@
 import { Toast } from "mint-ui";
 import { mapGetters, mapMutations } from "vuex";
 import PayHeader from "../../common/header";
+import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import axios from "axios";
 export default {
   name: "pay",
@@ -373,7 +370,17 @@ export default {
     return {
       listIndex: 0,
       invoiceIndex: 0,
+      integral:'', //积分
       pay: [],
+      address:[],
+      addressId:'5',
+      address_name:'1', //收货人
+      address_phone:'15255460858', //收货人手机号
+      address:'测试地址',
+      xz_address:'详情地址',
+      content:'',//留言
+      invoice:'',//发票抬头
+      swiperImg:'',
       lists: [
         {
           id: "1",
@@ -388,75 +395,101 @@ export default {
           name: "货到付款"
         }
       ],
-      text: "",
-      ly: ""
     };
   },
   components: {
     PayHeader
   },
-  //    computed: {
-  //         address() {
-  //         return this.$store.state.address;
-  //         },
-  //         ...mapGetters(
-  //             ["this.$store.state.address"],
-  //         )
-  //     },
+  
+     computed: {
+          xzAddess() {
+            return this.$store.state.xzAddess;
+          },
+          ...mapGetters(
+              ["this.$store.state.xzAddess"],
+          )
+      },
+      filters:{
+          integral(value){
+            return value.toFixed(2) //过滤积分后两位
+          }
+      },
   methods: {
+    go_Xzaddress(){
+        this.pay.forEach(list=>{
+            this.$router.push({
+                path: "xz_address",
+                query:{
+                    id:list.id
+                }
+            });
+      })
+    },
     btn(id, index) {
       this.listIndex = index;
     },
     invoiceClick(index) {
       this.invoiceIndex = index;
     },
-    addOrder(id, index) {
-      if (id.text == undefined) {
-        Toast({
-          message: "请输入发票抬头",
-          duration: 950
-        });
-      } else {
-        var data = {
-          id: id.id,
-          name: id.homeName,
-          price: id.homePrice,
-          text: id.text,
-          ly: id.ly,
-          img: id.homeImg,
-          listname: this.lists[index].name,
-          value: this.$route.query.value
-        };
-        this.$store.dispatch("setOrders", data);
-        var _this = this;
-        var time = setInterval(function() {
-          _this.$router.push({
-            path: "success"
-          });
-          clearInterval(time);
-        }, 1000);
+    addOrder(list) {
+        let cookier_token = getCookie("token");
+         axios({
+            url: "http://www.vivo-admin.com/add_order/",
+            method: "post",
+            params: {
+                token:cookier_token,
+                id:list.id,
+                shop_name:list.name,
+                shop_price:list.price,
+                address_name:this.address_name,
+                address_phone:this.address_phone,
+                content:this.content,
+                invoice:this.invoice,
+                address:this.address+this.xz_address,
+                shop_img:list.fm_img,
+                integral:(list.price*0.05).toFixed(2)
+            }
+        })
+            .then(res => {
+                console.log(res)
+                Toast({
+                message: res.data.msg,
+                duration: 950
+                });
+            })
+            .catch(err => {
+            });
       }
-    }
+     
+    
   },
   created() {
     var _this = this;
     var id = this.$route.query.id;
-    var value = this.$route.query.value;
-    axios.get("/static/ceshi.json").then(function(res) {
-      for (var i = 0; i < res.data.data.set.length; i++) {
-        if (res.data.data.set[i].id == id) {
-          _this.pay.push(res.data.data.set[i]);
+
+    axios.get("http://www.vivo-admin.com/shop_data/").then(function(res) {
+      for (var i = 0; i < res.data.data.length; i++) {
+        if (res.data.data[i].id == id) {
+          _this.pay.push(res.data.data[i]);
         }
       }
     });
-    axios.get("/static/ceshi.json").then(function(res) {
-      for (var i = 0; i < res.data.data.home.length; i++) {
-        if (res.data.data.home[i].id == id) {
-          _this.pay.push(res.data.data.home[i]);
+
+    var addressId=this.$route.query.addressId
+      this.$store.state.xzAddess.forEach(list=>{
+        if(list.id==addressId){
+            this.address_name=list.name
+            this.address=list.address
+            this.xz_address=list.xx_address
+            this.address_phone=list.phone
+            this.swiperImg=list.fm_img
         }
-      }
-    });
+        
+      })
+
+   
   }
+ 
 };
 </script>
 

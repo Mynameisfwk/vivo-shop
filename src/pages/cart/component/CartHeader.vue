@@ -1,13 +1,5 @@
 <template>
-  <div class="header">
-      <div class="header-left">
-          <router-link to="/news">
-             <i class="iconfont icon-zuojiantou"></i>
-        </router-link>
-      </div>
-      <div class="header-in">购物车</div>
-      <div class="header-rigth"></div>
-  </div>
+ 
 </template>
 
 <script>

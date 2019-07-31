@@ -3,19 +3,14 @@
         <Choose-Header title="选购手机"></Choose-Header>
         <div class="_choose_twoMain">
           <div class="upper">
-            <span v-for="(list,index) in upper" :key="index" class="list" @click="btn(index)" :class="{active:index===phoneIndex}">{{list.name}}</span>
-          </div>
-          <div class="sort">
-              <p @click="rise">价格升序</p>
-              <p @click="drop">价格降序</p>
-              <p>销量优先</p>
+            <span v-for="(list,index) in upper" :key="index" class="list" @click="btn(index)" :class="{active:index===phoneIndex}">{{list.lm_name}}</span>
           </div>
           <div class="lower">
-            <div v-for="(list,index) in lower.lower_data" :key="index" class="lower_list" @click="goDetails(list.id)">
-              <img v-bind:src="list.ImageOne" alt="图片">
+            <div v-for="(list,index) in lower" :key="index" v-if="list.lm_id===phoneIndex" class="lower_list" @click="goDetails(list.id)">
+              <img :src="'http://www.vivo-admin.com/static/image/'+list.fm_img" alt="图片">
               <p>{{list.name}}</p>
               <p style="font-size: 0.3rem;">{{list.nametwo}}</p>
-              <div>￥{{list.Price}}</div>
+              <div>￥{{list.price}}</div>
             </div>
           </div>
         </div>
@@ -41,10 +36,12 @@ export default {
   },
   created() {
     var _this = this;
-    axios.get("/static/ceshi.json").then(function(res) {
-      _this.upper = res.data.data.phone.upper;
-      _this.list = res.data.data.phone.lower;
-      _this.lower = _this.list[0];
+    axios.get("http://www.vivo-admin.com/lm_data/").then(function(res) {
+      _this.upper = res.data.data.lm;
+      // _this.upper = res.data.data.phone.upper;
+      _this.lower = res.data.data.list;
+      console.log(res.data.data.list)
+     
     });
   },
   methods: {
@@ -59,21 +56,7 @@ export default {
     btn(index) {
       var _this = this;
       _this.phoneIndex = index;
-      _this.lower = this.list[index];
-    },
-    rise() {
-      var _this = this;
-      var data = _this.lower.lower_data;
-      data.sort((a, b) => {
-        return a.Price > b.Price;
-      });
-    },
-    drop(){
-      var _this = this;
-      var data = _this.lower.lower_data;
-      data.sort((a, b) => {
-        return a.Price < b.Price;
-      });
+     
     }
   }
 };

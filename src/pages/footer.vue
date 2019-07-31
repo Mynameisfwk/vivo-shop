@@ -9,13 +9,13 @@
         <span>首页</span>
       </router-link>
 
-      <router-link to="/classify" tag="li">
+      <!-- <router-link to="/classify" tag="li">
         <div class="index">
           <i class="iconfont icon-fenleixuanzhong" style="color:#179dfe" v-if="active ==='classify'"></i>
           <i class="iconfont icon-fenlei-copy" v-else></i>
         </div>
         <span>分类</span>
-      </router-link>
+      </router-link> -->
 
       <router-link to="/news" tag="li">
         <div class="index">
@@ -25,7 +25,7 @@
         <span>动态</span>
       </router-link>
 
-       <router-link to="/my" tag="li">
+       <router-link to="/main" tag="li">
         <div class="index">
           <i class="iconfont icon-wode-" style="color:#179dfe" v-if="active ==='my'"></i>
           <i class="iconfont icon-wode"  v-else></i>
@@ -64,7 +64,7 @@
       align-items: center;
       height: 1.45rem;
       li
-        width 25%
+        width 33%
         display: flex;
         justify-content: center;
         flex-direction: column;

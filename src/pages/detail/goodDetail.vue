@@ -109,8 +109,8 @@ export default {
   data() {
     return {
       active: "1",
-      goodDetailHeader: "商品详情",
-      selected: "tab-container1",
+        goodDetailHeader: "商品详情",
+        selected: "tab-container1",
       goodDetails: [],
       cartlength: 0
     };
@@ -171,7 +171,7 @@ export default {
            name:index.homeName,
            price:index.homePrice
        }
-        this.$stor.dispatch("setGoods",data)
+        this.$store.dispatch("setGoods",data)
     },
     // 点击按钮时，首先判断该商品是否在购物车已存在，如果存在则不再加入
     add: function(index) {
