@@ -1,6 +1,8 @@
 # vue2.5+ThinkPHP5.0 全栈开发 vivo商城
 vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
 
+# 正在更新中！
+
 # vivo-shop后台管理系统地址 [🔗 传送地址](https://github.com/Mynameisfwk/tp5-vivo-admin) 
 
 ## 开头
