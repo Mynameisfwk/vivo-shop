@@ -14,7 +14,7 @@
             <div class="pay-shop-list">
                 <p class="pay-shop-1">商品清单</p>
                 <p class="pay-shop-2">
-                    <img :src="'http://www.vivo-admin.com/static/image/'+list.fm_img" />
+                    <img :src="list.fm_img" />
                     <p class="pay-shop-2-box">
                         <span class="name">{{list.name}}<p>× 1</p></span>
                         <!-- <span>颜色：冰钻黑</span> -->
@@ -363,6 +363,7 @@ import { Toast } from "mint-ui";
 import { mapGetters, mapMutations } from "vuex";
 import PayHeader from "../../common/header";
 import { setCookie, getCookie } from "../../assets/js/cookie.js";
+import { home_data,add_order } from "../../assets/js/api.js";
 import axios from "axios";
 export default {
   name: "pay",
@@ -434,7 +435,7 @@ export default {
     addOrder(list) {
         let cookier_token = getCookie("token");
          axios({
-            url: "http://www.vivo-admin.com/add_order/",
+            url:add_order,
             method: "post",
             params: {
                 token:cookier_token,
@@ -467,7 +468,7 @@ export default {
     var _this = this;
     var id = this.$route.query.id;
 
-    axios.get("http://www.vivo-admin.com/shop_data/").then(function(res) {
+    axios.get(home_data).then(function(res) {
       for (var i = 0; i < res.data.data.length; i++) {
         if (res.data.data[i].id == id) {
           _this.pay.push(res.data.data[i]);
