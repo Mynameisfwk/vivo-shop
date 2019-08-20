@@ -48,6 +48,7 @@ import CollectionHeader from "../../../common/Header";
 import { mapState, mapMutations, mapGetters } from "vuex";
 import { Toast,MessageBox } from "mint-ui";
 import { setCookie, getCookie } from "../../../assets/js/cookie.js";
+import { sc_biao ,del_sc_biao} from "../../../assets/js/api.js";
 import axios from "axios";
 export default {
   name: "MyCollection",
@@ -86,7 +87,7 @@ export default {
       async get_wz(){
         let cookier_token = getCookie("token");
         axios({
-          url: "http://www.vivo-admin.com/sc_biao/",
+          url: sc_biao,
           method: "post", 
           params: {
             token:cookier_token
@@ -103,7 +104,7 @@ export default {
         MessageBox.confirm('确定取消收藏该文章么？').then(action=>{
             let cookier_token = getCookie("token");
             axios({
-            url: "http://www.vivo-admin.com/del_sc_biao/",
+            url: del_sc_biao,
             method: "get", 
             params: {
                 id:list.id,
