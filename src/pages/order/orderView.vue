@@ -95,6 +95,7 @@
 import axios from "axios";
 import OrderHeader from "../../common/header";
 import { setCookie, getCookie } from "../../assets/js/cookie.js";
+import { user_order } from "../../assets/js/api.js";
 export default {
   name: "o1",
   data() {
@@ -109,7 +110,7 @@ export default {
     var shop_number = this.$route.query.number;
     let cookier_token = getCookie("token");
     axios({
-      url: "http://www.vivo-admin.com/user_order/",
+      url:user_order,
       method: "post",
       params: {
         token: cookier_token
