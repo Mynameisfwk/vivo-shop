@@ -53,6 +53,7 @@ import { mapState, mapMutations, mapGetters } from "vuex";
 import OrderHeader from "../../common/Header";
 import BScroll from "better-scroll";
 import { setCookie, getCookie } from "../../assets/js/cookie.js";
+import { user_order } from "../../assets/js/api.js";
 import axios from "axios";
 export default {
   name: "oerder",
@@ -86,10 +87,10 @@ export default {
       let cookier_token = getCookie("token");
       console.log(cookier_token)
       axios({
-        url: "http://www.vivo-admin.com/user_order",
+        url: user_order,
         method: "post",
         params: {
-          token: 'f8f8ed2ae40219192ece11d7e3c60f4e'
+          token: cookier_token
         }
       })
         .then(res => {
