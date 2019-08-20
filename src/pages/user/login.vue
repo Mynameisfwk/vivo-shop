@@ -31,6 +31,7 @@
 import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import { Toast } from "mint-ui";
 import axios from "axios";
+import { login } from "../../assets/js/api.js";
 export default {
   data() {
     return {
@@ -53,7 +54,7 @@ export default {
         });
       } else {
         axios
-          .get("http://www.vivo-admin.com/login/", {
+          .get(login, {
             params: {
               name: _this.name,
               password: _this.password

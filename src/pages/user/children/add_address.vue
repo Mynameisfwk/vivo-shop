@@ -34,6 +34,7 @@ import AddressHeader from "../../../common/header";
 import { mapGetters, mapMutations } from "vuex";
 import { Toast } from "mint-ui";
 import { setCookie, getCookie } from "../../../assets/js/cookie.js";
+import { user_address,address } from "../../../assets/js/api.js";
 import axios from "axios";
 export default {
   name: "add_address",
@@ -52,7 +53,7 @@ export default {
     btn(list) {
       let cookier_token = getCookie("token");
       axios({
-        url: "http://www.vivo-admin.com/address/",
+        url: address,
         method: "post",
         params: {
             token:cookier_token,

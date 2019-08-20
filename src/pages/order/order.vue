@@ -84,12 +84,12 @@ export default {
     },
     async get_order() {
       let cookier_token = getCookie("token");
-      
+      console.log(cookier_token)
       axios({
-        url: "http://kuangjiahu.top/user_order/",
+        url: "http://www.vivo-admin.com/user_order",
         method: "post",
         params: {
-          token: cookier_token
+          token: 'f8f8ed2ae40219192ece11d7e3c60f4e'
         }
       })
         .then(res => {

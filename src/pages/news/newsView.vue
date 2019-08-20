@@ -70,6 +70,7 @@ import {
 } from "mint-ui";
 import DetailHeader from "../../common/header";
 import { mapGetters, mapMutations } from "vuex";
+import { news_data,user_pl } from "../../assets/js/api.js";
 export default {
   name: "newsDetail",
   inject: ["reload"],
@@ -97,7 +98,7 @@ export default {
     // var sz_cc=sessionStorage.getItem('code')
     
     // _this.sc_zt==sz_cc
-    axios.get("http://www.vivo-admin.com/news_data/").then(function(res) {
+    axios.get(news_data).then(function(res) {
       _this.user_pl_data = res.data.user_pl;
       for (var i = 0; i < res.data.data.length; i++) {
         if (res.data.data[i].id == id) {
@@ -105,7 +106,7 @@ export default {
         }
       }
       axios({
-        url: "http://www.vivo-admin.com/news_data/",
+        url: news_data,
         method: "post",
         params: {
           id: id
@@ -166,7 +167,7 @@ export default {
       console.log(list)
       let cookier_token = getCookie("token");
       axios({
-        url: "http://www.vivo-admin.com/sc_news/",
+        url: user_pl,
         method: "post",
         params: {
           id: list.id,
