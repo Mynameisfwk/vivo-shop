@@ -12,10 +12,11 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
  
 后台预览：[vivo移动端商城后台管理](http://wwww.kuangjiahu.top)<br>
 仓库地址：[点我过去](https://github.com/Mynameisfwk/tp5-vivo-admin)<br>
+ps：后台有些功能还没完善 因为上班的原因基本都是周六周日在家写没什么时间 所以这个后台还在更新不过大部分的基本都完成了各位看官将就看吧
+
 
 ### 废话
 项目源码地址：[vivo-shop](https://github.com/Mynameisfwk/vivo-shop)，觉得还可以的话给个star 在这先谢谢了~<br>
-刚出来实习两个月 所以没有那么的时间来写，只有周六周日有时间！所以帮忙star鼓励下！🙏
 
 ## 写在前面
 
