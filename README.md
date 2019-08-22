@@ -1,18 +1,6 @@
 # vue2.5+ThinkPHP5.1 全栈开发 vivo商城
 vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
 
-# 正在更新中！
-
-# vivo-shop后台管理系统地址 [🔗 传送地址](https://github.com/Mynameisfwk/tp5-vivo-admin) 
-
-## 开头
-![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/1.png)
-<img style='wdith:400px' src='https://github.com/Mynameisfwk/vivo-shop/blob/master/static/lowSource/2.png'>
-<br>
-
-### 2019/01/08 最近在用TP5 写后台，持续关注哦 这个项目也会更新一些功能的，先放两张图 
-![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/img/D246F738D61254CF43058771EB0C256B.jpg)
-![](https://github.com/Mynameisfwk/vivo-shop/blob/master/static/img/E2CF505C13B27427AA8B7173161F9736.jpg)
 
 ### 在线预览
 
@@ -21,6 +9,9 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
 项目演示地址：<del>[vivo移动端商城](http://fwk02.top)</del><br>
 建议Chrome调试手机模式下预览<br>
 因为刚买的域名主机所以要解析，实名认证才可以浏览，所以你们还是下把项目给下载下来本地运行看把！😊
+ 
+后台预览：[vivo移动端商城后台管理](http://wwww.kuangjiahu.top)<br>
+仓库地址：[点我过去](https://github.com/Mynameisfwk/tp5-vivo-admin)<br>
 
 ### 废话
 项目源码地址：[vivo-shop](https://github.com/Mynameisfwk/vivo-shop)，觉得还可以的话给个star 在这先谢谢了~<br>
