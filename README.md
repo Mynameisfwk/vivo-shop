@@ -11,7 +11,7 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
 因为刚买的域名主机所以要解析，实名认证才可以浏览，所以你们还是下把项目给下载下来本地运行看把！😊
  
 后台预览：[vivo移动端商城后台管理](http://wwww.kuangjiahu.top)<br>
-仓库地址：[点我过去](https://github.com/Mynameisfwk/tp5-vivo-admin)<br>
+仓库地址：[点我过去/超链](https://github.com/Mynameisfwk/tp5-vivo-admin)<br>
 ps：后台有些功能还没完善 因为上班的原因基本都是周六周日在家写没什么时间 所以这个后台还在更新不过大部分的基本都完成了各位看官将就看吧
 
 
