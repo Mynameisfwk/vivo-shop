@@ -8,7 +8,8 @@ vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
 新的版本：<del>[vivo移动端商城](http://fwk02.top)</del><br>
 项目演示地址：<del>[vivo移动端商城](http://fwk02.top)</del><br>
 建议Chrome调试手机模式下预览<br>
-因为刚买的域名主机所以要解析，实名认证才可以浏览，所以你们还是下把项目给下载下来本地运行看把！😊
+因为刚买的域名主机所以要解析，实名认证才可以浏览，所以你们还是下把项目给下载下来本地运行看把！
+
  
 后台预览：[vivo移动端商城后台管理](http://wwww.kuangjiahu.top)<br>
 仓库地址：[点我过去/超链](https://github.com/Mynameisfwk/tp5-vivo-admin)<br>
