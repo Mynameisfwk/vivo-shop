@@ -26,6 +26,7 @@
 
 <script>
 import { setCookie, getCookie } from "../../assets/js/cookie.js";
+import { register } from "../../assets/js/api.js";
 import { Toast } from "mint-ui";
 import axios from "axios";
 export default {
@@ -49,7 +50,7 @@ export default {
               duration: 950
             });
       } else {
-        axios.get("http://www.vivo-admin.com/register/", {
+        axios.get(register, {
             params: {
               name: _this.name,
               password: _this.password
