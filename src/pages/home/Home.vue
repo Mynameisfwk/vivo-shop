@@ -160,7 +160,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .Home {
 	border-bottom: 10px;
     width: 100%;

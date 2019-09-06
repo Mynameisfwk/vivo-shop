@@ -1,4 +1,5 @@
-const http='http://www.kuangjiahu.top';
+const http='http://www.kuangjiahu.top/';
+// const http='http://www.vivo-admin.com/';
 // export const shop_data = p => get('http://www.kuangjiahu/news_data/', p);
 
 export const register = http+'/register/' //注册

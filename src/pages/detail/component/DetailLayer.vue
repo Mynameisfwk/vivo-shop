@@ -71,7 +71,7 @@ export default {
 };
 </script>
 
-<style lang="stylus" >
+<style lang="stylus" scoped>
 .category
     width 100%
     height 1.5rem

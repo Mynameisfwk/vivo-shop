@@ -29,6 +29,7 @@ import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import { register } from "../../assets/js/api.js";
 import { Toast } from "mint-ui";
 import axios from "axios";
+import { register } from "../../assets/js/api.js";
 export default {
   data() {
     return {
@@ -135,7 +136,6 @@ export default {
   width: 9rem;
   height: 1.1rem;
   margin: 0 auto;
-  /* margin-top: 0.72rem; */
   margin-bottom: 0.3rem;
   text-align: center;
   line-height: 1.1rem;

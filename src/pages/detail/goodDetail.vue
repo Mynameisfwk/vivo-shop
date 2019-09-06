@@ -98,7 +98,7 @@
   </div>
 </template>
 
-<script >
+<script scoped>
 import { Toast,MessageBox,Navbar,TabItem,TabContainer,TabContainerItem } from "mint-ui";
 import { mapGetters, mapMutations } from "vuex";
 import DetailHeader from "./component/DetailHeader";

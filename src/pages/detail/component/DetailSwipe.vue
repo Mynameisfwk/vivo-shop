@@ -48,7 +48,7 @@
 </template>
 
 
-<script>
+<script scoped>
 export default {
     name:"DetailSwipe",
     props:["gos"]

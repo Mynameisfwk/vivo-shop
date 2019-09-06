@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<script>
+<script >
 import axios from 'axios';
 import NewsFooter from '../../pages/footer'
 import BScroll from 'better-scroll'

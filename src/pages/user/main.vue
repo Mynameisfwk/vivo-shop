@@ -28,7 +28,7 @@
 
       <div class="container-integral">
         <p>
-          <span>0</span>
+          <span>{{moneny}}</span>
           <span>余额</span>
         </p>
         <p>
@@ -125,7 +125,9 @@ export default {
           name: "退货/退款"
         }
       ],
-      user_img:''
+      user_img:'',
+      moneny:''
+    
     };
   },
   components:{
@@ -135,6 +137,7 @@ export default {
     /*页面挂载获取保存的cookie值，渲染到页面上*/
     let cookier_name = getCookie("name");
     let cookier_token = getCookie("token");
+    let cookier_moneny = getCookie("moneny");
     this.name = cookier_name;
     /*如果cookie不存在，则跳转到登录页*/
     if (cookier_name == "") {
@@ -151,7 +154,7 @@ export default {
     up_user_tx(event){
       // console.log(event)
       // console.log(this.$refs.ceshi.files[0].name);
-       let self   = this;
+       let self = this;
          let cookier_token = getCookie("token"); 
         // reader.readAsDataURL( event.target.files[ 0 ] );
   
@@ -168,8 +171,9 @@ export default {
               .catch(err => {
                 //异常操作
               });
-      }
+      },
 
+    
 
     
      
