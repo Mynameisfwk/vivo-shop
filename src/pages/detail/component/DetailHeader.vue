@@ -1,10 +1,10 @@
 <template>
   <div class="header" >
-     <div class="left" @click="Return">
+     <div class="header-left" @click="Return">
         <i class="iconfont icon-zuojiantou"></i>
      </div>
      <div class="in">{{title}}</div>
-     <div class="rigth"></div>
+     <div class="header-right"></div>
   </div>
 </template>
 
@@ -41,7 +41,7 @@ export default {
             float left
             text-align center
             font-size 0.45rem
-        .left
+        .header-left
             width 10%; 
             height 100%
             float left
@@ -50,7 +50,7 @@ export default {
                 line-height: 1.45rem;
                 text-align: center;
                 display: block;
-        .rigth
+        .header-right
             width 10%; 
             height 100%
             float left

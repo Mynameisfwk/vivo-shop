@@ -187,7 +187,7 @@ export default {
 
 .header {
   width: 100%;
-  height: 1.45rem;
+  height: 1.71rem;
   background: #ffffff;
 
   .header-left {
