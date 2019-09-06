@@ -29,7 +29,6 @@ import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import { register } from "../../assets/js/api.js";
 import { Toast } from "mint-ui";
 import axios from "axios";
-import { register } from "../../assets/js/api.js";
 export default {
   data() {
     return {
