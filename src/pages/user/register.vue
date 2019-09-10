@@ -44,6 +44,21 @@ export default {
   methods: {
     btn() {
       var _this = this;
+      if(_this.name.length!=6){
+           Toast({
+              message: "注册的用户名低于六位！",
+              duration: 950
+            });
+          return false;
+      }
+
+      if(_this.password.length!=6){
+          Toast({
+              message: "用户密码安全度过低",
+              duration: 950
+            });
+          return false;
+      }
       if (_this.name == "") {
           Toast({
               message: "注册的用户名不能为空",
