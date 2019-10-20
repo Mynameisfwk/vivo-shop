@@ -2,6 +2,8 @@
 vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
 
 
+关注下我们公众号:<img src='http://kuangjiahu.top/public/static/image/5dabd4e4c46c2.jpg'> 谢谢
+
 ### 在线预览
 
 旧的版本：<del>[vivo移动端商城](http://fwk01.top)</del><br>
