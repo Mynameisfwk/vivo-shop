@@ -1,0 +1,23 @@
+.content {
+  width: 100%;
+  height: 15rem;
+  background: #ffffff;
+  position: relative;
+  top: 1.45rem;
+}
+.content .container-box {
+  width: 100%;
+  height: auto;
+  background: white;
+  border-bottom: 1px dotted #CCCCCC;
+  padding-bottom: 0.3rem;
+}
+.container-title {
+  color: #505b63;
+  width: 95%;
+  margin: auto;
+  text-align: left;
+  font-size: 0.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}

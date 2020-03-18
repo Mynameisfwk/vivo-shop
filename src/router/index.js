@@ -17,7 +17,6 @@ import success from '../common/success'
 import classify from "@/pages/Classify/classify"
 import pay from "@/pages/pay/pay"
 import address from "@/pages/user/children/address"
-import ceshi from "@/pages/ceshi/ceshi"
 
 import add_address from "@/pages/user/children/add_address"
 import shopDetail from "@/pages/shop/shopDetail"
@@ -32,7 +31,6 @@ Vue.use(Router)
 export default new Router({
   routes: [
     { path: '/login', name: 'login', component: login },
-    { path: '/ceshi', name: 'ceshi', component: ceshi },
     { path: '/view', name: 'view', component: view },
     { path: '/xz_address', name: 'xz_address', component: xz_address },
    
