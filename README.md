@@ -1,5 +1,7 @@
-# vue2.5+ThinkPHP5.1 全栈开发 vivo商城
-vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br>
+### 代码无法运行 ，别git clone 了 在重新开发 有问题联系我 fwk1203 
+
+#  <del> vue2.5+ThinkPHP5.1 全栈开发 vivo商城 <del>
+<del> vue全家桶 vue2.0+vuex+axios+better-scroll还有就是miut-ui组件 <br> <del>
 
 
 
