@@ -2,7 +2,7 @@
   <div class="cart">
     <div class="header">
       <div class="header-left">
-        <router-link to="/main">
+        <router-link to="/index">
           <i class="iconfont icon-zuojiantou"></i>
         </router-link>
       </div>
@@ -11,10 +11,10 @@
     </div>
     <div class="cartMain">
       <ul>
-        <li v-for="(cart,index) in carts" class="cartList" :key="index">
+        <li v-for="(list,index) in carts" class="cartList" :key="index">
           <!-- 购物车单选 -->
-          <div class="select" @click="danxuan(cart,index)">
-            <i class="iconfont icon-xuanzekuangmoren" v-if="cart.dx==0"></i>
+          <div class="select" @click="danxuan(list,index)">
+            <i class="iconfont icon-xuanzekuangmoren" v-if="list.dx==0"></i>
             <i v-else
               class="iconfont icon-xuanzekuangxuanzhong"
               style="color:#25b5fe"
@@ -23,24 +23,24 @@
 
           <!-- 购物车商品信息 -->
           <div class="cartImage">
-             <img :src="'http://www.vivo-admin.com/static/image/'+cart.shop_img">
+             <img :src="list.img_url">
           </div>
           <div class="cartInformation">
             <div class="cartName">
-              {{cart.title}}
+              {{list.name}}
               <a
                 href="javascript:;"
                 class="iconfont icon-huishouzhan7"
-                @click="shanchu(index)"
+                @click="delClistart(index)"
               ></a>
             </div>
-            <p class="cartPrice">￥{{cart.price}}</p>
+            <p class="cartPrice">￥{{list.price}}</p>
           </div>
 
           <!-- 购物车商品数量 -->
           <div class="cartNumber">
             <a href="javascript:;" @click="reduce(cart)" class="add">-</a>
-            <input type="text" v-model="cart.sum" readonly="readonly">
+            <input type="text" v-model="list.sum" readonly="readonly">
             <a href="javascript:;" @click="add(cart)" class="reduce">+</a>
           </div>
         </li>
@@ -50,7 +50,7 @@
     <div class="cartImg" v-if="!carts.length">
       <img src="/static/img/gouwuche.png" alt="购物车图片">
       <h1>购物车是空的哦，快去购物吧</h1>
-      <router-link :to="{name:'Home'}">逛一逛</router-link>
+      <router-link to="/index">逛一逛</router-link>
     </div>
     <div class="cartFooter" v-if="carts.length">
       <div class="checkAll" @click="quanxuan()">
@@ -85,96 +85,18 @@ export default {
     return {
       qx: false,
       danxuan1:false,
-      carts:[]
+      carts: this.$store.state.carts
     };
   },
   components: {
     CartHeader
   },
-  computed: {
-    // carts() {
-    //   return this.$store.state.carts;
-    // },
-    // ...mapGetters(["this.$store.state.carts"]),
-    sum: function() {
-      var sum = 0;
-      this.carts.forEach(cart=>{
-        if(cart.dx==1){
-           sum+= parseInt(cart.price) * parseInt(cart.sum)
-        }
-        
-      })
-      // this.$store.state.carts.forEach(cart => {
-      //   if (cart.danx1uan) {
-      //     sum += cart.price * cart.value;
-      //   }
-      // });
-      return sum;
-    },
-    sumValue() {
-      var sumValue = 0;
-      this.carts.forEach(cart => {
-        console.log(cart.dx)
-        if(cart.dx==1){
-            sumValue += parseInt(cart.sum);
-        }
-      
-        // if (cart.danx1uan) {
-        //   sumValue += parseInt(cart.value);
-        // }
-      });
-      return sumValue;
+  methods: {
+    delClistart(index) {
+      this.$store.commit('delClistart',index)
     }
   },
-  methods: {
-    ...mapMutations(["shanchu", "add", "reduce", "settlement"]),
-
-    async get_cart(){
-
-        let cookier_token = getCookie("token"); 
-        axios({
-          url: "http://www.vivo-admin.com/user_cart/",
-          method: "post", 
-          params: {
-            token:cookier_token
-          } 
-        })
-          .then(res => {
-              this.carts=res.data.data
-          })
-          .catch(err => {
-            //异常操作
-          });
-      },
-
-    danxuan(cart) {
-      if(cart.dx==1){
-        cart.dx=0
-      }else{
-        cart.dx=1
-      }
-      // console.log(cart[index].danxuan1)
-      // cart.danxuan1 = !cart.danxuan1;
-      // this.danxuan1=!this.danxuan1
-      // if (!cart.danx1uan) {
-      //   this.qx = false;
-      // }
-    },
-    // quanxuan() {
-    //   this.qx = !this.qx;
-    //   if (this.qx) {
-    //     this.$store.state.carts.forEach(cart => {
-    //       cart.danx1uan = true;
-    //     });
-    //   } else {
-    //     this.$store.state.carts.forEach(cart => {
-    //       cart.danx1uan = false;
-    //     });
-    //   }
-    // }
-  },
-    created(){
-      this.get_cart()
+  created(){
   },
 };
 </script>

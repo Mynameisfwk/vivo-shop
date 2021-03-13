@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import { register } from "../../assets/js/api.js";
 import { Toast } from "mint-ui";
 import axios from "axios";
@@ -37,60 +36,60 @@ export default {
     };
   },
   mounted() {
-    if (getCookie("name")) {
-      this.$router.push("/login");
-    }
+    // if (getCookie("name")) {
+    //   this.$router.push("/login");
+    // }
   },
   methods: {
-    btn() {
-      var _this = this;
-      if(_this.name.length!=6){
-           Toast({
-              message: "注册的用户名低于六位！",
-              duration: 950
-            });
-          return false;
-      }
+    // btn() {
+    //   var _this = this;
+    //   if(_this.name.length!=6){
+    //        Toast({
+    //           message: "注册的用户名低于六位！",
+    //           duration: 950
+    //         });
+    //       return false;
+    //   }
 
-      if(_this.password.length!=6){
-          Toast({
-              message: "用户密码安全度过低",
-              duration: 950
-            });
-          return false;
-      }
-      if (_this.name == "") {
-          Toast({
-              message: "注册的用户名不能为空",
-              duration: 950
-            });
-      } else {
-        axios.get(register, {
-            params: {
-              name: _this.name,
-              password: _this.password
-            }
-          })
-          .then(function(res) {
-            console.log(res)
-            if (res.data.code == 0) {
-               Toast({
-                message: res.data.msg,
-                duration: 950
-            });
-            } else if (res.data.code == 1) {
-              Toast({
-                message: res.data.msg,
-                duration: 950
-              });
-              _this.$router.push("main");
-              setCookie("username", _this.name);
-              setCookie("token", res.data.data.token);
+    //   if(_this.password.length!=6){
+    //       Toast({
+    //           message: "用户密码安全度过低",
+    //           duration: 950
+    //         });
+    //       return false;
+    //   }
+    //   if (_this.name == "") {
+    //       Toast({
+    //           message: "注册的用户名不能为空",
+    //           duration: 950
+    //         });
+    //   } else {
+    //     axios.get(register, {
+    //         params: {
+    //           name: _this.name,
+    //           password: _this.password
+    //         }
+    //       })
+    //       .then(function(res) {
+    //         console.log(res)
+    //         if (res.data.code == 0) {
+    //            Toast({
+    //             message: res.data.msg,
+    //             duration: 950
+    //         });
+    //         } else if (res.data.code == 1) {
+    //           Toast({
+    //             message: res.data.msg,
+    //             duration: 950
+    //           });
+    //           _this.$router.push("main");
+    //           setCookie("username", _this.name);
+    //           setCookie("token", res.data.data.token);
             
-            }
-          });
-      }
-    }
+    //         }
+    //       });
+    //   }
+    // }
   }
 };
 </script>

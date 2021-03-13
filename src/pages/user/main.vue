@@ -15,20 +15,16 @@
         <div class="bj-left">
           <!-- <img src="/static/img/tou.jpg"> -->
           <img :src="user_img">
-         
-          <input type="file"  @change='up_user_tx' name="sp_image" class="sp_image" ref="sp_image" style="position: absolute;margin-top:100px">
-         
-         
         </div>
         <div class="bj-right">
-          <span>{{name}}</span>
+          <span>Conway</span>
           <p>不要被人言左右，要相信自己的判断</p>
         </div>
       </div>
 
       <div class="container-integral">
         <p>
-          <span>{{moneny}}</span>
+          <span>100</span>
           <span>余额</span>
         </p>
         <p>
@@ -36,7 +32,7 @@
           <span>换鼓励金</span>
         </p>
         <p>
-          <span>{{jifeng}}</span>
+          <span>30</span>
           <span>积分</span>
         </p>
       </div>
@@ -91,17 +87,13 @@
       <router-view></router-view>
     </div>
     
-     <Home-Footer></Home-Footer>
+     <v-footer></v-footer>
 
    
   </div>
 </template>
 <script>
-import { Toast,MessageBox } from "mint-ui";
-import { Actionsheet } from 'mint-ui';
-import { setCookie, getCookie, delCookie } from "../../assets/js/cookie.js";
-import HomeFooter from '../../pages/footer';
-import axios from "axios";
+import footer from '@/components/footer/index'
 export default {
   data() {
     return {
@@ -131,52 +123,38 @@ export default {
     };
   },
   components:{
-      HomeFooter
+      'v-footer': footer
   },
   mounted() {
-    /*页面挂载获取保存的cookie值，渲染到页面上*/
-    let cookier_name = getCookie("name");
-    let cookier_token = getCookie("token");
-    let cookier_moneny = getCookie("moneny");
-    this.name = cookier_name;
-    /*如果cookie不存在，则跳转到登录页*/
-    if (cookier_name == "") {
-      this.$router.push("login");
-    };
-  
+
   },
   methods:{
-    zx(){
-       let cookier_name = delCookie("username");
-       let cookier_token =delCookie("token");
-    // };
-    },
-    up_user_tx(event){
-      // console.log(event)
-      // console.log(this.$refs.ceshi.files[0].name);
-       let self = this;
-         let cookier_token = getCookie("token"); 
-        // reader.readAsDataURL( event.target.files[ 0 ] );
+    // zx(){
+    //    let cookier_name = delCookie("username");
+    //    let cookier_token =delCookie("token");
+    // // };
+    // },
+    // up_user_tx(event){
+    //   // console.log(event)
+    //   // console.log(this.$refs.ceshi.files[0].name);
+    //    let self = this;
+    //      let cookier_token = getCookie("token"); 
+    //     // reader.readAsDataURL( event.target.files[ 0 ] );
   
-          axios({
-              url: "http://www.vivo-admin.com/upload/",
-              method: "post",
-              params: {
-                user_img:this.$refs.sp_image.files[0].name
-              },
-            })
-              .then(res => {
-                console.log(res)
-              })
-              .catch(err => {
-                //异常操作
-              });
-      },
-
-    
-
-    
-     
+    //       axios({
+    //           url: "http://www.vivo-admin.com/upload/",
+    //           method: "post",
+    //           params: {
+    //             user_img:this.$refs.sp_image.files[0].name
+    //           },
+    //         })
+    //           .then(res => {
+    //             console.log(res)
+    //           })
+    //           .catch(err => {
+    //             //异常操作
+    //           });
+    //   },
     
   }
 };

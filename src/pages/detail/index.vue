@@ -1,7 +1,7 @@
 <template>
     <div class="goodDetail" id="transitionName">
         <div class="header" >
-            <div class="header-left" @click="this.$router.go(-1)">
+            <div class="header-left" @click="$router.go(-1)">
                 <i class="iconfont icon-zuojiantou"></i>
             </div>
             <div class="in">商品详情</div>
@@ -151,6 +151,7 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 export default {
   name: "detail",
   data() {
@@ -182,9 +183,15 @@ export default {
       });
 
       if (id) {
-        alert("商品已存在购物车");
+         Toast({
+            message:'购物车已经存在',
+            duration: 1500
+         });
       } else {
-        alert('加入购物车成功！')
+        Toast({
+            message:'加入购物车成功！',
+            duration: 1500
+         });
         this.$store.commit("addCart", data);
       }
     },
@@ -199,44 +206,11 @@ export default {
         });
       });
     }
-    // jia: function(index) {
-    //   this.goodDetails[index].homeValue++;
-
-    // },
-    // jian: function(index) {
-    //   if (this.goodDetails[index].homeValue == 1) {
-    //     this.goodDetails[index].homeValue = 1;
-    //   } else {
-    //     this.goodDetails[index].homeValue--;
-    //   }
-    // },
-    // //返回上一级
-    // fanhui: function() {
-    //   this.$router.go(-1);
-    // },
-    // pay: function(id,value) {
-    //     console.log(value)
-    //     this.$router.push({
-    //         path:"pay",
-    //         query:{
-    //             id:id,
-    //             value:value
-    //         }
-    //     })
-    // },
   }
 };
 </script>
 
 <style lang="stylus" >
-// .goodDetail {
-// width: 100%;
-// height: 100%;
-// z-index: 999;
-// top: 0;
-// left: 0;
-// background: white;
-// }
 .header {
     width: 100%;
     height: 1.5rem;

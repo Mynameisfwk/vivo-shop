@@ -10,8 +10,6 @@ const matutaions={
         state.xzAddess.push(data)
         // localStorage.setItem("xzAddess",JSON.stringify(state.xzAddess));
     },
-    
-
     //数量加
      add(state,cart){
         cart.sum++

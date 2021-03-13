@@ -13,6 +13,10 @@ const store = new Vuex.Store({
     mutations: {
         addCart(state,data) {
             state.carts.push(data);
+        },
+
+        delClistart(state,index) {
+            state.carts.splice(index,1)
         }
     }
 })

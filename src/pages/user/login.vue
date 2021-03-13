@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import { Toast } from "mint-ui";
 import axios from "axios";
 import { login } from "../../assets/js/api.js";
@@ -40,51 +39,48 @@ export default {
     };
   },
   mounted() {
-    if (getCookie("name")) {
-      this.$router.push("/register");
-    }
   },
   methods: {
-    btn() {
-      var _this = this;
-      if (_this.name == "") {
-        Toast({
-          message: "登陆用户名不能为空",
-          duration: 950
-        });
-      } else {
-        axios
-          .get(login, {
-            params: {
-              name: _this.name,
-              password: _this.password
-            }
-          })
-          .then(function(res) {
-            console.log(res);
-            if (res.data.code == 0) {
-              Toast({
-                message: res.data.msg,
-                duration: 950
-              });
-            } else if (res.data.code == 1) {
-              Toast({
-                message: res.data.msg,
-                 duration: 950
-              });
-                _this.$router.push("main");
-                setCookie("username", _this.name);
-                setCookie("token", res.data.data.token);
+    // btn() {
+    //   var _this = this;
+    //   if (_this.name == "") {
+    //     Toast({
+    //       message: "登陆用户名不能为空",
+    //       duration: 950
+    //     });
+    //   } else {
+    //     axios
+    //       .get(login, {
+    //         params: {
+    //           name: _this.name,
+    //           password: _this.password
+    //         }
+    //       })
+    //       .then(function(res) {
+    //         console.log(res);
+    //         if (res.data.code == 0) {
+    //           Toast({
+    //             message: res.data.msg,
+    //             duration: 950
+    //           });
+    //         } else if (res.data.code == 1) {
+    //           Toast({
+    //             message: res.data.msg,
+    //              duration: 950
+    //           });
+    //             _this.$router.push("main");
+    //             setCookie("username", _this.name);
+    //             setCookie("token", res.data.data.token);
                
-            }
-          });
-      }
+    //         }
+    //       });
+    //   }
     },
     go_zc() {
-      this.$router.push("/register");
+      // this.$router.push("/register");
     }
   }
-};
+// };
 </script>
 
 <style>
