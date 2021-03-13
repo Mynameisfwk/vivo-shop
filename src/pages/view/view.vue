@@ -172,28 +172,16 @@ export default {
         }
       })
         .then(res => {
-     
-          // console.log('点击后res里面的='+res.data.code)
-          // console.log('点击后本地的='+this.sc_zt)
-          // this.$store.state.sc_zt=1 
-          // this.$store.commit('gb',res.data.code)
-        //  sessionStorage.setItem('code',JSON.stringify(res.data.code))
           if (res.data.code == 0) {
-            
-            //  console.log('点击后2本地的='+this.sc_zt)
             Toast({
               message: "取消成功",
               duration: 950
             });
           } else if (res.data.code == 1) {
-            //  this.sc_zt=res.data.code
-              //  console.log('点击后2本地的='+this.sc_zt)
             Toast({
               message: "收藏成功",
               duration: 950
             });
-            
-          
           
           }
         })

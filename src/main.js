@@ -5,6 +5,8 @@ import Vuex from 'vuex'
 import store from './vuex/index'
 import Navigation from 'vue-navigation'
 import Vuelazyload from 'vue-lazyload'
+import axios from 'axios';
+Vue.prototype.$axios = axios;
  
 Vue.use(Navigation, {router, store})
 
@@ -16,9 +18,6 @@ Vue.use(VueLazyLoad,{
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
-
-//引入axios文件
-import axios from 'axios';
 
 //引入vue-resource
 import VueResource from 'vue-resource';

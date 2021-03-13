@@ -13,41 +13,16 @@
         </div>
         <div class="HomeList">
             <ul>
-                <li>
+                <li v-for="(list,index) in routers" :key='index'>
                     <div>
-                        <router-link to="/collection">
-                            <img src="/static/img/xuangou.jpg" alt="选购">
-                        </router-link>
-                    </div>
-                </li>
-
-                 <li>
-                    <div>
-                        <router-link to="/parts">
-                            <img src="/static/img/peijian.jpg" alt="配件">
-                        </router-link>
-                    </div>
-                </li>
-
-                 <li>
-                    <div>
-                        <router-link to="/">
-                            <img src="/static/img/pingbao.jpg" alt="屏保">
-                        </router-link>
-                    </div>
-                </li>
-
-                 <li>
-                    <div>
-                        <router-link to="/">
-                            <img src="/static/img/dingzhi.jpg" alt="选购">
+                        <router-link :to="list.url">
+                            <img :src="list.img" alt="">
                         </router-link>
                     </div>
                 </li>
             </ul>
         </div>
         <div class="main">
-            
             <div class="main-box" >
                 <h2>热卖专区</h2>
                 <div class="main_box">
@@ -110,16 +85,29 @@
     </div>
 </template>
 <script>
-import { mapState,mapMutations,mapGetters  } from 'vuex';
-import { Swipe, SwipeItem } from 'mint-ui';
-import { MessageBox } from 'mint-ui';
+// import { mapState,mapMutations,mapGetters  } from 'vuex';
+// import { Swipe, SwipeItem } from 'mint-ui';
+// import { MessageBox } from 'mint-ui';
 import HomeFooter from '../../pages/footer'
-import axios from 'axios';
-import { home_data,home_banner } from "../../assets/js/api.js";
+// import axios from 'axios';
+// import { home_data,home_banner } from "../../assets/js/api.js";
 export default {
   name:"Home",
   data(){
     return{
+        routers: [{
+            'img': '/static/img/xuangou.jpg',
+            'src': '/collection'
+        },{
+            'img': '/static/img/peijian.jpg',
+            'src': '/parts'
+        },{
+            'img': '/static/img/pingbao.jpg',
+            'src': '/'
+        },{
+            'img': '/static/img/dingzhi.jpg',
+            'src': '/'
+        }]
     }
   },
   components:{
@@ -128,8 +116,39 @@ export default {
   computed:{
       
   },
-  created(){
-  },
+    created(){
+       this.$axios.get('../../static/ceshi.json').then((res) => {
+        console.log(res)
+    });
+
+    
+    //   axios({
+    //     url: "../../../../data.json",
+    //     method: "post",
+    //     // params: {
+    //     //   id: list.id,
+    //     //   token: cookier_token
+    //     // }
+    //   })
+    //     .then(res => {
+    //         console.log(res)
+    //     //   if (res.data.code == 0) {
+    //     //     Toast({
+    //     //       message: "取消成功",
+    //     //       duration: 950
+    //     //     });
+    //     //   } else if (res.data.code == 1) {
+    //     //     Toast({
+    //     //       message: "收藏成功",
+    //     //       duration: 950
+    //     //     });
+          
+    //     //   }
+    //     })
+    //     .catch(err => {
+    //       //异常操作
+    //     });
+    },
   methods:{
     btn:function(){
       MessageBox('提示', 'Vue的第一个项目能给个star么？Thank you');
