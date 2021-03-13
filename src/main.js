@@ -15,7 +15,7 @@ Vue.use(VueLazyLoad,{
 })
 
 //引入UI组件
-import MintUI from 'mint-ui'
+import MintUI  from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 

@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/home'
+import index from '@/pages/index/index'
+import detail from '@/pages/detail/index'
 import xz_address from "@/pages/user/children/xz_address"
 
 import view from '@/pages/view/view'
-import goodDetail from '@/pages/Detail/goodDetail'
+// import goodDetail from '@/pages/Detail/goodDetail'
 import order from '@/pages/order/order'
 import orderView from '@/pages/order/orderView'
 import OrderDetails from '@/pages/OrderDetails'
@@ -12,7 +13,7 @@ import choose from '@/pages/choose'
 import news from '@/pages/News/news'
 import newsView from '@/pages/News/newsView'
 import parts from '@/pages/parts'
-import change from '@/pages/Detail/Change'
+// import change from '@/pages/Detail/Change'
 import success from '../common/success'
 import classify from "@/pages/Classify/classify"
 import pay from "@/pages/pay/pay"
@@ -63,14 +64,16 @@ export default new Router({
     },
     { path: '/collection', name: 'collection', component: collection },
 
-    { path: '/', name: 'Home', component: Home },
+    { path: '/', name: 'index', component: index },
 
-    { path: '/Home', name: 'Home', component: Home },
-    {
-      path: '/goodDetail',
-      name: 'goodDetail',
-      component: goodDetail
-    },
+    { path: '/index', name: 'index', component: index },
+
+    { path: '/detail', name: 'detail', component: detail },
+    // {
+    //   path: '/goodDetail',
+    //   name: 'goodDetail',
+    //   component: goodDetail
+    // },
     {
       path: '/order',
       name: 'order',
@@ -82,7 +85,7 @@ export default new Router({
 
     { path: '/news', name: 'news', component: news },
     { path: '/parts', name: 'parts', component: parts },
-    { path: '/change', name: 'change', component: change },
+    // { path: '/change', name: 'change', component: change },
     { path: '/success', name: 'success', component: success },
     { path: '/classify', name: 'classify', component: classify },
     {

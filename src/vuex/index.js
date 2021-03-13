@@ -6,8 +6,22 @@ import actions from './actions'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-    state,
-    mutations,
-    actions
+const store = new Vuex.Store({
+    state: {
+        carts: []
+    },
+    mutations: {
+        addCart(state,data) {
+            state.carts.push(data);
+        }
+    }
 })
+
+
+export default store
+
+// export default new Vuex.Store({
+//     state,
+//     mutations,
+//     actions
+// })

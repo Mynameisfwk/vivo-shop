@@ -6,7 +6,7 @@
           <i class="iconfont icon-shouye_xuanzhong" style="color:#179dfe" v-if="active ==='home'"></i>
           <i class="iconfont icon-shouye2" v-else></i>
         </div>
-        <span>首页{{$router.path}}</span>
+        <span>首页</span>
       </router-link>
 
       <!-- <router-link to="/classify" tag="li">
