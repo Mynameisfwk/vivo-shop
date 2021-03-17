@@ -13,8 +13,8 @@
       <ul>
         <li v-for="(list,index) in carts" class="cartList" :key="index">
           <!-- 购物车单选 -->
-          <div class="select" @click="danxuan(list,index)">
-            <i class="iconfont icon-xuanzekuangmoren" v-if="list.dx==0"></i>
+          <div class="select" @click="singleCartsList(index)">
+            <i class="iconfont icon-xuanzekuangmoren" v-if="!list.select"></i>
             <i v-else
               class="iconfont icon-xuanzekuangxuanzhong"
               style="color:#25b5fe"
@@ -39,9 +39,9 @@
 
           <!-- 购物车商品数量 -->
           <div class="cartNumber">
-            <a href="javascript:;" @click="reduce(cart)" class="add">-</a>
-            <input type="text" v-model="list.sum" readonly="readonly">
-            <a href="javascript:;" @click="add(cart)" class="reduce">+</a>
+            <a href="javascript:;" @click="reduceCartValue(index)" class="add">-</a>
+            <input type="text" v-model="list.value" readonly="readonly">
+            <a href="javascript:;" @click="addCartValue(index)" class="reduce">+</a>
           </div>
         </li>
       </ul>
@@ -53,23 +53,20 @@
       <router-link to="/index">逛一逛</router-link>
     </div>
     <div class="cartFooter" v-if="carts.length">
-      <div class="checkAll" @click="quanxuan()">
-        <i class="iconfont icon-xuanzekuangmoren" v-show="!qx"></i>
+      <div class="checkAll" @click="">
+        <i class="iconfont icon-xuanzekuangmoren" v-if="!qx"></i>
         <i class="iconfont icon-xuanzekuangxuanzhong" v-show="qx" style="color:#25b5fe"></i>
         <span>全选</span>
       </div>
 
       <div class="Total">
         合计：
-        <span style="font-size: 0.54rem;color:#E3211E">￥{{sum}}</span>
+        <span style="font-size: 0.54rem;color:#E3211E">￥ {{TotalPrice}}</span>
       </div>
 
       <div class="Settlement">
-        <a href="javascript:void(0);" @click="settlement">结算 {{sumValue}}</a>
+        <a href="javascript:void(0);" @click="">结算</a>
       </div>
-      <!-- <div class="Settlementtwo">
-                    <router-link :to="{name:'Home'}" >继续购物</router-link>
-      </div>-->
     </div>
   </div>
 </template>
@@ -79,8 +76,6 @@ export default {
   name: "cart",
   data() {
     return {
-      qx: false,
-      danxuan1:false,
       carts: this.$store.state.carts
     };
   },
@@ -88,12 +83,35 @@ export default {
     CartHeader
   },
   methods: {
+    addCartValue(index) {
+      this.$store.commit('addCartValue',index)
+    },
     delClistart(index) {
       this.$store.commit('delClistart',index)
+    },
+    reduceCartValue(index) {
+      this.$store.commit('reduceCartValue',index)
+    },
+    singleCartsList(index) {
+      this.$store.commit('singleCartsList',index)
     }
   },
+
   created(){
+    console.log(this.$store.state.carts)
   },
+
+  computed: {
+    TotalPrice() {
+      var sum = 0
+      this.$store.state.carts.forEach(list => {
+        if(list.select) {
+          sum += list.value * list.price
+        }
+      });
+      return sum;
+    }
+  }
 };
 </script>
 

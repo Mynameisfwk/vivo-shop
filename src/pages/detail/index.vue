@@ -151,7 +151,7 @@
 </template>
 
 <script>
-import { Toast } from 'mint-ui';
+import { Toast,MessageBox } from 'mint-ui';
 export default {
   name: "detail",
   data() {
@@ -171,30 +171,16 @@ export default {
 
   methods: {
     addCart(list) {
-    // localStorage.setItem('catrs',1);
       var data = {
         id: list.id,
         img_url: list.img_url,
         name: list.name,
-        price: list.price
+        price: list.price,
+        select: false,
+        value: 1
       };
-
-      var id = this.$store.state.carts.find(list => {
-        return data.id == list.id
-      });
-
-      if (id) {
-         Toast({
-            message:'购物车已经存在',
-            duration: 1500
-         });
-      } else {
-        Toast({
-            message:'加入购物车成功！',
-            duration: 1500
-         });
-        this.$store.commit("addCart", data);
-      }
+        
+      this.$store.commit("addCart", data);
     },
 
     shopDetailsData() {
