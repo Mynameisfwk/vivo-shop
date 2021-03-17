@@ -171,6 +171,7 @@ export default {
 
   methods: {
     addCart(list) {
+    // localStorage.setItem('catrs',1);
       var data = {
         id: list.id,
         img_url: list.img_url,
@@ -179,7 +180,7 @@ export default {
       };
 
       var id = this.$store.state.carts.find(list => {
-        return (id = list.id);
+        return data.id == list.id
       });
 
       if (id) {

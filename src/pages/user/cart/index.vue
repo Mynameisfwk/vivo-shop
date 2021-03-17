@@ -74,11 +74,7 @@
   </div>
 </template>
 <script>
-import { Toast } from "mint-ui";
-import { mapState, mapMutations, mapGetters } from "vuex";
 import CartHeader from "../../../common/header";
-import { setCookie, getCookie } from "../../../assets/js/cookie.js";
-import axios from "axios"
 export default {
   name: "cart",
   data() {

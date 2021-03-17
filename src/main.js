@@ -20,14 +20,11 @@ import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
 router.beforeEach((to,from,next) => { 
-  console.log(to)
-  console.log(JSON.stringify(store.state.user))
   if(to.meta.requireAuth) {
     if(!store.state.user) {
       next({path:'/login'})
     }
   }
-
   next()
 })
 
