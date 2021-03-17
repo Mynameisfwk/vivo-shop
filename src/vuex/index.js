@@ -8,7 +8,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        carts: []
+        carts: [],
+        user: []
     },
     mutations: {
         addCart(state,data) {

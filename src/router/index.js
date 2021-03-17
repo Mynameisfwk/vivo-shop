@@ -66,6 +66,9 @@ export default new Router({
       path: '/main', 
       name: 'main', 
       component: main,
+      meta: {
+        requireAuth: true
+      },
       children:[
         {
           path: 'address',
