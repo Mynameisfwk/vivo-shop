@@ -14,15 +14,15 @@
       <div class="container-bj">
         <div class="bj-left">
           <!-- <img src="/static/img/tou.jpg"> -->
-          <img :src="user_img">
+          <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1040943398,1147003181&fm=26&gp=0.jpg">
         </div>
         <div class="bj-right">
-          <span>Conway</span>
-          <p>不要被人言左右，要相信自己的判断</p>
+          <span>213</span>
+          <p>作者微信：fwk1203</p>
         </div>
       </div>
 
-      <div class="container-integral">
+      <!-- <div class="container-integral">
         <p>
           <span>100</span>
           <span>余额</span>
@@ -35,7 +35,7 @@
           <span>30</span>
           <span>积分</span>
         </p>
-      </div>
+      </div> -->
 
       <router-link class="container-order" to="/order" tag="div">
         <div class="container-order-1">
@@ -118,12 +118,15 @@ export default {
         }
       ],
       user_img:'',
-      moneny:''
-    
+      moneny:'',
+      user: JSON.parse(localStorage.getItem('user'))
     };
   },
   components:{
-      'v-footer': footer
+    'v-footer': footer
+  },
+  created() {
+    console.log(this.user)
   },
   mounted() {
 

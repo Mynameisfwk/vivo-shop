@@ -10,16 +10,16 @@
     <div class="register-2">
       <label for>
         <span>账号</span>
-        <input type="text" v-model="name" placeholder="请输入账号/用户名">
+        <input type="text" v-model="user.name" placeholder="请输入账号/用户名">
       </label>
 
       <label for>
         <span>密码</span>
-        <input type="password" v-model="password" placeholder="请输入密码">
+        <input type="password" v-model="user.password" placeholder="请输入密码">
       </label>
     </div>
     <div class="register-3">
-      <input type="button" class="btn" @click="btn" value="注册">
+      <input type="button" class="btn" @click="regusterUser" value="注册">
     </div>
   </div>
 </template>
@@ -31,65 +31,37 @@ import axios from "axios";
 export default {
   data() {
     return {
-      name: "",
-      password: ""
+      user: {
+        name: "",
+        password: ""
+      }
     };
   },
-  mounted() {
-    // if (getCookie("name")) {
-    //   this.$router.push("/login");
-    // }
-  },
   methods: {
-    // btn() {
-    //   var _this = this;
-    //   if(_this.name.length!=6){
-    //        Toast({
-    //           message: "注册的用户名低于六位！",
-    //           duration: 950
-    //         });
-    //       return false;
-    //   }
+    regusterUser() {
+      if (this.user.name == "") {
+        Toast({
+          message: "用户名不能为空",
+          duration: 950
+        });
+        return false
+      }
 
-    //   if(_this.password.length!=6){
-    //       Toast({
-    //           message: "用户密码安全度过低",
-    //           duration: 950
-    //         });
-    //       return false;
-    //   }
-    //   if (_this.name == "") {
-    //       Toast({
-    //           message: "注册的用户名不能为空",
-    //           duration: 950
-    //         });
-    //   } else {
-    //     axios.get(register, {
-    //         params: {
-    //           name: _this.name,
-    //           password: _this.password
-    //         }
-    //       })
-    //       .then(function(res) {
-    //         console.log(res)
-    //         if (res.data.code == 0) {
-    //            Toast({
-    //             message: res.data.msg,
-    //             duration: 950
-    //         });
-    //         } else if (res.data.code == 1) {
-    //           Toast({
-    //             message: res.data.msg,
-    //             duration: 950
-    //           });
-    //           _this.$router.push("main");
-    //           setCookie("username", _this.name);
-    //           setCookie("token", res.data.data.token);
-            
-    //         }
-    //       });
-    //   }
-    // }
+      if (this.user.password == "") {
+        Toast({
+          message: "密码不能为空",
+          duration: 950
+        });
+        return false
+      }
+
+      Toast({
+        message: "注册成功",
+        duration: 950
+      });
+      localStorage.setItem('user',JSON.stringify(this.user))
+      this.$router.push("/login");
+    }
   }
 };
 </script>

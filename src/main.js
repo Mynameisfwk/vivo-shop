@@ -21,7 +21,7 @@ Vue.use(MintUI)
 
 router.beforeEach((to,from,next) => { 
   if(to.meta.requireAuth) {
-    if(!store.state.user) {
+    if(!localStorage.getItem('user')) {
       next({path:'/login'})
     }
   }

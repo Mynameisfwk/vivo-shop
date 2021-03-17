@@ -10,77 +10,89 @@
     <div class="register-2">
       <label for>
         <span>账号</span>
-        <input type="text" v-model="name" placeholder="请输入账号/用户名">
+        <input type="text" v-model="user.name" placeholder="请输入账号/用户名">
       </label>
 
       <label for>
         <span>密码</span>
-        <input type="password" v-model="password" placeholder="请输入密码">
+        <input type="password" v-model="user.password" placeholder="请输入密码">
       </label>
     </div>
     <div class="register-3">
-      <input type="button" class="btn" @click="btn" value="登陆">
+      <input type="button" class="btn" @click="login" value="登陆">
     </div>
     <div class="register-3">
-      <input type="button" class="btn" @click="go_zc" value="注册">
+      <input type="button" class="btn" @click="jumpRegister" value="注册">
     </div>
   </div>
 </template>
 
 <script>
 import { Toast } from "mint-ui";
-import axios from "axios";
-import { login } from "../../assets/js/api.js";
 export default {
   data() {
     return {
-      name: "",
-      password: ""
+      user: {
+        name: "",
+        password: ""
+      }
     };
   },
   mounted() {
   },
   methods: {
-    // btn() {
-    //   var _this = this;
-    //   if (_this.name == "") {
-    //     Toast({
-    //       message: "登陆用户名不能为空",
-    //       duration: 950
-    //     });
-    //   } else {
-    //     axios
-    //       .get(login, {
-    //         params: {
-    //           name: _this.name,
-    //           password: _this.password
-    //         }
-    //       })
-    //       .then(function(res) {
-    //         console.log(res);
-    //         if (res.data.code == 0) {
-    //           Toast({
-    //             message: res.data.msg,
-    //             duration: 950
-    //           });
-    //         } else if (res.data.code == 1) {
-    //           Toast({
-    //             message: res.data.msg,
-    //              duration: 950
-    //           });
-    //             _this.$router.push("main");
-    //             setCookie("username", _this.name);
-    //             setCookie("token", res.data.data.token);
-               
-    //         }
-    //       });
-    //   }
+    login() {
+      if(!JSON.parse(localStorage.getItem('user'))) {
+        Toast({
+          message: "用户不存在",
+          duration: 950
+        });
+        return false
+      }
+
+      if (this.user.name == "") {
+        Toast({
+          message: "请输入用户名",
+          duration: 950
+        });
+        return false
+      }
+
+      if (this.user.password == "") {
+        Toast({
+          message: "请输入密码",
+          duration: 950
+        });
+        return false
+      }
+
+      if (this.user.name != JSON.parse(localStorage.getItem('user')).name) {
+        Toast({
+          message: "用户名不正确",
+          duration: 950
+        });
+        return false
+      }
+
+       if (this.user.password != JSON.parse(localStorage.getItem('user')).password) {
+        Toast({
+          message: "密码不正确",
+          duration: 950
+        });
+        return false
+      }
+      Toast({
+        message: "登陆成功",
+        duration: 950
+      });
+      this.$router.push("/main");
     },
-    go_zc() {
-      // this.$router.push("/register");
+
+    jumpRegister() {
+     this.$router.push("/register");
     }
   }
-// };
+}
 </script>
 
 <style>

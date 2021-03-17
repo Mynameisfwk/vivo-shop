@@ -9,8 +9,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        carts: localStorage.getItem('carts') ? JSON.parse(localStorage.getItem('carts')) : [],
-        user: []
+        carts: localStorage.getItem('carts') ? JSON.parse(localStorage.getItem('carts')) : []
     },
     mutations: {
         addCart(state,data) {
