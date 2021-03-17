@@ -16,7 +16,7 @@ const store = new Vuex.Store({
         },
 
         delClistart(state,index) {
-            state.carts.splice(index,1)
+            state.carts.splice(index,1);
         }
     }
 })
