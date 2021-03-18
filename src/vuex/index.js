@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 // import mutations from './mutations'
 import cart from './modules/cart'
+import order from './modules/order'
 
 Vue.use(Vuex)
 
@@ -13,7 +14,8 @@ export default new Vuex.Store({
     // state,
     // mutations,
     modules: {
-        cart
+        cart,
+        order
     }
 })
 

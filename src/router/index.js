@@ -8,9 +8,9 @@ import cart from '@/pages/user/cart/index'
 
 import xz_address from "@/pages/user/children/xz_address"
 import view from '@/pages/view/view'
-import order from '@/pages/order/order'
-import orderView from '@/pages/order/orderView'
-import OrderDetails from '@/pages/OrderDetails'
+import order from '@/pages/order/index'
+import orderDetail from '@/pages/order/detail'
+// import OrderDetails from '@/pages/order/orderView'
 import choose from '@/pages/choose'
 import news from '@/pages/News/news'
 import newsView from '@/pages/News/newsView'
@@ -104,7 +104,7 @@ export default new Router({
       name: 'order',
       component: order,
     },
-    { path: '/orderView', name: 'orderView', component: orderView },
+    { path: '/orderDetail', name: 'orderDetail', component: orderDetail },
     { path: '/choose', name: 'choose', component: choose },
     { path: '/newsView', name: 'newsView', component: newsView },
 

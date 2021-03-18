@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="pay">
         <Pay-Header title="确认订单"></Pay-Header>
-        <div @click="go_Xzaddress" class="pay-address">
+        <div @click="" class="pay-address">
              <p class="address-box">
                 <span class="name">收货人：{{address_name}}</span>
               <span class="phone">{{address_phone}}</span>
@@ -14,10 +14,9 @@
             <div class="pay-shop-list">
                 <p class="pay-shop-1">商品清单</p>
                 <p class="pay-shop-2">
-                    <img :src="list.fm_img" />
+                    <img :src="list.img_url" />
                     <p class="pay-shop-2-box">
-                        <span class="name">{{list.name}}<p>× 1</p></span>
-                        <!-- <span>颜色：冰钻黑</span> -->
+                        <span class="name">{{list.name}}<p>× {{$route.params.value}}</p></span>
                         <span class="price">¥{{list.price}}</span>
                     </p>
                 </p>
@@ -30,21 +29,21 @@
                         <div>
                             <p>*请输入发票抬头:</p>
                             <input type="text" id="input" v-model="invoice"  placeholder="请输入发票信息">
-                            
                         </div>
                     </div>
-                   
                 </div>
             </div>
 
             <div class="pay-shop-fs">
                 <div class="pay-fs-1">支付方式</div>
                 <div class="pay-fs-2">
-                    <!-- <div class="pay-fs-2-1" v-for="(item,index) in lists" :class="{active:index===ceshi}" @click="btn(index)" >
-                        {{item.name}}
-                    </div> -->
                     <div class="pay-fs-2-1" >
-                        <div v-for="(list,index) in lists" :class="{active:index===listIndex}" @click="btn(list.name,index)">{{list.name}}</div>
+                        <div 
+                        v-for="(list,index) in paymentType"
+                        :class="paymentTypeIndex == index ? 'active' : ''"
+                        @click="selectPaymentType(index)"
+                        :key="index"
+                        >{{list}}</div>
                     </div>
                     <div class="pay-fs-2-2">
                        <div v-show="listIndex===0" class="pay-fs-2-2-1">支持支付宝支付、微信支付、银行卡支付、财付通等</div>
@@ -62,12 +61,12 @@
                     <p>商品总金额：¥{{list.price}}</p>
                     <p>运费：0.00</p>
                     <p>优惠：¥0.00</p>
-                    <p>赠送积分：{{list.price * 0.05 | integral}}</p>
+                    <p>赠送积分：{{toFixed(list.price * 0.05)}}</p>
                 </div>
             </div>
            
             <div class="pay-shop-footer">
-                <p class="price">订单总金额：<span>¥{{list.price}}</span></p>
+                <p class="price">订单总金额：<span>¥{{toFixed(list.price * $route.params.value)}}</span></p>
                 <a class="order" @click="addOrder(list,index)">提交订单</a>
             </div>
         </div>
@@ -360,137 +359,76 @@
 
 <script>
 import { Toast } from "mint-ui";
-import { mapGetters, mapMutations } from "vuex";
 import PayHeader from "../../common/header";
-import { setCookie, getCookie } from "../../assets/js/cookie.js";
-import { home_data,add_order } from "../../assets/js/api.js";
-import axios from "axios";
 export default {
   name: "pay",
   data() {
     return {
-      listIndex: 0,
-      invoiceIndex: 0,
-      integral:'', //积分
+      integral:'', 
       pay: [],
       address:[],
-      addressId:'5',
-      address_name:'1', //收货人
-      address_phone:'15255460858', //收货人手机号
-      address:'测试地址',
+      addressId: '5',
+      address_name: '1', 
+      address_phone: '15255460858', 
+      address: '测试地址',
       xz_address:'详情地址',
-      content:'',//留言
-      invoice:'',//发票抬头
-      swiperImg:'',
-      lists: [
-        {
-          id: "1",
-          name: "在线支付"
-        },
-        {
-          id: "2",
-          name: "花呗分期"
-        },
-        {
-          id: "3",
-          name: "货到付款"
-        }
+      content: '', 
+      invoice: '',
+      paymentType:[
+        '在线支付',
+        '花呗分期',
+        '货到付款'
       ],
+      paymentTypeIndex: 0
     };
   },
-  components: {
-    PayHeader
-  },
-  
-     computed: {
-          xzAddess() {
-            return this.$store.state.xzAddess;
-          },
-          ...mapGetters(
-              ["this.$store.state.xzAddess"],
-          )
-      },
-      filters:{
-          integral(value){
-            return value.toFixed(2) //过滤积分后两位
-          }
-      },
-  methods: {
-    go_Xzaddress(){
-        this.pay.forEach(list=>{
-            this.$router.push({
-                path: "xz_address",
-                query:{
-                    id:list.id
-                }
-            });
-      })
+    components: {
+        PayHeader
     },
-    btn(id, index) {
-      this.listIndex = index;
+
+    created() {
+        this.orderDetail()
+        console.log(this.$route);
     },
-    invoiceClick(index) {
-      this.invoiceIndex = index;
-    },
-    addOrder(list) {
-        let cookier_token = getCookie("token");
-         axios({
-            url:add_order,
-            method: "post",
-            params: {
-                token:cookier_token,
-                id:list.id,
-                shop_name:list.name,
-                shop_price:list.price,
-                address_name:this.address_name,
-                address_phone:this.address_phone,
-                content:this.content,
-                invoice:this.invoice,
-                address:this.address+this.xz_address,
-                shop_img:list.fm_img,
-                integral:(list.price*0.05).toFixed(2)
+
+    methods: {
+        addOrder(list) {
+            if(!this.invoice) {
+                Toast('请输入发票抬头');
+                return false
             }
-        })
-            .then(res => {
-                console.log(res)
-                Toast({
-                message: res.data.msg,
-                duration: 950
-                });
-            })
-            .catch(err => {
-            });
-      }
-     
-    
-  },
-  created() {
-    var _this = this;
-    var id = this.$route.query.id;
+            var myDate = new Date()
+            var Year = myDate.getFullYear()
+            var Month = myDate.getMonth() + 1
+            var Day = myDate.getDate()
 
-    axios.get(home_data).then(function(res) {
-      for (var i = 0; i < res.data.data.length; i++) {
-        if (res.data.data[i].id == id) {
-          _this.pay.push(res.data.data[i]);
-        }
-      }
-    });
+            list['paymentType']  = this.paymentType[this.paymentTypeIndex]
+            list['invoice'] = this.invoice
+            list['content'] = this.content
+            list['homeValue'] = this.$route.params.value //改变原来固定的数量 1
+            list['orderNumber'] = Year + ''  + Month + '' + Day + '' + Math.random().toFixed(15).substr(2) //订单号
 
-    var addressId=this.$route.query.addressId
-      this.$store.state.xzAddess.forEach(list=>{
-        if(list.id==addressId){
-            this.address_name=list.name
-            this.address=list.address
-            this.xz_address=list.xx_address
-            this.address_phone=list.phone
-            this.swiperImg=list.fm_img
-        }
+            this.$store.commit('order/ADD_ORDER',list);
+        },
         
-      })
+        selectPaymentType(index) {
+            this.paymentTypeIndex = index
+        },
 
-   
-  }
- 
+        toFixed(value) {
+            return value.toFixed(2)
+        },
+        
+        orderDetail() {
+            this.$axios.get('/static/ceshi.json').then(res => {
+                res.data.data.home.forEach(list => {
+                    if(list.id == this.$route.query.id) {
+                        this.pay.push(list);
+                    }
+                });
+            });
+        }
+    }
 };
 </script>
 

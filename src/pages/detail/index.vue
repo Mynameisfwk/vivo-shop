@@ -33,9 +33,9 @@
                     <div class="goodDetailValue">
                         <div class="_Value">购买数量：</div>
                         <div class="_cartNumber" style="margin-left: 2rem;">
-                            <a href="javascript:;"class="goodDetailReduce">-</a>
-                            <input type="text"  v-model="list.homeValue" readonly="readonly"/>
-                            <a href="javascript:;" class="goodDetailAdd">+</a>
+                            <a href="javascript:;"class="goodDetailReduce" @click="reduceOrderValue()">-</a>
+                            <input type="text"  v-model="value" readonly="readonly"/>
+                            <a href="javascript:;" class="goodDetailAdd" @click="addOrderValue()">+</a>
                         </div>
                     </div>
 
@@ -139,7 +139,7 @@
                                 <a href="javascript:void(0);" @click="addCart(list)">加入购物车</a>
                             </div>
                             <div class="purchase">
-                                <a href="javascript:void(0);" @click="pay(goodDetail.id,goodDetail.homeValue)">提交订单</a>
+                                <a href="javascript:void(0);" @click="jumpPay(list)">提交订单</a>
                             </div>
                         </div>
                         
@@ -151,7 +151,6 @@
 </template>
 
 <script>
-import { Toast,MessageBox } from 'mint-ui';
 export default {
   name: "detail",
   data() {
@@ -161,6 +160,7 @@ export default {
       selected: "tab-container1",
       goodDetails: [],
       cartlength: 0,
+      value: 1,
       show: false
     };
   },
@@ -183,8 +183,15 @@ export default {
       this.$store.commit('cart/ADD_CARTS',data);
     },
 
+    addOrderValue(list) {
+        this.value ++
+    },
+
+    reduceOrderValue() {
+
+    },
+
     shopDetailsData() {
-      var id = this.$route.query.id;
       this.$axios.get("/static/ceshi.json").then(res => {
         res.data.data.home.forEach(list => {
           if (list.id == this.$route.query.id) {
@@ -192,6 +199,19 @@ export default {
           }
         });
       });
+    },
+
+    jumpPay(list) {
+        this.$router.push({
+            path:'/pay',
+            name: 'pay',
+            query: {
+                id: list.id
+            },
+            params: {
+                value: this.value
+            }
+        })
     }
   }
 };

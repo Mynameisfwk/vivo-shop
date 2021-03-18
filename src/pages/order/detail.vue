@@ -18,14 +18,13 @@
 
         <div class="details-list">
           <div class="details-list-1">
-            <img src="http://www.vivo-admin.com/static/image/5cd6e6221bed6.png">
+            <img :src="item.img_url">
             <p>
-              <!-- <span>id是{{list.id}}</span> -->
               <span class="name">
-                {{item.shop_name}}
-                <p>× 1</p>
+                {{item.name}}
+                <p>× {{item.homeValue}}</p>
               </span>
-              <span class="price">¥ {{item.shop_price}}</span>
+              <span class="price">¥ {{item.price}}</span>
             </p>
           </div>
 
@@ -33,7 +32,7 @@
             <div class="details-list-2-1">
               <p>
                 <span class="span-1">订单编号：</span>
-                <span class="span-2">{{item.number}}</span>
+                <span class="span-2">{{item.orderNumber}}</span>
               </p>
               <p>
                 <span class="span-1">订单备注：</span>
@@ -44,7 +43,7 @@
             <div class="details-list-2-2">
               <p>
                 <span class="span-1">商品总金额：</span>
-                <span class="span-2">¥ {{item.shop_price}}</span>
+                <span class="span-2">¥ {{toFixed(item.price * item.homeValue)}}</span>
               </p>
               <p>
                 <span class="span-1">运费：</span>
@@ -67,7 +66,7 @@
               </p>
               <p>
                 <span class="span-1">支付方式：</span>
-                <span class="span-2">支付宝</span>
+                <span class="span-2">{{item.paymentType}}</span>
               </p>
               <p>
                 <span class="span-1">发票类型：</span>
@@ -83,7 +82,7 @@
 
           <div class="order-footer">
             总计：
-            <span>¥3999</span>
+            <span>¥ {{toFixed(item.price * item.homeValue)}}</span>
           </div>
         </div>
       </div>
@@ -92,12 +91,10 @@
 </template>
 
 <script>
-import axios from "axios";
 import OrderHeader from "../../common/header";
-import { setCookie, getCookie } from "../../assets/js/cookie.js";
-import { user_order } from "../../assets/js/api.js";
+
 export default {
-  name: "o1",
+  name: "detail",
   data() {
     return {
       list: []
@@ -106,27 +103,19 @@ export default {
   components: {
     OrderHeader
   },
+
   created() {
-    var shop_number = this.$route.query.number;
-    let cookier_token = getCookie("token");
-    axios({
-      url:user_order,
-      method: "post",
-      params: {
-        token: cookier_token
+    this.$store.state.order.orders.forEach(item => {
+      if(item.id == this.$route.query.id) {
+        this.list.push(item)
       }
-    })
-      .then(res => {
-        var data = res.data.order;
-        for (var i = 0; i < data.length; i++) {
-          if (data[i].number == shop_number) {
-            this.list.push(data[i]);
-          }
-        }
-      })
-      .catch(err => {
-        //异常操作
-      });
+    });
+  },
+
+  methods: {
+    toFixed(value) {
+      return  value.toFixed(2)
+    }
   }
 };
 </script>
