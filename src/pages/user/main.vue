@@ -6,7 +6,7 @@
       </div>
 
       <div class="header-in">个人中心</div>
-      <div class="header-rigth" @click="zx">
+      <div class="header-rigth" @click="">
         <i class="iconfont icon-shezhi-xianxing"></i>
       </div>
     </div>

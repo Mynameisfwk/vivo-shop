@@ -38,12 +38,6 @@ export default {
     methods: {
         getMessage(id,title){
             console.log(id,title)
-            // this.$router.push({
-            //     path:"view",
-            //     query:{
-            //         id:id
-            //     }
-            // })
         }
     },
     created() {
