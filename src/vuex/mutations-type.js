@@ -1,0 +1,5 @@
+export const ADD_CARTS = 'ADD_CARTS' 
+export const DEL_CARTS = 'DEL_CARTS' 
+export const ADDCART_VALUE = 'ADDCART_VALUE' 
+export const REDUCECART_VAVLUE = 'REDUCECART_VAVLUE'
+export const SELECT_CARTS_LIST = 'SELECT_CARTS_LIST'

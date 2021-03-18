@@ -13,7 +13,7 @@ import orderView from '@/pages/order/orderView'
 import OrderDetails from '@/pages/OrderDetails'
 import choose from '@/pages/choose'
 import news from '@/pages/News/news'
-// import newsView from '@/pages/News/newsView'
+import newsView from '@/pages/News/newsView'
 import parts from '@/pages/parts'
 import success from '../common/success'
 import classify from "@/pages/Classify/classify"
@@ -106,7 +106,7 @@ export default new Router({
     },
     { path: '/orderView', name: 'orderView', component: orderView },
     { path: '/choose', name: 'choose', component: choose },
-    // { path: '/newsView', name: 'newsView', component: newsView },
+    { path: '/newsView', name: 'newsView', component: newsView },
 
     { path: '/news', name: 'news', component: news },
     { path: '/parts', name: 'parts', component: parts },

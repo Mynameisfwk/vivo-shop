@@ -180,7 +180,7 @@ export default {
         value: 1
       };
         
-      this.$store.commit("addCart", data);
+      this.$store.commit('cart/ADD_CARTS',data);
     },
 
     shopDetailsData() {

@@ -2,7 +2,7 @@
   <div class="cart">
     <div class="header">
       <div class="header-left">
-        <router-link to="/index">
+        <router-link to="/main">
           <i class="iconfont icon-zuojiantou"></i>
         </router-link>
       </div>
@@ -76,35 +76,37 @@ export default {
   name: "cart",
   data() {
     return {
-      carts: this.$store.state.carts
+      carts: this.$store.state.cart.carts
     };
   },
+
   components: {
     CartHeader
   },
+
+  created() {
+    console.log(this.$store)
+  },
+  
   methods: {
     addCartValue(index) {
-      this.$store.commit('addCartValue',index)
+      this.$store.commit('cart/ADDCART_VALUE',index)
     },
     delClistart(index) {
-      this.$store.commit('delClistart',index)
+      this.$store.commit('cart/DEL_CARTS',index)
     },
     reduceCartValue(index) {
-      this.$store.commit('reduceCartValue',index)
+      this.$store.commit('cart/REDUCECART_VAVLUE',index)
     },
     singleCartsList(index) {
-      this.$store.commit('singleCartsList',index)
+      this.$store.commit('cart/SELECT_CARTS_LIST',index)
     }
-  },
-
-  created(){
-    console.log(this.$store.state.carts)
   },
 
   computed: {
     TotalPrice() {
       var sum = 0
-      this.$store.state.carts.forEach(list => {
+      this.$store.state.cart.carts.forEach(list => {
         if(list.select) {
           sum += list.value * list.price
         }
