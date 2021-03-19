@@ -47,8 +47,6 @@
 import CollectionHeader from "../../../common/Header";
 import { mapState, mapMutations, mapGetters } from "vuex";
 import { Toast,MessageBox } from "mint-ui";
-import { setCookie, getCookie } from "../../../assets/js/cookie.js";
-import { sc_biao ,del_sc_biao} from "../../../assets/js/api.js";
 import axios from "axios";
 export default {
   name: "MyCollection",

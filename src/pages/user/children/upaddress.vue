@@ -33,7 +33,6 @@
 import AddressHeader from "../../../common/header";
 import { mapGetters, mapMutations } from "vuex";
 import { Toast } from "mint-ui";
-import { setCookie, getCookie } from "../../../assets/js/cookie.js";
 import axios from "axios";
 export default {
   name: "add_address",

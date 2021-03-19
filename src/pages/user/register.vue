@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import { register } from "../../assets/js/api.js";
 import { Toast } from "mint-ui";
 import axios from "axios";
 export default {

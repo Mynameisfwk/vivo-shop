@@ -5,10 +5,12 @@ import detail from '@/pages/detail/index'
 import news from '@/pages/news/index'
 import newsDetail from '@/pages/news/detail'
 import cart from '@/pages/user/cart/index'
+import address from "@/pages/user/address/index"
+import add_address from "@/pages/user/address/add"
 
 // 整理路由中 分割线～
 import xz_address from "@/pages/user/children/xz_address"
-import view from '@/pages/view/view'
+// import view from '@/pages/view/view'
 import order from '@/pages/order/index'
 import orderDetail from '@/pages/order/detail'
 // import OrderDetails from '@/pages/order/orderView'
@@ -19,10 +21,10 @@ import parts from '@/pages/parts'
 import success from '../common/success'
 import classify from "@/pages/Classify/classify"
 import pay from "@/pages/pay/pay"
-import address from "@/pages/user/children/address"
 
-import add_address from "@/pages/user/children/add_address"
-import shopDetail from "@/pages/shop/shopDetail"
+
+// import add_address from "@/pages/user/children/add_address"
+// import shopDetail from "@/pages/shop/shopDetail"
 import login from "@/pages/user/login"
 import register from "@/pages/user/register"
 import upaddress from "@/pages/user/children/upaddress"
@@ -69,9 +71,21 @@ export default new Router({
       component: cart 
     },
 
+    {
+      path: '/address',
+      name:'address',
+      component: address
+    },
+
+    {
+      path: '/add_address',
+      name:'add_address',
+      component: add_address
+    },
+
 
     { path: '/login', name: 'login', component: login },
-    { path: '/view', name: 'view', component: view },
+    // { path: '/view', name: 'view', component: view },
     { path: '/xz_address', name: 'xz_address', component: xz_address },
    
     { path: '/register', name: 'register', component: register },
@@ -82,36 +96,9 @@ export default new Router({
       meta: {
         requireAuth: true
       },
-      children:[
-        {
-          path: 'address',
-          name:'address',
-          component: address
-        },
-        {
-          path: 'add_address',
-          component:add_address
-        },
-        { 
-          path: 'upaddress', 
-          name:'/main/upaddress',
-          component: upaddress 
-        },
-        { 
-          path: 'cart', 
-          name:'cart',
-          component: cart 
-        }
-      ]
     },
     { path: '/collection', name: 'collection', component: collection },
 
- 
-    // {
-    //   path: '/goodDetail',
-    //   name: 'goodDetail',
-    //   component: goodDetail
-    // },
     {
       path: '/order',
       name: 'order',
@@ -130,12 +117,12 @@ export default new Router({
       path: '/pay',
       name: 'pay',
       component: pay
-    },
-   
-    {
-      path: '/shopDetail',
-      name: 'shopDetail',
-      component: shopDetail
     }
+   
+    // {
+    //   path: '/shopDetail',
+    //   name: 'shopDetail',
+    //   component: shopDetail
+    // }
   ]
 })

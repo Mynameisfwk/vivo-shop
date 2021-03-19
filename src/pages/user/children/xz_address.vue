@@ -35,8 +35,6 @@
 import { Toast,MessageBox } from "mint-ui";
 import AddressHeader from "../../../common/header";
 import { mapState, mapMutations, mapGetters } from "vuex";
-import { setCookie, getCookie } from "../../../assets/js/cookie.js";
-import { user_address,del_address} from "../../../assets/js/api.js";
 import axios from "axios";
 
 export default {
