@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { getData } from '@/api/data'
 import footer from "@/components/footer/index";
 export default {
   data() {
@@ -40,9 +41,9 @@ export default {
       });
     },
     newsData() {
-      this.$axios.get("/static/ceshi.json").then(res => {
-        this.news = res.data.data.news;
-      });
+      getData().then(res => {
+        this.news = res.news;
+      })
     }
   },
   components: {

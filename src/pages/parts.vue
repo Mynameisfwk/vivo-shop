@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { getData } from "@/api/data";
 import PartsHeader from "../common/header";
 export default {
   data() {
@@ -47,15 +48,15 @@ export default {
   methods: {
     selectIndex(index) {
       this.selectShopIndex = index;
-      this.$axios.get("/static/data.json").then(res => {
-        this.data = res.data.accessories[index].data;
+      getData().then(res => {
+        this.data = res.accessories[index].data;
       });
     },
 
     accessories() {
-      this.$axios.get("/static/data.json").then(res => {
-        this.list = res.data.accessories;
-        this.data = res.data.accessories[0].data;
+      getData().then(res => {
+        this.list = res.accessories;
+        this.data = res.accessories[0].data;
       });
     },
 

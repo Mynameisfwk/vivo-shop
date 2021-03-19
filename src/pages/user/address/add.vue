@@ -1,5 +1,5 @@
 <template>
-  <div class="main-xs">
+  <div class="page">
     <Address-Header title="新增地址"></Address-Header>
     <div class="address">
       <div class="address-box">
@@ -74,15 +74,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.main-xs {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 99999;
-  background: #f4f4f4;
-}
 .address {
   padding-top: 1.45rem;
 

@@ -46,6 +46,7 @@
     </div>
 </template>
 <script>
+import { getData } from '@/api/data'
 import footer from "@/components/footer/index";
 export default {
   name: "index",
@@ -94,9 +95,9 @@ export default {
     },
 
     homeShopListData() {
-      this.$axios.get("/static/data.json").then(res => {
-        this.shopListData = res.data.homeData;
-      });
+      getData().then(res=> {
+        this.shopListData = res.homeData;
+      })
     },
   },
 

@@ -182,6 +182,7 @@
 </template>
 
 <script>
+import { getData } from '@/api/data'
 export default {
   name: "detail",
   data() {
@@ -219,13 +220,13 @@ export default {
     },
 
     shopDetailsData() {
-      this.$axios.get("/static/data.json").then(res => {
-        res.data.homeData[this.$route.query.id - 1].data.forEach(list => {
+      getData().then(res=> {
+         res.homeData[this.$route.query.id - 1].data.forEach(list => {
           if (list.id == this.$route.query.shop_id) {
             this.goodDetails.push(list);
           }
         });
-      });
+      })
     },
 
     jumpPay(list) {
