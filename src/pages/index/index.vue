@@ -274,20 +274,6 @@ export default {
           }
         }
       }
-
-      // .list {
-      //   width: 50%;
-      //   height: auto;
-      //   background: white;
-      //   float: left;
-      //   border-right: 1px solid #f4f4f4;
-      //   border-top: 1px solid #f4f4f4;
-      //   padding-bottom: 0.25rem;
-
-      //   span {
-      //     display: block;
-      //   }
-      // }
     }
   }
 </style>
