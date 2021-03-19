@@ -2,18 +2,19 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/pages/index/index'
 import detail from '@/pages/detail/index'
+import news from '@/pages/news/index'
+import newsDetail from '@/pages/news/detail'
 import cart from '@/pages/user/cart/index'
 
 // 整理路由中 分割线～
-
 import xz_address from "@/pages/user/children/xz_address"
 import view from '@/pages/view/view'
 import order from '@/pages/order/index'
 import orderDetail from '@/pages/order/detail'
 // import OrderDetails from '@/pages/order/orderView'
 import choose from '@/pages/choose'
-import news from '@/pages/News/news'
-import newsView from '@/pages/News/newsView'
+// import news from '@/pages/News/news'
+// import newsView from '@/pages/News/newsView'
 import parts from '@/pages/parts'
 import success from '../common/success'
 import classify from "@/pages/Classify/classify"
@@ -48,6 +49,18 @@ export default new Router({
       path: '/detail', 
       name: 'detail', 
       component: detail 
+    },
+
+    { 
+      path: '/news', 
+      name: 'news', 
+      component: news 
+    },
+
+    { 
+      path: '/newsDetail', 
+      name: 'newsDetail', 
+      component: newsDetail
     },
 
     { 
@@ -106,9 +119,9 @@ export default new Router({
     },
     { path: '/orderDetail', name: 'orderDetail', component: orderDetail },
     { path: '/choose', name: 'choose', component: choose },
-    { path: '/newsView', name: 'newsView', component: newsView },
+    // { path: '/newsView', name: 'newsView', component: newsView },
 
-    { path: '/news', name: 'news', component: news },
+    // { path: '/news', name: 'news', component: news },
     { path: '/parts', name: 'parts', component: parts },
     // { path: '/change', name: 'change', component: change },
     { path: '/success', name: 'success', component: success },

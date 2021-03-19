@@ -136,7 +136,9 @@ export default {
     btn: function() {
       MessageBox("提示", "Vue的第一个项目能给个star么？Thank you");
     }
-  }
+  },
+
+  computed() {}
 };
 </script>
 

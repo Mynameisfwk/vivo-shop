@@ -4,7 +4,7 @@
     <div class="Address-box">
       <div class="address-one">
         <p class="left">配送地址</p>
-        <p class="right" @click="goAdd_address">+添加地址</p>
+        <p class="right" @click="jumpAddress">+添加地址</p>
       </div>
       <div
         class="pay-address"
@@ -31,13 +31,7 @@
 
 
 <script>
-
-import { Toast,MessageBox } from "mint-ui";
 import AddressHeader from "../../../common/header";
-import { mapState, mapMutations, mapGetters } from "vuex";
-import { setCookie, getCookie } from "../../../assets/js/cookie.js";
-import { user_address } from "../../../assets/js/api.js";
-import axios from "axios";
 
 export default {
   data() {
@@ -49,62 +43,9 @@ export default {
   components: {
     AddressHeader
   },
-  created() {
-    this.get_address();
-  },
+
   methods: {
-    async get_address() {
-      let cookier_token = getCookie("token");
-      axios({
-        url: user_address,
-        method: "get",
-        params: {
-          token: cookier_token
-        }
-      })
-        .then(res => {
-          this.address = res.data.data;
-        })
-        .catch(err => {
-          //异常操作
-        });
-    },
-    btn(list) {
-      this.$router.push({
-        name: "/main/upaddress",
-        params: {
-          name: list.name,
-          address: list.address,
-          phone: list.phone,
-          xx_address: list.xx_address
-        },
-        query: {
-          id: list.id
-        }
-      });
-    },
-    del_address(list) {
-      let cookier_token = getCookie("token");
-      axios({
-        url: "http://www.vivo-admin.com/del_address/",
-        method: "get",
-        params: {
-          id: list.id,
-          token: cookier_token
-        }
-      })
-        .then(res => {
-          this.get_address();
-          alert('删除成功')
-        })
-        .catch(err => {
-          //异常操作
-        });
-    },
-    goAdd_address() {
-      this.$router.push({
-        path: "add_address"
-      });
+    jumpAddress() {
     }
   }
 };
