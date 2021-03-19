@@ -15,7 +15,7 @@
         <div class="icon">
             <ul class='icon-ul'>
                 <li class='icon-li' v-for="(list,index) in routers" :key='index'>
-                  <router-link :to="{ path: list.src }">
+                  <router-link :to="{ path: list.src }" >
                     <img :src="list.img" alt="vivo">
                   </router-link>
                 </li>
