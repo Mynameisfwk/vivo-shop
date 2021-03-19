@@ -3,7 +3,7 @@
     <Order-Header title="我的订单"></Order-Header>
     <div class="orderMain" id="transitionName">
       <div class="conntent">
-        <div class="content-list" v-for="(list,index) in order" @click="jumpOrderDetail(list.id)" :key="index">
+        <div class="content-list" v-for="(list,index) in order" @click="jumpOrderDetail(list)" :key="index">
           <div class="_order">
             <p class="left">订单号：{{list.orderNumber}}&nbsp;&nbsp;&nbsp;已完成</p>
             <p class="right">
@@ -57,11 +57,11 @@ export default {
     delOrder(index) {
       this.$store.commit('order/DEL_ORDER',index)
     },
-    jumpOrderDetail(id) {
+    jumpOrderDetail(list) {
       this.$router.push({
         path: '/orderDetail',
         query: {
-          id: id
+          orderNumber: list.orderNumber
         }
       })
     }

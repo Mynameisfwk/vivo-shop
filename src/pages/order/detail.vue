@@ -9,22 +9,22 @@
         >
       </div>
 
-      <div class="details-address" v-for="(item,index) in list" :key="index">
+      <div class="details-address">
         <p class="address-box">
-          <span class="name">收货人：{{item.address_name}}</span>
-          <span class="phone">{{item.address_phone}}</span>
+          <span class="name">收货人：测试</span>
+          <span class="phone">123456789</span>
         </p>
-        <p class="address-details">收货地址：{{item.address}}</p>
+        <p class="address-details">收货地址：详细地址</p>
 
         <div class="details-list">
           <div class="details-list-1">
-            <img :src="item.img_url">
+            <img :src="list.img_url">
             <p>
               <span class="name">
-                {{item.name}}
-                <p>× {{item.homeValue}}</p>
+                {{list.name}}
+                <p>× {{list.homeValue}}</p>
               </span>
-              <span class="price">¥ {{item.price}}</span>
+              <span class="price">¥ {{list.price}}</span>
             </p>
           </div>
 
@@ -32,18 +32,18 @@
             <div class="details-list-2-1">
               <p>
                 <span class="span-1">订单编号：</span>
-                <span class="span-2">{{item.orderNumber}}</span>
+                <span class="span-2">{{list.orderNumber}}</span>
               </p>
               <p>
                 <span class="span-1">订单备注：</span>
-                <span class="span-2">{{item.content}}</span>
+                <span class="span-2">{{list.content}}</span>
               </p>
             </div>
 
             <div class="details-list-2-2">
               <p>
                 <span class="span-1">商品总金额：</span>
-                <span class="span-2">¥ {{toFixed(item.price * item.homeValue)}}</span>
+                <span class="span-2">¥ {{toFixed(list.price * list.homeValue)}}</span>
               </p>
               <p>
                 <span class="span-1">运费：</span>
@@ -66,7 +66,7 @@
               </p>
               <p>
                 <span class="span-1">支付方式：</span>
-                <span class="span-2">{{item.paymentType}}</span>
+                <span class="span-2">{{list.paymentType}}</span>
               </p>
               <p>
                 <span class="span-1">发票类型：</span>
@@ -74,7 +74,7 @@
               </p>
               <p>
                 <span class="span-1">发票抬头：</span>
-                <span class="span-2">{{item.invoice}}</span>
+                <span class="span-2">{{list.invoice}}</span>
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@
 
           <div class="order-footer">
             总计：
-            <span>¥ {{toFixed(item.price * item.homeValue)}}</span>
+            <span>¥ {{toFixed(list.price * list.homeValue)}}</span>
           </div>
         </div>
       </div>
@@ -105,14 +105,16 @@ export default {
   },
 
   created() {
-    this.$store.state.order.orders.forEach(item => {
-      if(item.id == this.$route.query.id) {
-        this.list.push(item)
-      }
-    });
+    this.orderDetail() 
   },
-
   methods: {
+    orderDetail() {
+      var data = this.$store.state.order.orders.find(list=> {
+        return this.$route.query.orderNumber == list.orderNumber
+      })
+      this.list = data
+    },
+
     toFixed(value) {
       return  value.toFixed(2)
     }
