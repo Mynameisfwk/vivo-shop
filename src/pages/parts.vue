@@ -18,7 +18,7 @@
           <img :src="list.img_url" alt="图片" />
           <h2>{{ list.name }}</h2>
           <p>{{ list.content }}</p>
-          <div>￥{{ list.price }}</div>
+          <div>￥{{ toFixed(list.price) }}</div>
         </div>
       </div>
     </div>
