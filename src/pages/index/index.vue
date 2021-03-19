@@ -26,7 +26,7 @@
             <div class="main-box" v-for="(list,index) in shopListData" :key="index">
                 <h2>{{list.title}}</h2>
                 <ul>
-                    <li v-for="(v,index) in list.data" :key='v' @click="jumpDetails(list)">
+                    <li v-for="(v,index) in list.data" :key='v' @click="jumpDetail(list,v)">
                         <div class="list">
                             <div class="image">
                                 <img :src="v.img_url" alt="图片">
@@ -78,11 +78,12 @@ export default {
   },
 
   methods: {
-    jumpDetails(list) {
+    jumpDetail(list,v) {
       this.$router.push({
         path: "detail",
         query: {
-          id: list.id
+          id: list.id,
+          shop_id: v.id
         }
       });
     },
