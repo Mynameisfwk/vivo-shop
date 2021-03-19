@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       nowIndex: 0,
-      address: []
+      address: this.$store.state.address
     };
   },
   components: {

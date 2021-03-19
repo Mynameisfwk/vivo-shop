@@ -4,27 +4,43 @@
     <div class="address">
       <div class="address-box">
         <label for="">收货人：</label>
-        <input type="text" v-model="name" placeholder="收货人姓名" />
+        <input
+          type="text"
+          v-model="addressData.name"
+          placeholder="收货人姓名"
+        />
       </div>
 
       <div class="address-box">
         <label for="">手机号码：</label>
-        <input type="text" v-model="phone" placeholder="收货人的手机号码" />
+        <input
+          type="text"
+          v-model="addressData.phone"
+          placeholder="收货人的手机号码"
+        />
       </div>
 
       <div class="address-box">
         <label for="">选择地区：</label>
-        <input type="text" v-model="zone" placeholder="请选择收货地址" />
+        <input
+          type="text"
+          v-model="addressData.zone"
+          placeholder="请选择收货地址"
+        />
       </div>
 
       <div class="address-box">
         <label for="">详细地址：</label>
-        <input type="text" v-model="detail" placeholder="详细街道地址" />
+        <input
+          type="text"
+          v-model="addressData.detail"
+          placeholder="详细街道地址"
+        />
       </div>
     </div>
 
     <div class="footer">
-      <a @click="btn">保存地址</a>
+      <a @click="saveAddress">保存地址</a>
     </div>
   </div>
 </template>
@@ -36,16 +52,24 @@ export default {
   name: "add_address",
   data() {
     return {
-      name: "",
-      phone: "",
-      zone: "",
-      detail: ""
+      addressData: {
+        name: "",
+        phone: "",
+        zone: "",
+        detail: ""
+      }
     };
   },
+
+  methods: {
+    saveAddress() {
+        this.$store.commit('ADD_ADDRESS',this.addressData)
+    }
+  },
+
   components: {
     AddressHeader
-  },
-  methods: {}
+  }
 };
 </script>
 

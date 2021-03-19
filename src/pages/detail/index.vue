@@ -208,10 +208,14 @@ export default {
         name: list.name,
         price: list.price,
         select: false,
-        value: 1
+        value: this.value
       };
 
       this.$store.commit("cart/ADD_CARTS", data);
+    },
+
+    addOrderValue() {
+      this.value ++
     },
 
     shopDetailsData() {

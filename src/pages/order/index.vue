@@ -21,7 +21,7 @@
 
             <div class="order-div">
                 <h3>{{list.name}}</h3>
-                <p class="order-div-price">￥{{list.price}}</p>
+                <p class="order-div-price">￥{{toFixed(list.price)}}</p>
             </div>
             <div class="order-div-2">× {{list.homeValue ? list.homeValue : 1}}</div>
           </div>
@@ -29,7 +29,7 @@
             <div class="order-2-box">
                 <p class="order-2-one">
                 应付金额：
-                <span>￥{{list.price}}</span>
+                <span style="color:red">￥{{toFixed(list.price * list.homeValue)}}</span>
                 </p>
             </div>
           </div>
@@ -64,6 +64,10 @@ export default {
           orderNumber: list.orderNumber
         }
       })
+    },
+    toFixed(value) {
+      // 因为data.json里面的prcie是字符串类型 所以这边需要做个处理
+      return JSON.parse(value).toFixed(2);
     }
   }
 };
@@ -164,7 +168,7 @@ export default {
 .order img {
   float: left;
   margin: 0.3rem;
-  height: 2.5rem;
+  width: 23%
 }
 
 .order-div {
@@ -196,6 +200,9 @@ export default {
   width: 100%;
   height: 1.4rem;
   background: white;
+  display flex;
+  justify-content: flex-end;
+  align-items: center
 }
 
 .order-2-box {
@@ -211,17 +218,9 @@ export default {
   margin-left: 0.5rem;
 }
 
-.order-2-zero span {
-  color: red;
-}
-
 .order-2-one {
   font-size: 0.35rem;
   height: 100%;
-}
-
-.order-2-one span {
-  color: red;
 }
 
 .order-2-two {
@@ -240,7 +239,7 @@ export default {
   width: 2.8rem;
   height: 0.7rem;
   line-height: 0.7rem;
-  border: 1px solid red;
+  // border: 1px solid red;
   border-radius: 3px;
   text-align: center;
   display: block;
@@ -262,9 +261,8 @@ export default {
 
 .content-list {
   width: 100%;
-  height: auto;
-  background: red;
-  margin-bottom: 0.3rem;
+    height: auto;
+    margin-bottom: 0.3rem;
 }
 </style>
 

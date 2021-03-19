@@ -17,25 +17,10 @@
           <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1040943398,1147003181&fm=26&gp=0.jpg">
         </div>
         <div class="bj-right">
-          <span>213</span>
+          <span>{{user.name}}</span>
           <p>作者微信：fwk1203</p>
         </div>
       </div>
-
-      <!-- <div class="container-integral">
-        <p>
-          <span>100</span>
-          <span>余额</span>
-        </p>
-        <p>
-          <span>0</span>
-          <span>换鼓励金</span>
-        </p>
-        <p>
-          <span>30</span>
-          <span>积分</span>
-        </p>
-      </div> -->
 
       <router-link class="container-order" to="/order" tag="div">
         <div class="container-order-1">
@@ -82,14 +67,8 @@
         </router-link>
       </div>
     </div>
-
-    <div>
-      <router-view></router-view>
-    </div>
     
-     <v-footer></v-footer>
-
-   
+    <v-footer></v-footer>
   </div>
 </template>
 <script>

@@ -248,7 +248,7 @@ export default {
 
           .nametwo {
             width: 90%;
-            height: 0.9rem;
+            height: 0.99rem;
             font-size: 0.29rem;
             text-align: center;
             overflow: hidden;
