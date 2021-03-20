@@ -14,8 +14,8 @@ import phone from '@/pages/shops/phone'
 // 整理路由中 分割线～
 import xz_address from "@/pages/user/children/xz_address"
 // import view from '@/pages/view/view'
-import order from '@/pages/order/index'
-import orderDetail from '@/pages/order/detail'
+import order from '@/pages/user/order/index'
+import orderDetail from '@/pages/user/order/detail'
 // import OrderDetails from '@/pages/order/orderView'
 // import choose from '@/pages/choose'
 // import news from '@/pages/News/news'

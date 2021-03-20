@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-header title="我的订单" :headerLeftStatus="headerLeftStatus" />
     <div class="orderMain" id="transitionName">
       <div class="conntent">
         <div class="content-list" v-for="(list,index) in order" @click="jumpOrderDetail(list)" :key="index">
@@ -39,15 +40,14 @@
 </template>
 
 <script>
-
+import header from '@/components/header/index'
 export default {
   name: "oerder",
   data() {
     return {
       order: this.$store.state.order.orders,
+      headerLeftStatus: true
     };
-  },
-  components: {
   },
 
   methods: {
@@ -66,7 +66,11 @@ export default {
       // 因为data.json里面的prcie是字符串类型 所以这边需要做个处理
       return JSON.parse(value).toFixed(2);
     }
-  }
+  },
+
+  components: {
+    'v-header': header
+  },
 };
 </script>
 
