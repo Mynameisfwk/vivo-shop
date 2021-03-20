@@ -10,6 +10,7 @@ const state = {
 }
 
 const mutations = {
+    // 订单支付
     [ADD_ORDER](state,data) {
         Indicator.open({
             text: '支付中...',
@@ -24,7 +25,7 @@ const mutations = {
             Indicator.close()
         },1000)
     },
-
+    // 删除订单
     [DEL_ORDER](state,index) {
         MessageBox({
             title: '提示',

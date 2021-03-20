@@ -13,6 +13,7 @@ const state = {
 }
 
 const mutations = {
+    // 加入购物车
     [ADD_CARTS] (state,data) {
         var cartsId = state.carts.find(list => {
             return data.id == list.id
@@ -31,7 +32,7 @@ const mutations = {
             localStorage.setItem('carts',JSON.stringify(state.carts));
         }
     },
-
+    // 移出购物车
     [DEL_CARTS] (state,index) {
         MessageBox({
             title: '提示',
@@ -48,12 +49,12 @@ const mutations = {
             }
         });
     },
-
+    // 商品数量操作
     [ADDCART_VALUE] (state,index) {
         state.carts[index].value ++ 
         localStorage.setItem('carts',JSON.stringify(state.carts))
     },
-
+    // 商品数量操作
     [REDUCECART_VAVLUE] (state,index) {
         if(state.carts[index].value == 1) {
             MessageBox({
@@ -75,7 +76,7 @@ const mutations = {
             localStorage.setItem('carts',JSON.stringify(state.carts))
         }
     },
-
+    // 购物车全选
     [SELECT_CARTS_LIST] (state,index) {
         state.carts[index].select =! state.carts[index].select
     }

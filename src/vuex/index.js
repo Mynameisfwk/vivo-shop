@@ -14,6 +14,7 @@ const state = {
 }
 
 const mutations = {
+    // 添加地址
     [ADD_ADDRESS](state, data) {
         if (data.name == '') {
             Toast('请填写收货人姓名');
@@ -46,7 +47,7 @@ const mutations = {
         localStorage.setItem('address',JSON.stringify(state.address));
         Toast('添加成功');
     },
-
+    // 删除地址
     [DEL_ADDRESS](state, index) {
         MessageBox({
             title: '提示',
