@@ -1,13 +1,6 @@
 <template>
   <div class="goodDetail" id="transitionName">
-    <div class="header">
-      <div class="header-left" @click="$router.go(-1)">
-        <i class="iconfont icon-zuojiantou"></i>
-      </div>
-      <div class="in">商品详情</div>
-      <div class="header-right"></div>
-    </div>
-
+    <v-header title="商品详情" :headerLeftStatus="headerLeftStatus" @jumpRouter="$router.back()"/>
     <div class="goodDetailList">
       <ul style="background: white;">
         <li v-for="(list, index) in goodDetails" :key="index">
@@ -182,15 +175,16 @@
 </template>
 
 <script>
-import { getData } from '@/api/data'
+import header from '@/components/header/index'
+import { getData } from "@/api/data";
 export default {
   name: "detail",
   data() {
     return {
       active: "1",
-      goodDetailHeader: "商品详情",
       selected: "tab-container1",
       goodDetails: [],
+      headerLeftStatus: true,
       cartlength: 0,
       value: 1,
       show: false
@@ -216,17 +210,17 @@ export default {
     },
 
     addOrderValue() {
-      this.value ++
+      this.value++;
     },
 
     shopDetailsData() {
-      getData().then(res=> {
-         res.homeData[this.$route.query.id - 1].data.forEach(list => {
+      getData().then(res => {
+        res.homeData[this.$route.query.id - 1].data.forEach(list => {
           if (list.id == this.$route.query.shop_id) {
             this.goodDetails.push(list);
           }
         });
-      })
+      });
     },
 
     jumpPay(list) {
@@ -241,489 +235,457 @@ export default {
         }
       });
     }
+  },
+
+  components: {
+    'v-header': header
   }
 };
 </script>
 
 <style lang="less" scoped>
-.goodDetail {
-  .header {
-    width: 100%;
-    height: 1.5rem;
-    z-index: 1;
-    position: fixed;
-    background: white;
+  .goodDetail {
+    .peizhi {
+      width: 90%;
+      margin: auto;
 
-    .in {
-      width: 80%;
-      height: 100%;
-      line-height: 1.5rem;
-      float: left;
-      text-align: center;
-      font-size: 0.45rem;
-    }
+      div {
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
 
-    .header-left {
-      width: 10%;
-      height: 100%;
-      float: left;
+      h3 {
+        height: 2rem;
+        line-height: 2.3rem;
+        font-size: 0.5rem;
+        border-bottom: 1px solid #ccc;
+      }
 
-      i {
-        font-size: 0.6rem;
-        line-height: 1.45rem;
-        text-align: center;
+      span {
+        font-size: 0.38rem;
+        color: #888;
+        margin-top: 0.3rem;
         display: block;
-      }
-    }
-
-    .header-right {
-      width: 10%;
-      height: 100%;
-      float: left;
-    }
-  }
-
-  .peizhi {
-    width: 90%;
-    margin: auto;
-
-    div {
-      margin-bottom: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    h3 {
-      height: 2rem;
-      line-height: 2.3rem;
-      font-size: 0.5rem;
-      border-bottom: 1px solid #ccc;
-    }
-
-    span {
-      font-size: 0.38rem;
-      color: #888;
-      margin-top: 0.3rem;
-      display: block;
-    }
-
-    p {
-      height: 0.55rem;
-      color: #888;
-    }
-  }
-
-  .cartlength {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    top: 1px;
-    left: 30px;
-    background: #f81301;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 15px;
-    color: white;
-  }
-
-  .goodDetailList {
-    margin-bottom: 1rem;
-    padding-top: 1.45rem;
-  }
-
-  .goodDetailHeader {
-    width: 100%;
-    z-index: 1;
-    height: 1.3rem;
-    line-height: 1.3rem;
-    font-size: 12px;
-    background: white;
-    position: fixed;
-    box-shadow: 0 0 10px #cecece;
-    text-align: center;
-    font-size: 0.41rem;
-  }
-
-  .goodDetailHeader i {
-    display: block;
-    float: left;
-    height: 50px;
-    padding-left: 0.3rem;
-    font-size: 0.71rem;
-    color: black;
-  }
-
-  .goodDetaiSwipe {
-    height: 8rem;
-    margin-top: 3px;
-    background: white;
-  }
-
-  .goodDetaiSwipe img {
-    width: 70%;
-    height: 7rem;
-    display: block;
-    /* margin-top: 60px; */
-    margin: auto;
-  }
-
-  .goodDetailMain {
-    background: white;
-    border-bottom: 1px solid #cecece;
-    padding: 0.4rem;
-    margin-top: -15px;
-  }
-
-  .goodDetailName {
-    color: black;
-    font-weight: 400;
-    font-size: 0.5rem;
-    line-height: 1rem;
-  }
-
-  .goodDetailPaid {
-    color: #f81200;
-    font-size: 0.7rem;
-    margin-top: 0.1rem;
-  }
-
-  .goodDetailFooter {
-    position: fixed;
-    width: 100%;
-    bottom: 0rem;
-    height: 1.2rem;
-    background: #f6f4f7;
-    border-top: 1px solid #efefef;
-
-    .left {
-      width: 45%;
-      float: left;
-      position: relative;
-      font-size: 0.35rem;
-
-      .cart {
-        width: 33%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        float: right;
-        position: relative;
-
-        img {
-          width: 0.76rem;
-          height: 0.7rem;
-          display: block;
-          margin: auto;
-        }
-
-        span {
-          text-align: center;
-          color: #767676;
-        }
-      }
-
-      .shop {
-        width: 33%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        float: right;
-
-        img {
-          width: 0.76rem;
-          height: 0.7rem;
-          display: block;
-          margin: auto;
-        }
-
-        span {
-          display: block;
-          text-align: center;
-          color: #767676;
-        }
-      }
-
-      .collection {
-        width: 33%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        float: right;
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        color: #767676;
-
-        .collection-box {
-          text-align: center;
-        }
-
-        i {
-          font-size: 0.6rem;
-          display: block;
-          text-align: center;
-        }
-
-        span {
-          text-align: center;
-        }
-      }
-    }
-
-    .rigth {
-      width: 55%;
-      float: right;
-
-      .add {
-        a {
-          display: block;
-          width: 50%;
-          height: 1.2rem;
-          line-height: 1.2rem;
-          text-align: center;
-          background: #ff9800;
-          color: white;
-          font-size: 0.35rem;
-          float: left;
-        }
-      }
-
-      .purchase {
-        a {
-          float: left;
-          display: block;
-          width: 50%;
-          height: 1.2rem;
-          line-height: 1.2rem;
-          text-align: center;
-          color: white;
-          font-size: 0.35rem;
-          background: #e3211e;
-        }
-      }
-    }
-  }
-
-  .category {
-    width: 100%;
-    height: 1.5rem;
-    border-bottom: 10px solid #f4f4f4;
-
-    .category-con {
-      float: left;
-      margin-left: 10px;
-      line-height: 1.28rem;
-      font-size: 0.34rem;
-
-      i {
-        float: left;
-        color: #0098df;
       }
 
       p {
-        float: left;
-        color: #777;
-        padding-left: 0.1rem;
+        height: 0.55rem;
+        color: #888;
       }
     }
 
-    .category-rigth {
-      float: right;
-      margin-right: 10px;
-      line-height: 1.28rem;
+    .cartlength {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 1px;
+      left: 30px;
+      background: #f81301;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 15px;
+      color: white;
     }
-  }
 
-  .boxbox {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background: rgba(0, 0, 0, 0.4);
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-  }
+    .goodDetailList {
+      margin-bottom: 1rem;
+      padding-top: 1.45rem;
+    }
 
-  .layer {
-    width: 100%;
-    height: 9rem;
-    background: white;
-    position: fixed;
-    bottom: 0;
-    z-index: 2;
-
-    .layer-box {
+    .goodDetailHeader {
       width: 100%;
-      height: 1.5rem;
-      line-height: 1.5rem;
-
-      .layer-box-left {
-        width: 10%;
-        height: 100%;
-        float: left;
-      }
-
-      .layer-box-in {
-        width: 80%;
-        height: 100%;
-        font-size: 0.4rem;
-        float: left;
-        text-align: center;
-      }
-
-      .layer-box-right {
-        width: 10%;
-        height: 100%;
-        float: left;
-
-        i {
-          font-size: 0.4rem;
-        }
-      }
+      z-index: 1;
+      height: 1.3rem;
+      line-height: 1.3rem;
+      font-size: 12px;
+      background: white;
+      position: fixed;
+      box-shadow: 0 0 10px #cecece;
+      text-align: center;
+      font-size: 0.41rem;
     }
 
-    .layer-box-2 {
-      width: 85%;
-      margin: 20px auto;
+    .goodDetailHeader i {
+      display: block;
+      float: left;
+      height: 50px;
+      padding-left: 0.3rem;
+      font-size: 0.71rem;
+      color: black;
+    }
 
-      .layer-box-2-1 {
-        width: 100%;
+    .goodDetaiSwipe {
+      height: 8rem;
+      margin-top: 3px;
+      background: white;
+    }
 
-        h3 {
-          font-size: 0.4rem;
-          padding-left: 0.1rem;
-          display: inline-block;
-        }
+    .goodDetaiSwipe img {
+      width: 70%;
+      height: 7rem;
+      display: block;
+      /* margin-top: 60px; */
+      margin: auto;
+    }
 
-        p {
-          font-size: 0.35rem;
-          height: 0.7rem;
-          line-height: 0.7rem;
-          color: #666;
-          margin-top: 0.15rem;
-          padding-left: 0.3rem;
+    .goodDetailMain {
+      background: white;
+      border-bottom: 1px solid #cecece;
+      padding: 0.4rem;
+      margin-top: -15px;
+    }
 
-          a {
-            color: #00acff;
+    .goodDetailName {
+      color: black;
+      font-weight: 400;
+      font-size: 0.5rem;
+      line-height: 1rem;
+    }
+
+    .goodDetailPaid {
+      color: #f81200;
+      font-size: 0.7rem;
+      margin-top: 0.1rem;
+    }
+
+    .goodDetailFooter {
+      position: fixed;
+      width: 100%;
+      bottom: 0rem;
+      height: 1.2rem;
+      background: #f6f4f7;
+      border-top: 1px solid #efefef;
+
+      .left {
+        width: 45%;
+        float: left;
+        position: relative;
+        font-size: 0.35rem;
+
+        .cart {
+          width: 33%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          float: right;
+          position: relative;
+
+          img {
+            width: 0.76rem;
+            height: 0.7rem;
+            display: block;
+            margin: auto;
+          }
+
+          span {
+            text-align: center;
+            color: #767676;
           }
         }
+
+        .shop {
+          width: 33%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          float: right;
+
+          img {
+            width: 0.76rem;
+            height: 0.7rem;
+            display: block;
+            margin: auto;
+          }
+
+          span {
+            display: block;
+            text-align: center;
+            color: #767676;
+          }
+        }
+
+        .collection {
+          width: 33%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          float: right;
+          border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+          color: #767676;
+
+          .collection-box {
+            text-align: center;
+          }
+
+          i {
+            font-size: 0.6rem;
+            display: block;
+            text-align: center;
+          }
+
+          span {
+            text-align: center;
+          }
+        }
+      }
+
+      .rigth {
+        width: 55%;
+        float: right;
+
+        .add {
+          a {
+            display: block;
+            width: 50%;
+            height: 1.2rem;
+            line-height: 1.2rem;
+            text-align: center;
+            background: #ff9800;
+            color: white;
+            font-size: 0.35rem;
+            float: left;
+          }
+        }
+
+        .purchase {
+          a {
+            float: left;
+            display: block;
+            width: 50%;
+            height: 1.2rem;
+            line-height: 1.2rem;
+            text-align: center;
+            color: white;
+            font-size: 0.35rem;
+            background: #e3211e;
+          }
+        }
+      }
+    }
+
+    .category {
+      width: 100%;
+      height: 1.5rem;
+      border-bottom: 10px solid #f4f4f4;
+
+      .category-con {
+        float: left;
+        margin-left: 10px;
+        line-height: 1.28rem;
+        font-size: 0.34rem;
 
         i {
           float: left;
           color: #0098df;
-          font-size: 0.5rem;
+        }
+
+        p {
+          float: left;
+          color: #777;
+          padding-left: 0.1rem;
         }
       }
 
-      .top {
-        margin-top: 0.6rem;
+      .category-rigth {
+        float: right;
+        margin-right: 10px;
+        line-height: 1.28rem;
       }
     }
 
-    .layer-box-button {
+    .boxbox {
       width: 100%;
-      height: 1.5rem;
-      border-top: 1px solid #eee;
-      position: absolute;
+      height: 100%;
+      position: fixed;
+      background: rgba(0, 0, 0, 0.4);
+      top: 0;
       bottom: 0;
+      z-index: 1;
+    }
 
-      div {
-        width: 95%;
-        height: 0.89rem;
-        line-height: 0.89rem;
-        display: block;
-        text-align: center;
-        margin: 0.25rem auto;
-        background: #00acff;
-        border-radius: 30px;
-        color: white;
-        font-size: 0.35rem;
+    .layer {
+      width: 100%;
+      height: 9rem;
+      background: white;
+      position: fixed;
+      bottom: 0;
+      z-index: 2;
+
+      .layer-box {
+        width: 100%;
+        height: 1.5rem;
+        line-height: 1.5rem;
+
+        .layer-box-left {
+          width: 10%;
+          height: 100%;
+          float: left;
+        }
+
+        .layer-box-in {
+          width: 80%;
+          height: 100%;
+          font-size: 0.4rem;
+          float: left;
+          text-align: center;
+        }
+
+        .layer-box-right {
+          width: 10%;
+          height: 100%;
+          float: left;
+
+          i {
+            font-size: 0.4rem;
+          }
+        }
+      }
+
+      .layer-box-2 {
+        width: 85%;
+        margin: 20px auto;
+
+        .layer-box-2-1 {
+          width: 100%;
+
+          h3 {
+            font-size: 0.4rem;
+            padding-left: 0.1rem;
+            display: inline-block;
+          }
+
+          p {
+            font-size: 0.35rem;
+            height: 0.7rem;
+            line-height: 0.7rem;
+            color: #666;
+            margin-top: 0.15rem;
+            padding-left: 0.3rem;
+
+            a {
+              color: #00acff;
+            }
+          }
+
+          i {
+            float: left;
+            color: #0098df;
+            font-size: 0.5rem;
+          }
+        }
+
+        .top {
+          margin-top: 0.6rem;
+        }
+      }
+
+      .layer-box-button {
+        width: 100%;
+        height: 1.5rem;
+        border-top: 1px solid #eee;
+        position: absolute;
+        bottom: 0;
+
+        div {
+          width: 95%;
+          height: 0.89rem;
+          line-height: 0.89rem;
+          display: block;
+          text-align: center;
+          margin: 0.25rem auto;
+          background: #00acff;
+          border-radius: 30px;
+          color: white;
+          font-size: 0.35rem;
+        }
       }
     }
-  }
 
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: all 0.3s ease;
-  }
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: all 0.3s ease;
+    }
 
-  .fade-enter,
-  .fade-leave-active {
-    transform: translateY(100%);
-  }
+    .fade-enter,
+    .fade-leave-active {
+      transform: translateY(100%);
+    }
 
-  .gooDetailNumber {
-    display: none;
-  }
+    .gooDetailNumber {
+      display: none;
+    }
 
-  .goodDetailImg {
-    margin-top: 4px;
-    margin-bottom: 6px;
-  }
+    .goodDetailImg {
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
 
-  .goodDetailImg img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    .goodDetailImg img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-  table td {
-    font-size: 0.31rem;
-    text-align: center;
-    color: #000;
-  }
+    table td {
+      font-size: 0.31rem;
+      text-align: center;
+      color: #000;
+    }
 
-  .goodDetailValue {
-    height: 2rem;
-    border-bottom: 1px solid #cecece;
-    padding: 0.4rem;
-  }
+    .goodDetailValue {
+      height: 2rem;
+      border-bottom: 1px solid #cecece;
+      padding: 0.4rem;
+    }
 
-  .goodDetailAdd {
-    width: 1rem;
-    height: 0.8rem;
-    line-height: 0.8rem;
-    display: block;
-    background: white;
-    float: left;
-    border: 1px solid #b2b2b2;
-    border-left: none;
-    text-align: center;
-    font-size: 0.5rem;
-    color: black;
-  }
+    .goodDetailAdd {
+      width: 1rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      display: block;
+      background: white;
+      float: left;
+      border: 1px solid #b2b2b2;
+      border-left: none;
+      text-align: center;
+      font-size: 0.5rem;
+      color: black;
+    }
 
-  .goodDetailReduce {
-    width: 1rem;
-    height: 0.8rem;
-    line-height: 0.8rem;
-    display: block;
-    background: white;
-    float: left;
-    border: 1px solid #b2b2b2;
-    border-right: none;
-    text-align: center;
-    font-size: 0.5rem;
-    color: black;
-  }
+    .goodDetailReduce {
+      width: 1rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      display: block;
+      background: white;
+      float: left;
+      border: 1px solid #b2b2b2;
+      border-right: none;
+      text-align: center;
+      font-size: 0.5rem;
+      color: black;
+    }
 
-  ._cartNumber input {
-    width: 1rem;
-    height: 0.8rem;
-    line-height: 0.8rem;
-    float: left;
-    border: 1px solid #b2b2b2;
-    text-align: center;
-    color: black;
-  }
+    ._cartNumber input {
+      width: 1rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      float: left;
+      border: 1px solid #b2b2b2;
+      text-align: center;
+      color: black;
+    }
 
-  ._Value {
-    float: left;
-    margin-top: 0.2rem;
-    font-size: 0.35rem;
-  }
+    ._Value {
+      float: left;
+      margin-top: 0.2rem;
+      font-size: 0.35rem;
+    }
 
-  .goodDetailColor {
-    display: none;
+    .goodDetailColor {
+      display: none;
+    }
   }
-}
 </style>

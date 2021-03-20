@@ -1,5 +1,6 @@
 <template>
   <div class="news">
+    <v-header title="新闻资讯" :headerLeftStatus="headerLeftStatus" @jump='jumpHome()'/>
     <div class="content">
       <li
         class="container-box"
@@ -21,17 +22,22 @@
 
 <script>
 import { getData } from '@/api/data'
-import footer from "@/components/footer/index";
+import header from '@/components/header/index'
+import footer from '@/components/footer/index'
 export default {
   data() {
     return {
-      news: []
+      news: [],
+      headerLeftStatus: false
     };
   },
   created() {
     this.newsData();
   },
   methods: {
+    jumpHome() {
+      console.log(1)
+    },
     jumpNewsDetail(list) {
       this.$router.push({
         name: "newsDetail",
@@ -47,6 +53,7 @@ export default {
     }
   },
   components: {
+    "v-header": header,
     "v-footer": footer
   }
 };

@@ -77,7 +77,7 @@ export default {
   created() {
     this.homeShopListData();
   },
-
+  
   methods: {
     jumpDetail(list,v) {
       this.$router.push({
