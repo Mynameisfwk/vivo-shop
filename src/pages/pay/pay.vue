@@ -90,7 +90,6 @@ export default {
       headerLeftStatus: true
     };
   },
-
   methods: {
     addOrder(list) {
         if (!this.invoice) {
@@ -101,29 +100,23 @@ export default {
         var Year = myDate.getFullYear();
         var Month = myDate.getMonth() + 1;
         var Day = myDate.getDate();
-
         list["paymentType"] = this.paymentType[this.paymentTypeIndex];
         list["invoice"] = this.invoice;
         list["content"] = this.content;
         list["homeValue"] = this.$route.params.value; //改变原来固定的数量 1
         list["orderNumber"] = Year + "" + Month + "" +  Day + ""  + Math.random().toFixed(15).substr(2); //订单号
-
         this.$store.commit("order/ADD_ORDER", list);
-        
         var time = setInterval(() => {
             clearInterval(time)
             this.$router.push('/success')
         },1000)
     },
-
     selectPaymentType(index) {
       this.paymentTypeIndex = index;
     },
-
     toFixed(value) {
       return value.toFixed(2);
     },
-
     orderDetail() {
       getData().then(res => {
         res.homeData[this.$route.query.shop_id - 1].data.forEach(list => {
@@ -134,12 +127,9 @@ export default {
       });
     }
   },
-
   mounted() {
     this.orderDetail();
-    console.log(this.pay)
   },
-
   components: {
     "v-header": header
   }
