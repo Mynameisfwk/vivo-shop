@@ -3,11 +3,11 @@
         <v-header title='商品详情' :headerLeftStatus="headerLeftStatus" />
         <div @click="" class="pay-address">
              <p class="address-box">
-                <span class="name">收货人：{{address_name}}</span>
-              <span class="phone">{{address_phone}}</span>
+                <span class="name">收货人：{{address.name}}</span>
+              <span class="phone">{{address.phone}}</span>
             </p>
             <p class="address-details">
-                收货地址：{{address}}{{xz_address}}
+                收货地址：{{address.zone}}{{address.detail}}
             </p>
         </div>
         <div class="pay-shop" v-for="(list,index) in pay" :key="index">
@@ -82,11 +82,12 @@ export default {
       invoice: "",
       paymentType: ["在线支付", "花呗分期", "货到付款"],
       paymentTypeIndex: 0,
-      headerLeftStatus: true
+      headerLeftStatus: true,
     };
   },
   methods: {
     addOrder(list) {
+        console.log(this.address.phone)
         if (!this.invoice) {
             Toast("请输入发票抬头");
             return false;
@@ -98,6 +99,9 @@ export default {
         list["paymentType"] = this.paymentType[this.paymentTypeIndex];
         list["invoice"] = this.invoice;
         list["content"] = this.content;
+        list["consignee"] = this.address.name;
+        list["phone"] = this.address.phone;
+        list["address"] = this.address.zone + this.address.detail
         list["homeValue"] = this.$route.params.value; //改变原来固定的数量 1
         list["orderNumber"] = Year + "" + Month + "" +  Day + ""  + Math.random().toFixed(15).substr(2); //订单号
         this.$store.commit("order/ADD_ORDER", list);
@@ -125,6 +129,17 @@ export default {
   mounted() {
     this.orderDetail();
   },
+  computed: {
+    address() {
+        var address = []
+        this.$store.state.address.forEach(list=> {
+            if(list.default) {
+                address = list
+            }
+        })
+        return address
+    }
+  },
   components: {
     "v-header": header
   }
@@ -138,11 +153,12 @@ export default {
     }
     .pay-address {
         width: 100%;
-        height: 4.3rem;
+        min-height: 4rem;
         background: url("https://shopstatic.vivo.com.cn/vivoshop/wap/dist/images/prod/bg-addr-box-line_d380baa.png")
             #fff left bottom repeat-x;
         background-size: 1.6rem;
         padding-top: 1.45rem;
+        padding-bottom: 0.3rem;
         display: block;
         .address-box {
             width: 87%;

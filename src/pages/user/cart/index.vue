@@ -30,7 +30,7 @@
               <a
                 href="javascript:;"
                 class="iconfont icon-huishouzhan7"
-                @click="delClistart(index)"
+                @click="delCartList(index)"
               ></a>
             </div>
             <p class="cartPrice">￥{{list.price}}</p>
@@ -80,7 +80,7 @@ export default {
     addCartValue(index) {
       this.$store.commit('cart/ADDCART_VALUE',index)
     },
-    delClistart(index) {
+    delCartList(index) {
       this.$store.commit('cart/DEL_CARTS',index)
     },
     reduceCartValue(index) {

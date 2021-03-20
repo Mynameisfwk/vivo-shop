@@ -17,28 +17,22 @@ const state = {
 const mutations = {
     // 添加地址
     [ADD_ADDRESS](state, data) {
-        if (data.name == '') {
+        if (!data.name) {
             Toast('请填写收货人姓名');
             return false;
         }
-
         if (!data.phone) {
-            if (!data.name) {
-                Toast('请填写收货人联系方式');
-                return false;
-            }
+            Toast('请填写收货人联系方式');
+            return false;
         }
-
         if (!data.zone) {
             Toast('请填写收货地址');
             return false;
         }
-
         if (!data.detail) {
             Toast('请填写详细收货地址');
             return false;
         }
-
         state.address.push({
             name: data.name,
             phone: data.phone,

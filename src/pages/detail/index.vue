@@ -149,14 +149,10 @@
             </div>
             <div class="rigth">
               <div class="add">
-                <a href="javascript:void(0);" @click="addCart(list)"
-                  >加入购物车</a
-                >
+                <a href="javascript:void(0);" @click="addCart(list)">加入购物车</a>
               </div>
               <div class="purchase">
-                <a href="javascript:void(0);" @click="jumpPay(list)"
-                  >提交订单</a
-                >
+                <a href="javascript:void(0);" @click="jumpPay(list)">提交订单</a>
               </div>
             </div>
           </div>
@@ -168,6 +164,7 @@
 
 <script>
 import header from '@/components/header/index'
+import { MessageBox } from 'mint-ui'
 import { getData } from "@/api/data";
 export default {
   name: "detail",
@@ -205,6 +202,18 @@ export default {
       });
     },
     jumpPay(list) {
+      if(!localStorage.getItem('user')) {
+        MessageBox({
+            title: '检测到你还未授权登陆',
+            message: '是否前去登陆',
+            showCancelButton: true
+            }).then(res => {
+            if(res == 'confirm') {
+              this.$router.push('/login')
+            }
+        });
+        return false;
+      }
       this.$router.push({
         path: "/pay",
         name: "pay",

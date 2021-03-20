@@ -6,6 +6,7 @@ import {
     SELECT_CARTS_LIST,
 } from '../mutations-type'
 
+import router from '../../router';
 import { Toast,MessageBox } from 'mint-ui'
 
 const state = {
@@ -18,6 +19,18 @@ const mutations = {
         var cartsId = state.carts.find(list => {
             return data.id == list.id
         });
+        if(!localStorage.getItem('user')) {
+            MessageBox({
+                title: '检测到你还未授权登陆',
+                message: '是否前去登陆',
+                showCancelButton: true
+                }).then(res => {
+                if(res == 'confirm') {
+                    router.push('/login')
+                }
+            });
+            return false;
+        }
         if (cartsId) {
             Toast({
                 message:'购物车已经存在',
