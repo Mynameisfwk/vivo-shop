@@ -223,35 +223,6 @@ export default {
             }
           }
         }
-
-        // .con {
-        //   width: 100%;
-        //   height: 1.41rem;
-        //   background: #ffffff;
-        //   border-bottom: 1px solid #f0f0f0;
-        //   display: block;
-
-        //   .con-left {
-        //     float: left;
-        //     line-height: 1.3rem;
-        //     padding-left: 0.47rem;
-
-        //     i {
-        //       font-size: 0.5rem;
-        //     }
-
-        //     span {
-        //       font-size: 0.37rem;
-        //       padding-left: 0.1rem;
-        //     }
-        //   }
-
-        //   .con-rigth {
-        //     float: right;
-        //     line-height: 1.3rem;
-        //     padding-right: 0.4rem;
-        //   }
-        // }
       }
 
       .container-order {
