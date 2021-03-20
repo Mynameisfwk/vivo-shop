@@ -12,7 +12,7 @@ import parts from '@/pages/shops/parts'
 import phone from '@/pages/shops/phone'
 
 // 整理路由中 分割线～
-import xz_address from "@/pages/user/children/xz_address"
+// import xz_address from "@/pages/user/children/xz_address"
 // import view from '@/pages/view/view'
 import order from '@/pages/user/order/index'
 import orderDetail from '@/pages/user/order/detail'
@@ -29,10 +29,10 @@ import pay from "@/pages/pay/pay"
 // import shopDetail from "@/pages/shop/shopDetail"
 import login from "@/pages/user/login"
 import register from "@/pages/user/register"
-import upaddress from "@/pages/user/children/upaddress"
+// import upaddress from "@/pages/user/children/upaddress"
 // import cart from '@/pages/user/children/cart'
 import main from "@/pages/user/main"
-import collection from "@/pages/user/children/collection"
+// import collection from "@/pages/user/children/collection"
 Vue.use(Router)
 
 export default new Router({
@@ -94,7 +94,7 @@ export default new Router({
 
     { path: '/login', name: 'login', component: login },
     // { path: '/view', name: 'view', component: view },
-    { path: '/xz_address', name: 'xz_address', component: xz_address },
+    // { path: '/xz_address', name: 'xz_address', component: xz_address },
    
     { path: '/register', name: 'register', component: register },
     { 
@@ -105,7 +105,7 @@ export default new Router({
         requireAuth: true
       },
     },
-    { path: '/collection', name: 'collection', component: collection },
+    // { path: '/collection', name: 'collection', component: collection },
 
     {
       path: '/order',

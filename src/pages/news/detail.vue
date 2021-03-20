@@ -14,7 +14,6 @@ export default {
       headerLeftStatus: true
     };
   },
-
   methods: {
     jumpNews() {
       this.$router.push({
@@ -22,7 +21,6 @@ export default {
       })
     }
   },
-
   components: {
     'v-header': header
   }
@@ -38,7 +36,6 @@ export default {
     display: flex;
     justify-content: center;
     margin: auto;
-    
     .detail-content {
       width: 100%;
       height: auto;

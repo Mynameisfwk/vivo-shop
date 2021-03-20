@@ -12,7 +12,6 @@
           >{{ list.name }}</span
         >
       </div>
-
       <div class="lower">
         <div class="lower_list" v-for="(list, index) in data" :key="index">
           <img :src="list.img_url" alt="图片" />

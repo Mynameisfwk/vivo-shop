@@ -1,49 +1,44 @@
 <template>
-    <div class='home'>
-        <div class="header">
-            <i class="iconfont icon-VIVO"></i>
-        </div>
-        <div class="official"></div>
-        <div class="swiper">
-            <mt-swipe :auto="4000">
-                <mt-swipe-item >
-                    <img src="https://shopstatic.vivo.com.cn/vivoshop/commodity/20180418/20180418104131830678_original.jpg">
-                </mt-swipe-item>
-            </mt-swipe>
-        </div>
-        
-        <div class="icon">
-            <ul class='icon-ul'>
-                <li class='icon-li' v-for="(list,index) in routers" :key='index'>
-                  <router-link :to="{ path: list.src }" >
-                    <img :src="list.img" alt="vivo">
-                  </router-link>
-                </li>
-            </ul>
-        </div>
-
-        <div class="main">
-            <div class="main-box" v-for="(list,index) in shopListData" :key="index">
-                <h2>{{list.title}}</h2>
-                <ul>
-                    <li v-for="(v,i) in list.data" :key='i' @click="jumpDetail(list,v)">
-                        <div class="list">
-                            <div class="image">
-                                <img :src="v.img_url" alt="图片">
-                            </div>
-                            <p class="name">{{v.name}}</p>
-                            <p class="nametwo">{{v.content}}</p>
-                            <p class="price">￥ {{toFixed(v.price)}} </p>
+  <div class='home'>
+    <div class="header">
+        <i class="iconfont icon-VIVO"></i>
+    </div>
+    <div class="official"></div>
+    <div class="swiper">
+        <mt-swipe :auto="4000">
+            <mt-swipe-item >
+                <img src="https://shopstatic.vivo.com.cn/vivoshop/commodity/20180418/20180418104131830678_original.jpg">
+            </mt-swipe-item>
+        </mt-swipe>
+    </div>
+    <div class="icon">
+        <ul class='icon-ul'>
+            <li class='icon-li' v-for="(list,index) in routers" :key='index'>
+              <router-link :to="{ path: list.src }" >
+                <img :src="list.img" alt="vivo">
+              </router-link>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="main-box" v-for="(list,index) in shopListData" :key="index">
+            <h2>{{list.title}}</h2>
+            <ul>
+                <li v-for="(v,i) in list.data" :key='i' @click="jumpDetail(list,v)">
+                    <div class="list">
+                        <div class="image">
+                            <img :src="v.img_url" alt="图片">
                         </div>
-                    </li>
-                </ul>  
-            </div>
+                        <p class="name">{{v.name}}</p>
+                        <p class="nametwo">{{v.content}}</p>
+                        <p class="price">￥ {{toFixed(v.price)}} </p>
+                    </div>
+                </li>
+            </ul>  
         </div>
-      
-        <v-footer></v-footer>
     </div>
-    </div>
-    </div>
+    <v-footer></v-footer>
+  </div>
 </template>
 <script>
 import { getData } from '@/api/data'
@@ -73,7 +68,6 @@ export default {
       shopListData: []
     };
   },
-
   methods: {
     jumpDetail(list,v) {
       this.$router.push({
@@ -84,23 +78,19 @@ export default {
         }
       });
     },
-
     toFixed(value) {
       // 因为data.json里面的prcie是字符串类型 所以这边需要做个处理
       return JSON.parse(value).toFixed(2)
     },
-
     homeShopListData() {
       getData().then(res=> {
         this.shopListData = res.homeData;
       })
     },
   },
-
   mounted() {
     this.homeShopListData();
   },
-
   components: {
     "v-footer": footer
   },
@@ -111,7 +101,6 @@ export default {
   .home {
     width: 100%;
     height: auto;
-    
     .header {
       position: fixed;
       width: 100%;
@@ -121,7 +110,6 @@ export default {
       line-height: 1.45rem;
       font-size: 0.35rem;
       background: black;
-
       i {
         font-size: 0.55rem;
         color: white;
@@ -129,7 +117,6 @@ export default {
         display: block;
       }
     }
-
     .official {
       width: 100%;
       height: 0.8rem;
@@ -138,40 +125,33 @@ export default {
       background: url("/static/img/official.png") no-repeat;
       background-size: 100% 100%;
     }
-
     .swiper {
       margin-top: 1px;
       height: 6.9rem;
-
       img {
         width: 100%;
         height: 6.9rem;
       }
     }
-
     .icon {
       width: 100%;
       height: 2rem;
       background: white;
       border-bottom: 1px solid #f4f4f4;
-
       .icon-ul {
         width: 100%;
         height: 100%;
-
         .icon-li {
           width: 25%;
           height: 100%;
           float: left;
           margin: auto;
-
           a {
             width: 100%;
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-
             img {
               display: block;
               width: 70%;
@@ -180,10 +160,8 @@ export default {
         }
       }
     }
-
     .main {
       margin-bottom: 1.6rem;
-
       h2 {
         display: block;
         height: 1.6rem;
@@ -193,7 +171,6 @@ export default {
         color: #333;
         text-align: center;
       }
-
       h2::before,
       h2::after {
         position: relative;
@@ -205,16 +182,13 @@ export default {
         background-color: #9c9c9c;
         top: -0.16rem;
       }
-
       ul {
         width: 100%;
         height: auto;
         overflow: hidden;
       }
-
       li {
         list-style: none;
-
         .list {
           width: 50%;
           height: auto;
@@ -223,7 +197,6 @@ export default {
           border-right: 1px solid #f4f4f4;
           border-top: 1px solid #f4f4f4;
           padding-bottom: 0.25rem;
-
           .price {
             margin: auto;
             text-align: center;
@@ -233,7 +206,6 @@ export default {
             padding-top: 0.8rem;
             padding-bottom: 0.2rem;
           }
-
           .name {
             width: 80%;
             height: 0.64rem;
@@ -246,7 +218,6 @@ export default {
             font-weight: 800;
             text-align: center;
           }
-
           .nametwo {
             width: 90%;
             height: 0.99rem;
@@ -258,13 +229,11 @@ export default {
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
           }
-
           .image {
             width: 100%;
             background: white;
             padding-top: 0.2rem;
             padding-bottom: 0.3rem;
-
             img {
               width: 2.48rem;
               height: 2.6rem;

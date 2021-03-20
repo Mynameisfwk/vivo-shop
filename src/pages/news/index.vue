@@ -45,11 +45,9 @@ export default {
       })
     }
   },
-
   mounted() {
     this.newsData();
   },
-
   components: {
     "v-header": header,
     "v-footer": footer
@@ -65,14 +63,12 @@ export default {
     background: #ffffff;
     position: relative;
     top: 1.45rem;
-
     .container-box {
       width: 100%;
       height: auto;
       background: white;
       border-bottom: 1px dotted #cccccc;
       padding-bottom: 0.3rem;
-
       .container-title {
         color: #505b63;
         width: 95%;
@@ -82,18 +78,15 @@ export default {
         height: 1.5rem;
         line-height: 1.5rem;
       }
-
       .container-img {
         width: 95%;
         height: 4.3rem;
         margin: auto;
-
         img {
           width: 100%;
           height: 100%;
         }
       }
-
       .container-con {
         width: 95%;
         margin: auto;
@@ -103,7 +96,6 @@ export default {
         text-align: justify;
         font-size: 0.3rem;
       }
-
       .container-time {
         width: 95%;
         margin: auto;

@@ -26,12 +26,10 @@
         </ul>
       </div>
     </div>
-    <v-footer></v-footer>
   </div>
 </template>
 
 <script>
-import footer from "../../pages/footer";
 import axios from "axios";
 import { mapGetters } from "vuex";
 export default {
@@ -46,7 +44,6 @@ export default {
     };
   },
   components: {
-    "v-footer": footer,
   },
   //    mounted(){
   //       this.$nextTick(() => {

@@ -12,7 +12,6 @@
           >{{ list.name }}</span
         >
       </div>
-
       <div class="lower">
         <div class="lower_list" v-for="(list, index) in data" :key="index">
           <img :src="list.img_url" alt="图片" />
@@ -38,7 +37,6 @@ export default {
       headerLeftStatus: true
     };
   },
-
   methods: {
     selectIndex(index) {
       this.selectShopIndex = index;
@@ -46,24 +44,20 @@ export default {
         this.data = res.phone[index].data;
       });
     },
-
     accessories() {
       getData().then(res => {
         this.list = res.phone;
         this.data = res.phone[0].data;
       });
     },
-
     toFixed(value) {
       // 因为data.json里面的prcie是字符串类型 所以这边需要做个处理
       return JSON.parse(value).toFixed(2);
     }
   },
-
   mounted() {
     this.accessories();
   },
-
   components: {
     "v-header": header
   }

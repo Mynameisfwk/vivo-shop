@@ -1,18 +1,17 @@
 <template>
-<div>
-  <v-header title='支付' :headerLeftStatus="headerLeftStatus" />
-  <div class="success">
-    <i class="iconfont icon-chenggong1"></i>
-    <h2>购买成功</h2>
-    <p>已收到您的货款,请留意
-      <router-link to="/order" >订单信息</router-link>
-      以及
-      <router-link to="/order">物流信息</router-link>
-      另外祝您生活愉快 感谢您的支持与厚爱
-    </p>
+  <div>
+    <v-header title="支付" :headerLeftStatus="headerLeftStatus" />
+    <div class="success">
+      <i class="iconfont icon-chenggong1"></i>
+      <h2>购买成功</h2>
+      <p>已收到您的货款,请留意
+        <router-link to="/order" >订单信息</router-link>
+        以及
+        <router-link to="/order">物流信息</router-link>
+        另外祝您生活愉快 感谢您的支持与厚爱
+      </p>
+    </div>
   </div>
-</div>
- 
 </template>
 
 <script>
@@ -23,7 +22,6 @@ export default {
       headerLeftStatus: true
     }
   },
-
   components:{
     'v-header': header
   }
