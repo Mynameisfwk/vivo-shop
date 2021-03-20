@@ -26,7 +26,7 @@
       </router-link>
 
       <div class="container-con">
-        <router-link  :to="{name:'collection'}" class="con">
+        <router-link :to="{name:'collection'}" class="con">
           <div class="con-left">
             <i class="iconfont icon-collection"></i>
             <span>我的收藏</span>
@@ -99,8 +99,9 @@ export default {
 
 
 <style lang="less" scoped>
-
   .user {
+    width: 100%;
+    height: auto;
 
     .t {
       background-image: url('/static/img/t.png');
@@ -184,36 +185,73 @@ export default {
       }
 
       .container-con {
-        margin-bottom: 1.45rem;
+        background: #ffffff;
 
-        .con {
-          width: 100%;
-          height: 1.41rem;
-          background: #ffffff;
-          border-bottom: 1px solid #f0f0f0;
-          display: block;
+        a {
+          width: 90%;
+          height: 1.5rem;
+          display: flex;
+          justify-content: space-between;
+          margin: auto;
 
           .con-left {
-            float: left;
-            line-height: 1.3rem;
-            padding-left: 0.47rem;
-
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            
             i {
               font-size: 0.5rem;
+              margin-right: 0.2rem;
             }
 
             span {
-              font-size: 0.37rem;
+              font-size: 0.4rem;
               padding-left: 0.1rem;
             }
           }
 
           .con-rigth {
-            float: right;
-            line-height: 1.3rem;
-            padding-right: 0.4rem;
+            width: 10%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            i {
+              font-size: 0.5rem;
+            }
           }
         }
+
+        // .con {
+        //   width: 100%;
+        //   height: 1.41rem;
+        //   background: #ffffff;
+        //   border-bottom: 1px solid #f0f0f0;
+        //   display: block;
+
+        //   .con-left {
+        //     float: left;
+        //     line-height: 1.3rem;
+        //     padding-left: 0.47rem;
+
+        //     i {
+        //       font-size: 0.5rem;
+        //     }
+
+        //     span {
+        //       font-size: 0.37rem;
+        //       padding-left: 0.1rem;
+        //     }
+        //   }
+
+        //   .con-rigth {
+        //     float: right;
+        //     line-height: 1.3rem;
+        //     padding-right: 0.4rem;
+        //   }
+        // }
       }
 
       .container-order {
