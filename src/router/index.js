@@ -7,8 +7,9 @@ import newsDetail from '@/pages/news/detail'
 import cart from '@/pages/user/cart/index'
 import address from "@/pages/user/address/index"
 import add_address from "@/pages/user/address/add"
-
 import success from '@/pages/pay/success'
+import parts from '@/pages/shops/parts'
+import phone from '@/pages/shops/phone'
 
 // 整理路由中 分割线～
 import xz_address from "@/pages/user/children/xz_address"
@@ -16,10 +17,10 @@ import xz_address from "@/pages/user/children/xz_address"
 import order from '@/pages/order/index'
 import orderDetail from '@/pages/order/detail'
 // import OrderDetails from '@/pages/order/orderView'
-import choose from '@/pages/choose'
+// import choose from '@/pages/choose'
 // import news from '@/pages/News/news'
 // import newsView from '@/pages/News/newsView'
-import parts from '@/pages/parts'
+
 import classify from "@/pages/Classify/classify"
 import pay from "@/pages/pay/pay"
 
@@ -112,11 +113,12 @@ export default new Router({
       component: order,
     },
     { path: '/orderDetail', name: 'orderDetail', component: orderDetail },
-    { path: '/choose', name: 'choose', component: choose },
+    // { path: '/choose', name: 'choose', component: choose },
     // { path: '/newsView', name: 'newsView', component: newsView },
 
     // { path: '/news', name: 'news', component: news },
     { path: '/parts', name: 'parts', component: parts },
+    { path: '/phone', name: 'phone', component: phone },
     // { path: '/change', name: 'change', component: change },
     { path: '/classify', name: 'classify', component: classify },
     {

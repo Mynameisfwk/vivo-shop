@@ -55,7 +55,7 @@ export default {
       routers: [
         {
           img: "/static/img/xuangou.jpg",
-          src: "/collection"
+          src: "/phone"
         },
         {
           img: "/static/img/peijian.jpg",
