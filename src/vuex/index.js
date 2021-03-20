@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import {
     ADD_ADDRESS,
-    DEL_ADDRESS
+    DEL_ADDRESS,
+    SET_DEFAULT
 } from './mutations-type'
 import cart from './modules/cart'
 import order from './modules/order'
@@ -42,7 +43,8 @@ const mutations = {
             name: data.name,
             phone: data.phone,
             zone: data.zone,
-            detail: data.detail
+            detail: data.detail,
+            default: false
         });
         localStorage.setItem('address',JSON.stringify(state.address));
         Toast('添加成功');
@@ -55,7 +57,7 @@ const mutations = {
             showCancelButton: true
         }).then(res => {
             if (res == 'confirm') {
-                state.address.push(data);
+                state.address.splice(index,1)
                 localStorage.setItem('address',JSON.stringify(state.address));
                 Toast({
                     message: '地址删除成功',
@@ -63,6 +65,17 @@ const mutations = {
                 });
             }
         });
+    },
+    // 选择默认地址
+    [SET_DEFAULT](state,index) {
+        state.address.forEach((list,listIndex) => {
+            if(index == listIndex) {
+                list.default = true
+            } else {
+                list.default = false
+            }
+        });
+        localStorage.setItem('address',JSON.stringify(state.address));
     }
 }
 

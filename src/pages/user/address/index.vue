@@ -1,5 +1,6 @@
 <template>
   <div class="address">
+    <v-header title="收货地址" :headerLeftStatus="headerLeftStatus"/>
     <div class="Address-box">
       <div class="address-one">
         <p class="left">配送地址</p>
@@ -10,21 +11,22 @@
         v-for="(list, index) in address"
         :key="index"
         :class="{ active: index === $store.state.nowIndex }"
-        @click="btn(list, index)"
       >
         <p class="address-box">
           <span class="name">收货人：{{ list.name }}</span>
+          <span v-if="!list.default" @click="setDetault(index)">设为默认</span>
+          <span v-else>默认</span>
           <span class="phone">{{ list.phone }}</span>
         </p>
         <p class="address-details">
-          收货地址：{{ list.address }}{{ list.xx_address }}
+          收货地址：{{ list.zone }}{{ list.detail }}
         </p>
         <div class="address-operation">
           <p class="address-operation-box">
             <i class="iconfont icon-bianji"></i>
             <i
               class="iconfont icon-lajitong"
-              @click.stop="del_address(list)"
+              @click.stop="delAddress(index)"
             ></i>
           </p>
         </div>
@@ -34,23 +36,43 @@
 </template>
 
 <script>
+import header from '@/components/header/index'
+
+function arr (arr) {
+  var len = arr.length
+  for(var i=0;i<len-1;i++) {
+    for(var j=0;j<len-1;j++) {
+      if(len[j] != len[j+1]) {
+        var t = len[j+1]
+        len[j+1] = len[j]
+        len[j] = t
+      }
+    }
+  }
+}
 export default {
   data() {
     return {
       nowIndex: 0,
-      address: this.$store.state.address
+      address: this.$store.state.address,
+      headerLeftStatus: true
     };
   },
-  components: {
-    
-  },
-
   methods: {
     jumpAddress() {
       this.$router.push({
         path: "add_address"
       });
+    },
+    delAddress(index) {
+      this.$store.commit('DEL_ADDRESS',index)
+    },
+    setDetault(index) {
+      this.$store.commit('SET_DEFAULT',index);
     }
+  },
+  components: {
+    "v-header": header
   }
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <v-header title="新增地址" :headerLeftStatus="headerLeftStatus"/>
     <div class="address">
       <div class="address-box">
         <label for="">收货人：</label>
@@ -45,7 +46,8 @@
 </template>
 
 <script>
-import { Toast } from "mint-ui";
+import header from '@/components/header/index'
+import { Toast,Switch } from "mint-ui";
 export default {
   name: "add_address",
   data() {
@@ -54,69 +56,72 @@ export default {
         name: "",
         phone: "",
         zone: "",
-        detail: ""
-      }
+        detail: "",
+      },
+      headerLeftStatus: true
     };
   },
-
   methods: {
     saveAddress() {
-        this.$store.commit('ADD_ADDRESS',this.addressData)
+      this.$store.commit('ADD_ADDRESS',this.addressData)
+      this.$router.push('/address')
     }
   },
-
   components: {
-    
+    "v-header": header
   }
 };
 </script>
 
 <style lang="less" scoped>
-.address {
-  padding-top: 1.45rem;
-
-  .address-box {
-    width: 100%;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    background: #fff;
-
-    label {
-      width: 30%;
-      height: 100%;
-      padding-left: 0.58rem;
-      font-size: 0.4rem;
-      display: block;
-      float: left;
+  .page {
+    .address {
+      padding-top: 1.45rem;
+      .address-box {
+        width: 100%;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        background: #fff;
+        display: flex;
+        label {
+          width: 30%;
+          height: 100%;
+          padding-left: 0.58rem;
+          font-size: 0.4rem;
+          display: block;
+          float: left;
+        }
+        input {
+          width: 70%;
+          height: 100%;
+          font-size: 0.4rem;
+        }
+        .mint-switch{
+          display: flex;
+          align-items: center;
+        }
+      }
     }
-
-    input {
-      width: 70%;
-      font-size: 0.4rem;
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 1.3rem;
+      border-top: 1px solid #e0e0e0;
+      background: #ffffff;
+      a {
+        float: none;
+        display: block;
+        margin: 0.18rem auto;
+        text-align: center;
+        width: 95%;
+        height: 0.9rem;
+        line-height: 0.9rem;
+        border-radius: 20px;
+        font-size: 0.28rem;
+        color: #fff;
+        background-color: #00acff;
+      }
     }
   }
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 1.3rem;
-  border-top: 1px solid #e0e0e0;
-  background: #ffffff;
-
-  a {
-    float: none;
-    display: block;
-    margin: 0.18rem auto;
-    text-align: center;
-    width: 95%;
-    height: 0.9rem;
-    line-height: 0.9rem;
-    border-radius: 20px;
-    font-size: 0.28rem;
-    color: #fff;
-    background-color: #00acff;
-  }
-}
 </style>

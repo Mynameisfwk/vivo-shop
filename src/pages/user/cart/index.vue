@@ -20,7 +20,6 @@
               style="color:#25b5fe"
             ></i>
           </div>
-
           <!-- 购物车商品信息 -->
           <div class="cartImage">
              <img :src="list.img_url">
@@ -46,7 +45,6 @@
         </li>
       </ul>
     </div>
-
     <div class="cartImg" v-if="!carts.length">
       <img src="/static/img/gouwuche.png" alt="购物车图片">
       <h1>购物车是空的哦，快去购物吧</h1>
@@ -78,14 +76,6 @@ export default {
       carts: this.$store.state.cart.carts
     };
   },
-
-  components: {
-  },
-
-  created() {
-    console.log(this.$store)
-  },
-  
   methods: {
     addCartValue(index) {
       this.$store.commit('cart/ADDCART_VALUE',index)
@@ -100,7 +90,6 @@ export default {
       this.$store.commit('cart/SELECT_CARTS_LIST',index)
     }
   },
-
   computed: {
     TotalPrice() {
       var sum = 0
