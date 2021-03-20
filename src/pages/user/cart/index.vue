@@ -71,7 +71,6 @@
   </div>
 </template>
 <script>
-import CartHeader from "../../../common/header";
 export default {
   name: "cart",
   data() {
@@ -81,7 +80,6 @@ export default {
   },
 
   components: {
-    CartHeader
   },
 
   created() {

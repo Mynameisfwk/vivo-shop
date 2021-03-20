@@ -1,7 +1,7 @@
 <template>
     <div class="header">
        <div class="header-left">
-            <i class="iconfont icon-zuojiantou" v-show="headerLeftStatus" @click="jumpRouter()"></i>
+            <i class="iconfont icon-zuojiantou" v-show="headerLeftStatus"  @click="$router.back()"></i>
        </div>
         <div class="header-in">{{title}}</div>
         <div class="header-right"></div>
@@ -13,12 +13,9 @@ export default {
     name: 'ceshi',
     props: ['title','headerLeftStatus'],
     data() {
-        
+        return {}
     },
     methods: {
-        jumpRouter() {
-            this.$emit('jumpRouter')
-        }
     }
 }
 </script>

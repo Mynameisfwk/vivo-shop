@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-    <Address-Header title="新增地址"></Address-Header>
     <div class="address">
       <div class="address-box">
         <label for="">收货人：</label>
@@ -46,7 +45,6 @@
 </template>
 
 <script>
-import AddressHeader from "../../../common/header";
 import { Toast } from "mint-ui";
 export default {
   name: "add_address",
@@ -68,7 +66,7 @@ export default {
   },
 
   components: {
-    AddressHeader
+    
   }
 };
 </script>

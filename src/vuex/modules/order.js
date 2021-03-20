@@ -3,7 +3,7 @@ import {
     DEL_ORDER
 } from '../mutations-type'
 
-import { Toast,MessageBox } from 'mint-ui'
+import { Toast,MessageBox,Indicator } from 'mint-ui'
 
 const state = {
     orders: localStorage.getItem('orders') ? JSON.parse(localStorage.getItem('orders')) : []
@@ -11,9 +11,18 @@ const state = {
 
 const mutations = {
     [ADD_ORDER](state,data) {
-        state.orders.push(data)
-        localStorage.setItem('orders',JSON.stringify(state.orders))
-        Toast('订单支付成功！');
+        Indicator.open({
+            text: '支付中...',
+            spinnerType: 'fading-circle',
+        })
+
+        var time = setInterval(() => {
+            state.orders.push(data)
+            localStorage.setItem('orders',JSON.stringify(state.orders))
+            Toast('订单支付成功！');
+            clearInterval(time);
+            Indicator.close()
+        },1000)
     },
 
     [DEL_ORDER](state,index) {

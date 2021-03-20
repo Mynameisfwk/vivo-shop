@@ -8,6 +8,8 @@ import cart from '@/pages/user/cart/index'
 import address from "@/pages/user/address/index"
 import add_address from "@/pages/user/address/add"
 
+import success from '@/pages/pay/success'
+
 // 整理路由中 分割线～
 import xz_address from "@/pages/user/children/xz_address"
 // import view from '@/pages/view/view'
@@ -18,7 +20,6 @@ import choose from '@/pages/choose'
 // import news from '@/pages/News/news'
 // import newsView from '@/pages/News/newsView'
 import parts from '@/pages/parts'
-import success from '../common/success'
 import classify from "@/pages/Classify/classify"
 import pay from "@/pages/pay/pay"
 
@@ -82,6 +83,12 @@ export default new Router({
       name:'add_address',
       component: add_address
     },
+    
+    {
+      path: '/success',
+      name:'success',
+      component: success
+    },
 
 
     { path: '/login', name: 'login', component: login },
@@ -111,7 +118,6 @@ export default new Router({
     // { path: '/news', name: 'news', component: news },
     { path: '/parts', name: 'parts', component: parts },
     // { path: '/change', name: 'change', component: change },
-    { path: '/success', name: 'success', component: success },
     { path: '/classify', name: 'classify', component: classify },
     {
       path: '/pay',

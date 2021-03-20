@@ -1,6 +1,5 @@
 <template>
   <div class="address">
-    <Address-Header title="管理收货地址"></Address-Header>
     <div class="Address-box">
       <div class="address-one">
         <p class="left">配送地址</p>
@@ -35,8 +34,6 @@
 </template>
 
 <script>
-import AddressHeader from "../../../common/header";
-
 export default {
   data() {
     return {
@@ -45,7 +42,7 @@ export default {
     };
   },
   components: {
-    AddressHeader
+    
   },
 
   methods: {

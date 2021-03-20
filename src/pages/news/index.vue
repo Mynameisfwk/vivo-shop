@@ -1,6 +1,6 @@
 <template>
   <div class="news">
-    <v-header title="新闻资讯" :headerLeftStatus="headerLeftStatus" @jump='jumpHome()'/>
+    <v-header title="新闻资讯" :headerLeftStatus="headerLeftStatus"/>
     <div class="content">
       <li
         class="container-box"
@@ -28,16 +28,9 @@ export default {
   data() {
     return {
       news: [],
-      headerLeftStatus: false
     };
   },
-  created() {
-    this.newsData();
-  },
   methods: {
-    jumpHome() {
-      console.log(1)
-    },
     jumpNewsDetail(list) {
       this.$router.push({
         name: "newsDetail",
@@ -52,6 +45,11 @@ export default {
       })
     }
   },
+
+  mounted() {
+    this.newsData();
+  },
+
   components: {
     "v-header": header,
     "v-footer": footer

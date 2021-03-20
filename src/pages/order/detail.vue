@@ -1,6 +1,5 @@
 <template>
   <div class="o1">
-    <Order-Header title="订单详情"></Order-Header>
     <div class="details-box">
       <div class="details-success">
         <p>订单状态：已完成</p>
@@ -91,7 +90,6 @@
 </template>
 
 <script>
-import OrderHeader from "../../common/header";
 
 export default {
   name: "detail",
@@ -101,7 +99,7 @@ export default {
     };
   },
   components: {
-    OrderHeader
+    
   },
 
   created() {

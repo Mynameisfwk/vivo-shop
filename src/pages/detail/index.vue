@@ -1,6 +1,6 @@
 <template>
   <div class="goodDetail" id="transitionName">
-    <v-header title="商品详情" :headerLeftStatus="headerLeftStatus" @jumpRouter="$router.back()"/>
+    <v-header title="商品详情" :headerLeftStatus="headerLeftStatus" />
     <div class="goodDetailList">
       <ul style="background: white;">
         <li v-for="(list, index) in goodDetails" :key="index">
@@ -34,7 +34,7 @@
                 @click="reduceOrderValue()"
                 >-</a
               >
-              <input type="text" v-model="value" readonly="readonly" />
+              <input type="text" v-model="shopNumber" readonly="readonly" />
               <a
                 href="javascript:;"
                 class="goodDetailAdd"
@@ -181,18 +181,12 @@ export default {
   name: "detail",
   data() {
     return {
-      active: "1",
-      selected: "tab-container1",
       goodDetails: [],
+      shopNumber: 1,
+      show: false,
       headerLeftStatus: true,
-      cartlength: 0,
-      value: 1,
-      show: false
+      selected: "tab-container1",
     };
-  },
-
-  created() {
-    this.shopDetailsData();
   },
 
   methods: {
@@ -203,20 +197,20 @@ export default {
         name: list.name,
         price: list.price,
         select: false,
-        value: this.value
+        value: this.shopNumber
       };
 
       this.$store.commit("cart/ADD_CARTS", data);
     },
 
     addOrderValue() {
-      this.value++;
+      this.shopNumber ++;
     },
 
     shopDetailsData() {
       getData().then(res => {
-        res.homeData[this.$route.query.id - 1].data.forEach(list => {
-          if (list.id == this.$route.query.shop_id) {
+        res.homeData[this.$route.query.shop_id - 1].data.forEach(list => {
+          if (list.id == this.$route.query.id) {
             this.goodDetails.push(list);
           }
         });
@@ -228,13 +222,18 @@ export default {
         path: "/pay",
         name: "pay",
         query: {
-          id: list.id
+          id: list.id,
+          shop_id: this.$route.query.shop_id
         },
         params: {
-          value: this.value
+          value: this.shopNumber
         }
       });
     }
+  },
+
+  mounted() {
+    this.shopDetailsData()
   },
 
   components: {

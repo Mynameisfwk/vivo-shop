@@ -1,6 +1,6 @@
 <template>
   <div class="user">
-    <v-header title="个人中心" />
+    <v-header title="个人中心" :headerLeftStatus="headerLeftStatus"/>
     <div class="container">
       <div class="container-bj">
         <div class="bj-left">
@@ -67,8 +67,6 @@ import footer from '@/components/footer/index'
 export default {
   data() {
     return {
-      name: "",
-      jifeng:"123",
       container: [
         {
           img: "/static/img/111.png",
@@ -87,23 +85,14 @@ export default {
           name: "退货/退款"
         }
       ],
-      user_img:'',
-      moneny:'',
-      user: JSON.parse(localStorage.getItem('user'))
+      user: JSON.parse(localStorage.getItem('user')),
+      headerLeftStatus: false
     };
   },
-  components:{
-    'v-header': header,
-    'v-footer': footer
-  },
-  created() {
-    console.log(this.user)
-  },
-  mounted() {
 
-  },
-  methods:{
-    
+  components: {
+    "v-header": header,
+    "v-footer": footer
   }
 };
 </script>

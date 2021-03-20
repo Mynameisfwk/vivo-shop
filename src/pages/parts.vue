@@ -1,6 +1,6 @@
 <template>
   <div class="parts">
-    <Parts-Header title="选购配件"></Parts-Header>
+    <v-header title="手机配件" :headerLeftStatus="headerLeftStatus" />
     <div class="partsMain">
       <div class="upper">
         <span
@@ -26,23 +26,17 @@
 </template>
 
 <script>
+import header from "@/components/header/index";
 import { getData } from "@/api/data";
-import PartsHeader from "../common/header";
 export default {
   data() {
     return {
       selected: "tab-container1",
       data: [],
       list: [],
-      selectShopIndex: 0
+      selectShopIndex: 0,
+      headerLeftStatus: true
     };
-  },
-  components: {
-    PartsHeader
-  },
-
-  created() {
-    this.accessories();
   },
 
   methods: {
@@ -64,6 +58,14 @@ export default {
       // 因为data.json里面的prcie是字符串类型 所以这边需要做个处理
       return JSON.parse(value).toFixed(2);
     }
+  },
+
+  mounted() {
+    this.accessories();
+  },
+
+  components: {
+    "v-header": header
   }
 };
 </script>

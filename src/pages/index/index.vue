@@ -26,7 +26,7 @@
             <div class="main-box" v-for="(list,index) in shopListData" :key="index">
                 <h2>{{list.title}}</h2>
                 <ul>
-                    <li v-for="(v,index) in list.data" :key='v' @click="jumpDetail(list,v)">
+                    <li v-for="(v,i) in list.data" :key='i' @click="jumpDetail(list,v)">
                         <div class="list">
                             <div class="image">
                                 <img :src="v.img_url" alt="图片">
@@ -36,7 +36,7 @@
                             <p class="price">￥ {{toFixed(v.price)}} </p>
                         </div>
                     </li>
-                </ul>
+                </ul>  
             </div>
         </div>
       
@@ -74,17 +74,13 @@ export default {
     };
   },
 
-  created() {
-    this.homeShopListData();
-  },
-  
   methods: {
     jumpDetail(list,v) {
       this.$router.push({
         path: "detail",
         query: {
-          id: list.id,
-          shop_id: v.id
+          id: v.id,
+          shop_id: list.id
         }
       });
     },
@@ -99,6 +95,10 @@ export default {
         this.shopListData = res.homeData;
       })
     },
+  },
+
+  mounted() {
+    this.homeShopListData();
   },
 
   components: {

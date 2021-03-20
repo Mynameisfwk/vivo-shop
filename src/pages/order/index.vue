@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Order-Header title="我的订单"></Order-Header>
     <div class="orderMain" id="transitionName">
       <div class="conntent">
         <div class="content-list" v-for="(list,index) in order" @click="jumpOrderDetail(list)" :key="index">
@@ -40,7 +39,6 @@
 </template>
 
 <script>
-import OrderHeader from "../../common/Header";
 
 export default {
   name: "oerder",
@@ -50,7 +48,6 @@ export default {
     };
   },
   components: {
-    OrderHeader,
   },
 
   methods: {

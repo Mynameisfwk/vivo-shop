@@ -1,26 +1,24 @@
 <template>
   <div class="choose">
-        <Choose-Header title="选购手机"></Choose-Header>
-        <div class="_choose_twoMain">
-          <div class="upper">
-            <span v-for="(list,index) in upper" :key="index" class="list" @click="btn(index)" :class="{active:index===phoneIndex}">{{list.lm_name}}</span>
-          </div>
-          <div class="lower">
-            <div v-for="(list,index) in lower" :key="index" v-if="list.lm_id===phoneIndex" class="lower_list" @click="goDetails(list.id)">
-              <img :src="'http://www.vivo-admin.com/static/image/'+list.fm_img" alt="图片">
-              <p>{{list.name}}</p>
-              <p style="font-size: 0.3rem;">{{list.nametwo}}</p>
-              <div>￥{{list.price}}</div>
-            </div>
-          </div>
+    <div class="_choose_twoMain">
+      <div class="upper">
+        <span v-for="(list,index) in upper" :key="index" class="list" @click="btn(index)" :class="{active:index===phoneIndex}">{{list.lm_name}}</span>
+      </div>
+      <div class="lower">
+        <div v-for="(list,index) in lower" :key="index" v-if="list.lm_id===phoneIndex" class="lower_list" @click="goDetails(list.id)">
+          <img :src="'http://www.vivo-admin.com/static/image/'+list.fm_img" alt="图片">
+          <p>{{list.name}}</p>
+          <p style="font-size: 0.3rem;">{{list.nametwo}}</p>
+          <div>￥{{list.price}}</div>
         </div>
+      </div>
+    </div>
   </div>
 </template>
 
 
 <script>
 import axios from "axios";
-import ChooseHeader from "../common/header";
 export default {
   name: "choose",
   data() {
@@ -32,7 +30,7 @@ export default {
     };
   },
   components: {
-    ChooseHeader
+    
   },
   created() {
     var _this = this;
