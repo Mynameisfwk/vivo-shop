@@ -1,14 +1,6 @@
 <template>
   <div class="cart">
-    <div class="header">
-      <div class="header-left">
-        <router-link to="/main">
-          <i class="iconfont icon-zuojiantou"></i>
-        </router-link>
-      </div>
-      <div class="header-in">购物车</div>
-      <div class="header-rigth"></div>
-    </div>
+    <v-header title="购物车" :headerLeftStatus="headerLeftStatus" />
     <div class="cartMain">
       <ul>
         <li v-for="(list,index) in carts" class="cartList" :key="index">
@@ -52,8 +44,8 @@
     </div>
     <div class="cartFooter" v-if="carts.length">
       <div class="checkAll" @click="">
-        <i class="iconfont icon-xuanzekuangmoren" v-if="!qx"></i>
-        <i class="iconfont icon-xuanzekuangxuanzhong" v-show="qx" style="color:#25b5fe"></i>
+        <i class="iconfont icon-xuanzekuangmoren"></i>
+        <!-- <i class="iconfont icon-xuanzekuangxuanzhong" style="color:#25b5fe"></i> -->
         <span>全选</span>
       </div>
 
@@ -69,28 +61,27 @@
   </div>
 </template>
 <script>
+import { mapState,mapMutations } from 'vuex'
+import header from "@/components/header/index";
 export default {
   name: "cart",
   data() {
     return {
-      carts: this.$store.state.cart.carts
+      headerLeftStatus: true
     };
   },
   methods: {
-    addCartValue(index) {
-      this.$store.commit('cart/ADDCART_VALUE',index)
-    },
-    delCartList(index) {
-      this.$store.commit('cart/DEL_CARTS',index)
-    },
-    reduceCartValue(index) {
-      this.$store.commit('cart/REDUCECART_VAVLUE',index)
-    },
-    singleCartsList(index) {
-      this.$store.commit('cart/SELECT_CARTS_LIST',index)
-    }
+    ...mapMutations({
+      addCartValue: 'cart/ADDCART_VALUE',
+      delCartList: 'cart/DEL_CARTS',
+      reduceCartValue: 'cart/REDUCECART_VAVLUE',
+      singleCartsList: 'cart/SELECT_CARTS_LIST'
+    }),
   },
   computed: {
+    ...mapState({
+      'carts': state => state.cart.carts
+    }),
     TotalPrice() {
       var sum = 0
       this.$store.state.cart.carts.forEach(list => {
@@ -98,49 +89,16 @@ export default {
           sum += list.value * list.price
         }
       });
-      return sum;
+      return sum
     }
+  },
+  components: {
+    "v-header": header
   }
 };
 </script>
 
-<style lang="stylus" scoped>
-.header {
-  width: 100%;
-  height: 1.5rem;
-  background: white;
-  position: fixed;
-  z-index: 1;
-
-  .header-left {
-    width: 10%;
-    height: 100%;
-    float: left;
-
-    i {
-      font-size: 0.6rem;
-      line-height: 1.45rem;
-      text-align: center;
-      display: block;
-    }
-  }
-
-  .header-in {
-    width: 80%;
-    height: 100%;
-    float: left;
-    text-align: center;
-    font-size: 0.45rem;
-    line-height: 1.45rem;
-  }
-
-  .header-right {
-    width: 10%;
-    height: 100%;
-    float: left;
-  }
-}
-
+<style lang="less" scoped>
 .select {
   float: left;
   margin-top: 1.5rem;
