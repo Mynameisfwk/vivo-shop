@@ -10,20 +10,20 @@
       </div>
       <div class="details-address">
         <p class="address-box">
-          <span class="name">收货人：{{orderList.consignee}}</span>
-          <span class="phone">{{orderList.phone}}</span>
+          <span class="name">收货人：{{orderDetail.consignee}}</span>
+          <span class="phone">{{orderDetail.phone}}</span>
         </p>
-        <p class="address-details">收货地址：{{orderList.address}}</p>
+        <p class="address-details">收货地址：{{orderDetail.address}}</p>
       </div>
       <div class="details-list">
         <div class="details-list-1">
-          <img :src="orderList.img_url">
+          <img :src="orderDetail.img_url">
           <p>
             <span class="name">
-              {{orderList.name}}
-              <p>× {{orderList.homeValue}}</p>
+              {{orderDetail.name}}
+              <p>× {{orderDetail.homeValue}}</p>
             </span>
-            <span class="price">¥ {{orderList.price}}</span>
+            <span class="price">¥ {{orderDetail.price}}</span>
           </p>
         </div>
 
@@ -31,18 +31,18 @@
           <div class="details-list-2-1">
             <p>
               <span class="span-1">订单编号：</span>
-              <span class="span-2">{{orderList.orderNumber}}</span>
+              <span class="span-2">{{orderDetail.orderNumber}}</span>
             </p>
             <p>
               <span class="span-1">订单备注：</span>
-              <span class="span-2">{{orderList.content}}</span>
+              <span class="span-2">{{orderDetail.content}}</span>
             </p>
           </div>
 
           <div class="details-list-2-2">
             <p>
               <span class="span-1">商品总金额：</span>
-              <span class="span-2">¥ {{toFixed(orderList.price * orderList.homeValue)}}</span>
+              <span class="span-2">¥ {{toFixed(orderDetail.price * orderDetail.homeValue)}}</span>
             </p>
             <p>
               <span class="span-1">运费：</span>
@@ -65,7 +65,7 @@
             </p>
             <p>
               <span class="span-1">支付方式：</span>
-              <span class="span-2">{{orderList.paymentType}}</span>
+              <span class="span-2">{{orderDetail.paymentType}}</span>
             </p>
             <p>
               <span class="span-1">发票类型：</span>
@@ -73,14 +73,14 @@
             </p>
             <p>
               <span class="span-1">发票抬头：</span>
-              <span class="span-2">{{orderList.invoice}}</span>
+              <span class="span-2">{{orderDetail.invoice}}</span>
             </p>
           </div>
         </div>
 
         <div class="order-footer">
           总计：
-          <span>¥ {{toFixed(orderList.price * orderList.homeValue)}}</span>
+          <span>¥ {{toFixed(orderDetail.price * orderDetail.homeValue)}}</span>
         </div>
       </div>
     </div>
@@ -93,27 +93,22 @@ export default {
   name: "detail",
   data() {
     return {
-      orderList: [],
       headerLeftStatus: true
     };
   },
-
   methods: {
-    orderDetail() {
-      this.orderList = this.$store.state.order.orders.find(list=> {
-        return this.$route.query.orderNumber == list.orderNumber
-      })
-    },
-
     toFixed(value) {
       return value.toFixed(2)
     }
   },
-
-  mounted() {
-    this.orderDetail() 
+  computed: {
+    orderDetail() {
+      var orderDetail = this.$store.state.order.orders.find(list=> {
+        return this.$route.query.orderNumber == list.orderNumber
+      })
+      return orderDetail
+    }
   },
-  
   components: {
     'v-header': header
   }

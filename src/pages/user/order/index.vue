@@ -2,7 +2,7 @@
   <div>
     <v-header title="我的订单" :headerLeftStatus="headerLeftStatus" />
     <div class="orderMain" id="transitionName">
-      <div class="conntent">
+      <div class="content">
         <div class="content-list" v-for="(list,index) in order" @click="jumpOrderDetail(list)" :key="index">
           <div class="_order">
             <p class="left">订单号：{{list.orderNumber}}&nbsp;&nbsp;&nbsp;已完成</p>
@@ -15,15 +15,15 @@
                 >
             </p>
           </div>
-
           <div class="order">
             <img :src="list.img_url">
-
             <div class="order-div">
-                <h3>{{list.name}}</h3>
-                <p class="order-div-price">￥{{toFixed(list.price)}}</p>
+              <h3>{{list.name}}</h3>
+              <p class="order-div-price">￥{{toFixed(list.price)}}</p>
             </div>
-            <div class="order-div-2">× {{list.homeValue ? list.homeValue : 1}}</div>
+            <div class="order-number">
+              <p>× {{list.homeValue ? list.homeValue : 1}}</p>
+            </div>
           </div>
           <div class="order-2">
             <div class="order-2-box">
@@ -40,20 +40,19 @@
 </template>
 
 <script>
+import { mapState,mapMutations } from 'vuex'
 import header from '@/components/header/index'
 export default {
   name: "oerder",
   data() {
     return {
-      order: this.$store.state.order.orders,
       headerLeftStatus: true
     };
   },
-
   methods: {
-    delOrder(index) {
-      this.$store.commit('order/DEL_ORDER',index)
-    },
+    ...mapMutations({
+      delOrder: 'order/DEL_ORDER'
+    }),
     jumpOrderDetail(list) {
       this.$router.push({
         path: '/orderDetail',
@@ -67,6 +66,11 @@ export default {
       return JSON.parse(value).toFixed(2);
     }
   },
+  computed: {
+    ...mapState({
+      'order': state => state.order.orders
+    })
+  },
 
   components: {
     'v-header': header
@@ -74,196 +78,95 @@ export default {
 };
 </script>
 
-
-<style lang="stylus" scoped>
+<style lang="less" scoped>
 .orderMain {
   position: relative;
-  top: 1.7rem;
-}
-
-.conntent {
-  // width 100%;
-  // height 100%;
-}
-
-.order-box {
-  height: 1rem;
-  background: white;
-  position: fixed;
-  width: 100%;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.order-box .active {
-  color: #199cfe;
-  border-bottom: 2px solid #199cfe;
-}
-
-.order-box p {
-  width: 25%;
-  height: 100%;
-  line-height: 1rem;
-  float: left;
-  text-align: center;
-}
-
-.order-box p {
-  width: 50%;
-  height: 100%;
-  font-size: 0.36rem;
-  display: block;
-  margin: auto;
-}
-
-.order-box p a {
-  width: 50%;
-  height: 100%;
-  font-size: 0.36rem;
-  display: block;
-  margin: auto;
-}
-
-.order-box2 {
-  width: 100%;
-  height: 12rem;
-}
-
-.orders {
-  margin-top: 10px;
-}
-
-._order {
-  width: 100%;
-  height: 1.3rem;
-  line-height: 1.3rem;
-  background: #ffffff;
-}
-
-.left {
-  float: left;
-  color: #666;
-  margin-left: 0.5rem;
-  font-size: 0.35rem;
-}
-
-.orders i {
-  font-size: 0.4rem;
-  color: #666;
-}
-
-.right {
-  float: right;
-  color: rgb(0, 172, 255);
-  margin-right: 0.3rem;
-  font-size: 0.35rem;
-}
-
-.order {
-  width: 100%;
-  height: 3rem;
-  background: white;
-  border-bottom: 1px solid #f0f0f0;
-  border-top: 1px solid #f0f0f0;
-}
-
-.order img {
-  float: left;
-  margin: 0.3rem;
-  width: 23%
-}
-
-.order-div {
-  width: 4rem;
-  margin: 0.3rem;
-  line-height: 0.7rem;
-  float: left;
-}
-
-.order h3 {
-  font-size: 0.45rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.order-div-price {
-  color: red;
-  font-size: 0.4rem;
-}
-
-.order-div-2 {
-  display: inline-block;
-  float: right;
-  margin: 0.3rem 0.6rem;
-  font-size: 0.4rem;
-}
-
-.order-2 {
-  width: 100%;
-  height: 1.4rem;
-  background: white;
-  display flex;
-  justify-content: flex-end;
-  align-items: center
-}
-
-.order-2-box {
-  width: 50%;
-  float: right;
-  text-align: right;
-  margin: 0.2rem 0.4rem;
-}
-
-.order-2-zero {
-  float: left;
-  font-size: 0.35rem;
-  margin-left: 0.5rem;
-}
-
-.order-2-one {
-  font-size: 0.35rem;
-  height: 100%;
-}
-
-.order-2-two {
-  color: #666;
-  padding-top: 0.2rem;
-  font-size: 0.35rem;
-}
-
-.order-3 {
-  width: 100%;
-  height: 1.1rem;
-  background: white;
-}
-
-.order-3 a {
-  width: 2.8rem;
-  height: 0.7rem;
-  line-height: 0.7rem;
-  // border: 1px solid red;
-  border-radius: 3px;
-  text-align: center;
-  display: block;
-  float: right;
-  margin-right: 0.3rem;
-  margin-top: 0.1rem;
-  border: 1px solid #dcdcdc;
-  font-size: 0.3rem;
-}
-
-.wrapper-father {
-  width: 100%;
-  height: 100%;
-}
-
-.wrapper {
-  height: 100%;
-}
-
-.content-list {
-  width: 100%;
+  top: 1.5rem;
+  .content {
+    width: 100%;
     height: auto;
-    margin-bottom: 0.3rem;
+    .content-list {
+      width: 100%;
+      height: auto;
+      margin-bottom: 0.3rem;
+      ._order {
+        width: 100%;
+        height: 1.3rem;
+        line-height: 1.3rem;
+        background: #ffffff;
+        .left {
+          float: left;
+          color: #666;
+          margin-left: 0.5rem;
+          font-size: 0.35rem;
+        }
+        .right {
+          float: right;
+          color: rgb(0, 172, 255);
+          margin-right: 0.3rem;
+          font-size: 0.35rem;
+        }
+      }
+      .order {
+        width: 100%;
+        height: 3rem;
+        background: white;
+        border-bottom: 1px solid #f0f0f0;
+        border-top: 1px solid #f0f0f0;
+        display: flex;
+        img {
+          margin: 0.3rem;
+          width: 23%
+        }
+        .order-div {
+          width: 50%;
+          height: auto;
+          h3 {
+            font-size: 0.45rem;
+            margin-top: 0.3rem;
+            color: #666;
+          }
+          .order-div-price {
+            font-size: 0.4rem;
+            margin-top: 0.15rem;
+            color: red;
+          }
+        }
+        .order-number {
+          width: 27%;
+          height: 100%;
+          display: inline-block;
+          font-size: 0.45rem;
+          display: flex;
+          justify-content: flex-end;
+
+          p {
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+            color: #666;
+          }
+        }
+      }
+      .order-2 {
+        width: 100%;
+        height: 1.4rem;
+        background: white;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .order-2-box {
+          width: 50%;
+          float: right;
+          text-align: right;
+          margin: 0.2rem 0.4rem;
+          .order-2-one {
+            font-size: 0.35rem;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
 
