@@ -26,7 +26,7 @@
 
 <!-- > [better-scroll](http://ustbhuangyi.github.io/better-scroll/doc/options.html)：解决移动端各种滚动场景需求的插件，使移动端滑动体验更加流畅 -->
 
-> [axios](https://www.npmjs.com/package/axios)：用来请求后端api数据
+> [axios](https://www.npmjs.com/package/axios) 请求api
 
 ## 效果预览
 
