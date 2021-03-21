@@ -21,7 +21,7 @@
           <p>
             <span class="name">
               {{orderDetail.name}}
-              <p>× {{orderDetail.homeValue}}</p>
+              <p>× {{orderDetail.value}}</p>
             </span>
             <span class="price">¥ {{orderDetail.price}}</span>
           </p>
@@ -80,7 +80,7 @@
 
         <div class="order-footer">
           总计：
-          <span>¥ {{toFixed(orderDetail.price * orderDetail.homeValue)}}</span>
+          <span>¥ {{toFixed(orderDetail.price * orderDetail.value)}}</span>
         </div>
       </div>
     </div>
