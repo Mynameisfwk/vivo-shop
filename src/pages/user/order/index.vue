@@ -22,14 +22,14 @@
               <p class="order-div-price">￥{{toFixed(list.price)}}</p>
             </div>
             <div class="order-number">
-              <p>× {{list.homeValue ? list.homeValue : 1}}</p>
+              <p>× {{list.value ? list.value : 1}}</p>
             </div>
           </div>
           <div class="order-2">
             <div class="order-2-box">
                 <p class="order-2-one">
                 应付金额：
-                <span style="color:red">￥{{toFixed(list.price * list.homeValue)}}</span>
+                <span style="color:red">￥{{toFixed(list.price * list.value)}}</span>
                 </p>
             </div>
           </div>
@@ -62,9 +62,8 @@ export default {
       })
     },
     toFixed(value) {
-      // 因为data.json里面的prcie是字符串类型 所以这边需要做个处理
-      return JSON.parse(value).toFixed(2);
-    }
+      return JSON.parse(value).toFixed(2)
+    },
   },
   computed: {
     ...mapState({
