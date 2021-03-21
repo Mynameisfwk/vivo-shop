@@ -1,7 +1,7 @@
 #  vue全家桶 vue2.0(+) +vuex+axios+miut-ui
 
 ### 在线预览
-项目演示地址：<del>[vivo移动端商城](http://fwk02.top)</del><br>
+项目演示地址：[线上预览 vivo商城](http://vivo.findtalk.cn/#/index)<br>
 建议Chrome调试手机模式下预览<br>
 
 <!-- ### 废话

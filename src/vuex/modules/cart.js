@@ -113,7 +113,7 @@ const mutations = {
     [DEL_COLLECTION] (state,index) {
         MessageBox({
             title: '提示',
-            message: '是否取消'+ state.carts[index].name +'的收藏?',
+            message: '是否取消'+ state.collections[index].name +'的收藏?',
             showCancelButton: true
             }).then(res => {
                 if(res == 'confirm') {
