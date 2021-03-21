@@ -4,8 +4,8 @@
 项目演示地址：<del>[vivo移动端商城](http://fwk02.top)</del><br>
 建议Chrome调试手机模式下预览<br>
 
-### 废话
-项目源码地址：[vivo-shop](https://github.com/Mynameisfwk/vivo-shop)，觉得还可以的话给个star 在这先谢谢了~<br>
+<!-- ### 废话
+项目源码地址：[vivo-shop](https://github.com/Mynameisfwk/vivo-shop)，觉得还可以的话给个star 在这先谢谢了~<br> -->
 
 ## 写在前面
 
