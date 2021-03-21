@@ -71,6 +71,7 @@ const mutations = {
                 list.default = false
             }
         });
+        state.address.sort(status => { return status.default ?  - 1 : 1 })
         localStorage.setItem('address',JSON.stringify(state.address));
     }
 }
