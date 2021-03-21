@@ -71,10 +71,9 @@ export default {
       'order': state => state.order.orders
     })
   },
-
   components: {
     'v-header': header
-  },
+  }
 };
 </script>
 
