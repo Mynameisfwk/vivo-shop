@@ -4,6 +4,8 @@ import {
     ADDCART_VALUE,
     REDUCECART_VAVLUE,
     SELECT_CARTS_LIST,
+    ADD_COLLECTION,
+    DEL_COLLECTION
 } from '../mutations-type'
 
 import router from '../../router';
@@ -11,6 +13,7 @@ import { Toast,MessageBox } from 'mint-ui'
 
 const state = {
     carts: localStorage.getItem('carts') ? JSON.parse(localStorage.getItem('carts')) : [], //购物车列表
+    collections: localStorage.getItem('collections') ? JSON.parse(localStorage.getItem('collections')) : [], //收藏列表
 }
 
 const mutations = {
@@ -92,8 +95,37 @@ const mutations = {
     // 购物车全选
     [SELECT_CARTS_LIST] (state,index) {
         state.carts[index].select =! state.carts[index].select
-    }
+    },
     //商品收藏
+    [ADD_COLLECTION] (state,data) {
+        var collectionsId = state.collections.find(list => {
+            return data.id == list.id
+        });
+        if(collectionsId) {
+            Toast('已经收藏过了！')
+            return false
+        }
+        state.collections.push(data)
+        localStorage.setItem('collections',JSON.stringify(state.collections));
+        Toast('收藏成功')
+    },
+    // 移出收藏夹
+    [DEL_COLLECTION] (state,index) {
+        MessageBox({
+            title: '提示',
+            message: '是否取消'+ state.carts[index].name +'的收藏?',
+            showCancelButton: true
+            }).then(res => {
+                if(res == 'confirm') {
+                state.collections.splice(index,1);
+                localStorage.setItem('collections',JSON.stringify(state.collections))
+                Toast({
+                    message: '取消成功',
+                    duration: 1500
+                });
+            }
+        });
+    },
 }
 
 export default {

@@ -10,6 +10,7 @@ import add_address from "@/pages/user/address/add"
 import success from '@/pages/pay/success'
 import parts from '@/pages/shops/parts'
 import phone from '@/pages/shops/phone'
+import collection from '@/pages/user/collections/index'
 
 // 整理路由中 分割线～
 // import xz_address from "@/pages/user/children/xz_address"
@@ -105,7 +106,7 @@ export default new Router({
         requireAuth: true
       },
     },
-    // { path: '/collection', name: 'collection', component: collection },
+    { path: '/collection', name: 'collection', component: collection },
 
     {
       path: '/order',

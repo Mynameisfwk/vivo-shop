@@ -120,7 +120,7 @@
               <div class="collection">
                 <div
                   class="collection-box"
-                  @click="addCollection(goodDetail)"
+                  @click="addCollection(list)"
                   v-show="!$store.state.ces"
                 >
                   <i class="iconfont icon-collection"></i>
@@ -225,6 +225,10 @@ export default {
           value: this.shopNumber
         }
       });
+    },
+    addCollection(list) {
+      console.log(list)
+      this.$store.commit('cart/ADD_COLLECTION',list)
     }
   },
   mounted() {
