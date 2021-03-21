@@ -24,7 +24,7 @@
 
 > [Mint UI](http://mint-ui.github.io/#!/zh-cn) 由饿了么前端团队推出的 Mint UI 是一个基于 vue.js 的移动端组件库。
 
-> [better-scroll](http://ustbhuangyi.github.io/better-scroll/doc/options.html)：解决移动端各种滚动场景需求的插件，使移动端滑动体验更加流畅
+<!-- > [better-scroll](http://ustbhuangyi.github.io/better-scroll/doc/options.html)：解决移动端各种滚动场景需求的插件，使移动端滑动体验更加流畅 -->
 
 > [axios](https://www.npmjs.com/package/axios)：用来请求后端api数据
 
