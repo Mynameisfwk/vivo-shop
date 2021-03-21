@@ -2,9 +2,9 @@
     <div class="pay">
         <v-header title='商品详情' :headerLeftStatus="headerLeftStatus" />
         <div @click="" class="pay-address">
-             <p class="address-box">
+            <p class="address-box">
                 <span class="name">收货人：{{address.name}}</span>
-              <span class="phone">{{address.phone}}</span>
+                <span class="phone">{{address.phone}}</span>
             </p>
             <p class="address-details">
                 收货地址：{{address.zone}}{{address.detail}}
@@ -366,11 +366,14 @@ export default {
                 // background red
                 div {
                 width: 90%;
-                height: 1.3rem;
+                height: auto;
                 border-radius: 3px;
                 border: 1px solid #d1d1d1;
                 margin: auto;
-                padding: 0.3rem;
+                // padding: 0.3rem;
+                padding-top: 0.3rem;
+                padding-bottom: 0.3rem;
+                padding-left: 0.3rem;
                 }
 
                 .pay-fs-2-2-2 {

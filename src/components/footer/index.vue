@@ -7,13 +7,13 @@
           <span :style="$route.path ==='/index' || $route.path ==='/'  ? 'color: #179DFE ': 'color: #666'">首页</span>
       </router-link>
 
-      <!-- <router-link to="/classify" tag="li">
+      <router-link :to="{ path: '/classify' }" tag="li">
         <div class="index">
-          <i class="iconfont icon-fenleixuanzhong" style="color:#179dfe" v-if="active ==='classify'"></i>
+          <i class="iconfont icon-fenleixuanzhong" style="color:#179dfe" v-if="$route.path === '/classify'"></i>
           <i class="iconfont icon-fenlei-copy" v-else></i>
         </div>
-        <span>分类</span>
-      </router-link> -->
+        <span :style="$route.path ==='/classify' ? 'color: #179DFE ': 'color: #666'">分类</span>
+      </router-link>
 
       <router-link :to="{ path: '/news' }" tag="li">
         <i class="iconfont icon-dongtaixuanzhong" style="color:#179dfe" v-if="$route.path ==='/news'"></i>

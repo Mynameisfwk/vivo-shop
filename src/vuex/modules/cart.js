@@ -93,6 +93,7 @@ const mutations = {
     [SELECT_CARTS_LIST] (state,index) {
         state.carts[index].select =! state.carts[index].select
     }
+    //商品收藏
 }
 
 export default {

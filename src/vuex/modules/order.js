@@ -16,7 +16,6 @@ const mutations = {
             text: '支付中...',
             spinnerType: 'fading-circle',
         })
-
         var time = setInterval(() => {
             state.orders.push(data)
             localStorage.setItem('orders',JSON.stringify(state.orders))
