@@ -10,7 +10,6 @@
         class="pay-address"
         v-for="(list, index) in address"
         :key="index"
-        :class="{ active: index === $store.state.nowIndex }"
       >
         <p class="address-box">
           <span class="name">收货人：{{ list.name }}</span>
@@ -36,47 +35,35 @@
 </template>
 
 <script>
+import { mapState,mapMutations } from 'vuex'
 import header from '@/components/header/index'
-
-function arr (arr) {
-  var len = arr.length
-  for(var i=0;i<len-1;i++) {
-    for(var j=0;j<len-1;j++) {
-      if(len[j] != len[j+1]) {
-        var t = len[j+1]
-        len[j+1] = len[j]
-        len[j] = t
-      }
-    }
-  }
-}
 export default {
   data() {
     return {
-      nowIndex: 0,
-      address: this.$store.state.address,
       headerLeftStatus: true
     };
   },
   methods: {
+    ...mapMutations({
+      delAddress: 'DEL_ADDRESS',
+      setDetault: 'SET_DEFAULT'
+    }),
     jumpAddress() {
       this.$router.push({
         path: "add_address"
       });
     },
-    delAddress(index) {
-      this.$store.commit('DEL_ADDRESS',index)
-    },
-    setDetault(index) {
-      this.$store.commit('SET_DEFAULT',index);
-    }
+  },
+  computed: {
+    ...mapState({
+      address: state => state.address
+    })
   },
   components: {
     "v-header": header
   }
 };
 </script>
-
 
 <style lang="less" scoped>
 .address {
@@ -89,10 +76,8 @@ export default {
     z-index: 99999;
     background: #f4f4f4;
   }
-
   .Address-box {
     padding-top: 1.45rem;
-
     .address-one {
       width: 100%;
       height: 1.6rem;
@@ -100,13 +85,11 @@ export default {
       background: #ffffff;
       margin-bottom: 0.2rem;
       border-top: 1px solid #eaeaea;
-
       .left {
         float: left;
         margin-left: 0.6rem;
         font-size: 0.37rem;
       }
-
       .right {
         float: right;
         margin-right: 0.6rem;
@@ -114,7 +97,6 @@ export default {
         color: #00acff;
       }
     }
-
     .pay-address {
       width: 100%;
       height: 3.5rem;
@@ -122,19 +104,16 @@ export default {
       background-size: 1.6rem;
       margin-top: 0.3rem;
       display: block;
-
       .address-box {
         width: 87%;
         margin: auto;
         font-size: 0.4rem;
         padding-top: 0.3rem;
         padding-bottom: 0.3rem;
-
         .phone {
           float: right;
         }
       }
-
       .address-details {
         width: 87%;
         height: 1rem;
@@ -142,17 +121,14 @@ export default {
         color: #666;
         font-size: 0.38rem;
       }
-
       .address-operation {
         width: 100%;
         height: 1rem;
         line-height: 1rem;
         margin-top: 0.3rem;
-
         .address-operation-box {
           width: 100%;
           border-top: 1px solid #eaeaea;
-
           i {
             float: right;
             font-size: 0.5rem;

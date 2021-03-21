@@ -10,7 +10,6 @@
           placeholder="收货人姓名"
         />
       </div>
-
       <div class="address-box">
         <label for="">手机号码：</label>
         <input
@@ -19,7 +18,6 @@
           placeholder="收货人的手机号码"
         />
       </div>
-
       <div class="address-box">
         <label for="">选择地区：</label>
         <input
@@ -28,7 +26,6 @@
           placeholder="请选择收货地址"
         />
       </div>
-
       <div class="address-box">
         <label for="">详细地址：</label>
         <input
@@ -38,16 +35,16 @@
         />
       </div>
     </div>
-
     <div class="footer">
-      <a @click="saveAddress">保存地址</a>
+      <a @click="saveAddress(addressData)">保存地址</a>
     </div>
   </div>
 </template>
 
 <script>
-import header from '@/components/header/index'
+import { mapMutations } from 'vuex'
 import { Toast,Switch } from "mint-ui";
+import header from '@/components/header/index'
 export default {
   name: "add_address",
   data() {
@@ -62,10 +59,9 @@ export default {
     };
   },
   methods: {
-    saveAddress() {
-      this.$store.commit('ADD_ADDRESS',this.addressData)
-      this.$router.push('/address')
-    }
+    ...mapMutations({
+      saveAddress: 'ADD_ADDRESS'
+    })
   },
   components: {
     "v-header": header

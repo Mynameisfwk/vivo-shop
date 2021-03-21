@@ -8,6 +8,7 @@ import {
 import cart from './modules/cart'
 import order from './modules/order'
 import { Toast, MessageBox } from 'mint-ui'
+import router from '../router';
 Vue.use(Vuex)
 
 const state = {
@@ -42,6 +43,7 @@ const mutations = {
         });
         localStorage.setItem('address',JSON.stringify(state.address));
         Toast('添加成功');
+        router.push('/address')
     },
     // 删除地址
     [DEL_ADDRESS](state, index) {
