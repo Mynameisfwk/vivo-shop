@@ -44,6 +44,7 @@ const mutations = {
                 message:'加入购物车成功！',
                 duration: 1500
             });
+            data['select'] = false
             state.carts.push(data);
             localStorage.setItem('carts',JSON.stringify(state.carts));
         }
@@ -92,7 +93,7 @@ const mutations = {
             localStorage.setItem('carts',JSON.stringify(state.carts))
         }
     },
-    // 购物车全选
+    // 购物车单选
     [SELECT_CARTS_LIST] (state,index) {
         state.carts[index].select =! state.carts[index].select
     },

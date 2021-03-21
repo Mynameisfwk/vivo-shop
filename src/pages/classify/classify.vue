@@ -19,7 +19,6 @@
           <li
             v-for="(list, index) in right.rigth_data"
             :key="index"
-            @click="goDetails(list.id)"
           >
             <img v-lazy="list.img" />
             <span>{{ list.name }}</span>
@@ -67,11 +66,6 @@ export default {
       _this.right = _this.list[index];
     },
     goDetails(id) {
-      console.log(id);
-      this.$router.push({
-        path: "goodDetail",
-        query: { id: id }
-      });
     }
   },
   components: {

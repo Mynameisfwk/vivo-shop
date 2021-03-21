@@ -16,7 +16,7 @@
                 <p class="pay-shop-2">
                     <img :src="list.img_url" />
                     <p class="pay-shop-2-box">
-                        <span class="name">{{list.name}}<p>× {{$route.params.value ? $route.params.value : list.value}}</p></span>
+                        <span class="name">{{list.name}}<p>× {{$route.query.value}}</p></span>
                         <span class="price">¥{{list.price}}</span>
                     </p>
                 </p>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="pay-shop-footer">
-                <p class="price">订单总金额：<span>¥{{toFixed(list.price * $route.params.value)}}</span></p>
+                <p class="price">订单总金额：<span>¥{{toFixed(list.price * $route.query.value)}}</span></p>
                 <a class="order" @click="addOrder(list,index)">提交订单</a>
             </div>
         </div>
@@ -87,7 +87,6 @@ export default {
   },
   methods: {
     addOrder(list) {
-        console.log(this.address.phone)
         if (!this.invoice) {
             Toast("请输入发票抬头");
             return false;

@@ -75,8 +75,8 @@ export default {
       addCartValue: 'cart/ADDCART_VALUE',
       delCartList: 'cart/DEL_CARTS',
       reduceCartValue: 'cart/REDUCECART_VAVLUE',
-      singleCartsList: 'cart/SELECT_CARTS_LIST'
-    }),
+      singleCartsList: 'cart/SELECT_CARTS_LIST',
+    })
   },
   computed: {
     ...mapState({
@@ -104,22 +104,18 @@ export default {
   margin-top: 1.5rem;
   padding-left: 0.5rem;
 }
-
 .select i {
   font-size: 0.53rem;
 }
-
 .checkAll {
   width: 24%;
   line-height: 1.18rem;
   float: left;
 }
-
 .checkAll i {
   font-size: 0.53rem;
   padding-left: 0.5rem;
 }
-
 .cart {
   position: absolute;
   width: 100%;
@@ -129,7 +125,6 @@ export default {
   left: 0;
   background: #f4f4f4;
 }
-
 .cartheader {
   position: fixed;
   width: 100%;
@@ -142,7 +137,6 @@ export default {
   top: 0;
   font-size: 0.41rem;
 }
-
 .cartheader i {
   display: block;
   float: left;
@@ -151,51 +145,42 @@ export default {
   color: black;
   width: 0.9rem;
 }
-
 .cartList {
   width: 100%;
   height: 4rem;
   background: white;
   margin-top: 0.04rem;
 }
-
 .cartMain {
   margin-top: 1.3rem;
   margin-bottom: 1.24rem;
 }
-
 .cartMain ul li {
   list-style: none;
 }
-
 .cartImage img {
   width: 2.6rem;
   height: 2.8rem;
 }
-
 .cartImage {
   float: left;
   padding: 0.5rem 0.3rem;
 }
-
 .cartInformation {
   width: 7.7rem;
   font-size: 0.35rem;
   padding-left: 0.3rem;
   padding-top: 0.6rem;
 }
-
 .cartPrice {
   color: red;
   margin-top: 0.2rem;
   font-size: 0.4rem;
 }
-
 .cartNumber {
   float: left;
   margin-top: 0.3rem;
 }
-
 .cartNumber .add, .cartNumber .reduce {
   display: block;
   width: 0.75rem;
@@ -207,7 +192,6 @@ export default {
   text-align: center;
   font-size: 0.5rem;
 }
-
 .cartNumber input {
   width: 0.96rem;
   height: 0.76rem;
@@ -215,15 +199,12 @@ export default {
   text-align: center;
   border: 1px solid #dedede;
 }
-
 .cartNumber .add {
   border-right: none;
 }
-
 .cartNumber .reduce {
   border-left: none;
 }
-
 .cartFooter {
   position: fixed;
   width: 100%;
@@ -234,7 +215,6 @@ export default {
   display: block;
   border-top: 1px solid #f4f4f4;
 }
-
 .cartImg img {
   width: 4.4rem;
   height: 5.2rem;
@@ -242,7 +222,6 @@ export default {
   margin: auto;
   padding-top: 1.5rem;
 }
-
 .cartImg a {
   display: block;
   text-align: center;
@@ -257,31 +236,26 @@ export default {
   font-weight: 800;
   font-size: 0.5rem;
 }
-
 .cartName {
   width: 9.3rem;
   font-size: 0.36rem;
 }
-
 .cartName a {
   color: black;
   font-size: 0.57rem;
   float: right;
 }
-
 .cartImg h1 {
   margin-top: 0.5rem;
   text-align: center;
   color: #959595;
   font-size: 0.6rem;
 }
-
 ._box {
   width: 63%;
   height: 100%;
   float: left;
 }
-
 .Total {
   float: left;
   width: 35%;
@@ -289,7 +263,6 @@ export default {
   line-height: 1.18rem;
   font-size: 0.35rem;
 }
-
 .Settlement {
   width: 34%;
   height: 80%;
@@ -299,14 +272,12 @@ export default {
   border-radius: 40px;
   margin-right: 0.3rem;
 }
-
 .Settlementtwo {
   width: 50%;
   height: 100%;
   background: #e3211e;
   float: right;
 }
-
 .Settlement a, .Settlementtwo a {
   color: white;
   text-align: center;

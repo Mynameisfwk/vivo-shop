@@ -29,14 +29,14 @@
               <a
                 href="javascript:;"
                 class="goodDetailReduce"
-                @click="reduceOrderValue()"
+                @click="reduceOrderValue(list)"
                 >-</a
               >
-              <input type="text" v-model="shopNumber" readonly="readonly" />
+              <input type="text" v-model="list.value" readonly="readonly" />
               <a
                 href="javascript:;"
                 class="goodDetailAdd"
-                @click="addOrderValue()"
+                @click="addOrderValue(list)"
                 >+</a
               >
             </div>
@@ -149,7 +149,7 @@
             </div>
             <div class="rigth">
               <div class="add">
-                <a href="javascript:void(0);" @click="addCart(list)">加入购物车</a>
+                <a href="javascript:void(0);" @click="addCart(list,index)">加入购物车</a>
               </div>
               <div class="purchase">
                 <a href="javascript:void(0);" @click="jumpPay(list)">提交订单</a>
@@ -163,34 +163,30 @@
 </template>
 
 <script>
-import header from '@/components/header/index'
-import { MessageBox } from 'mint-ui'
+import { mapState,mapMutations } from 'vuex'
+import { Toast,MessageBox } from 'mint-ui'
 import { getData } from "@/api/data";
+import header from '@/components/header/index'
 export default {
   name: "detail",
   data() {
     return {
       goodDetails: [],
-      shopNumber: 1,
       show: false,
       headerLeftStatus: true,
       selected: "tab-container1",
     };
   },
   methods: {
-    addCart(list) {
-      var data = {
-        id: list.id,
-        img_url: list.img_url,
-        name: list.name,
-        price: list.price,
-        select: false,
-        value: this.shopNumber
-      };
-      this.$store.commit("cart/ADD_CARTS", data);
+    ...mapMutations({
+      addCart: 'cart/ADD_CARTS',
+      addCollection: 'cart/ADD_COLLECTION'
+    }),
+    addOrderValue(list) {
+      list['value'] ++ 
     },
-    addOrderValue() {
-      this.shopNumber ++;
+    reduceOrderValue(list,index) {
+      list['value']  == 1 ?  Toast('不能在减了') : list['value'] --
     },
     shopDetailsData() {
       getData().then(res => {
@@ -216,19 +212,12 @@ export default {
       }
       this.$router.push({
         path: "/pay",
-        name: "pay",
         query: {
           id: list.id,
-          shop_id: this.$route.query.shop_id
+          shop_id: this.$route.query.shop_id,
+          value: list.value
         },
-        params: {
-          value: this.shopNumber
-        }
       });
-    },
-    addCollection(list) {
-      console.log(list)
-      this.$store.commit('cart/ADD_COLLECTION',list)
     }
   },
   mounted() {

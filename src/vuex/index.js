@@ -34,13 +34,12 @@ const mutations = {
             Toast('请填写详细收货地址');
             return false;
         }
-        state.address.push({
-            name: data.name,
-            phone: data.phone,
-            zone: data.zone,
-            detail: data.detail,
-            default: false
-        });
+        if(state.address.length == 0 || state.address.length < 0) {
+            data['default'] = true
+        } else {
+            data['default'] = false
+        }
+        state.address.push(data);
         localStorage.setItem('address',JSON.stringify(state.address));
         Toast('添加成功');
         router.push('/address')

@@ -22,7 +22,7 @@ import orderDetail from '@/pages/user/order/detail'
 // import news from '@/pages/News/news'
 // import newsView from '@/pages/News/newsView'
 
-import classify from "@/pages/Classify/classify"
+// import classify from "@/pages/Classify/classify"
 import pay from "@/pages/pay/pay"
 
 
@@ -121,7 +121,7 @@ export default new Router({
     { path: '/parts', name: 'parts', component: parts },
     { path: '/phone', name: 'phone', component: phone },
     // { path: '/change', name: 'change', component: change },
-    { path: '/classify', name: 'classify', component: classify },
+    // { path: '/classify', name: 'classify', component: classify },
     {
       path: '/pay',
       name: 'pay',

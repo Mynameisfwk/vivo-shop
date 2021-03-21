@@ -19,7 +19,7 @@
                             </p>
                         </div>
                         <div class="list-box-right">
-                            <p>立即购买</p>
+                            <p @click="jumpPay(list.id)">立即购买</p>
                         </div>
                     </div>
                 </div>
@@ -41,6 +41,14 @@ export default {
         ...mapMutations ({
             delCollection: 'cart/DEL_COLLECTION'
         }),
+        jumpPay(id) {
+            this.$router.push({
+                path: "/pay",
+                query: {
+                    id: id
+                }
+            })
+        },
         toFixed(value) {
             return JSON.parse(value).toFixed(2)
         }
@@ -71,6 +79,7 @@ export default {
                 background: #ffffff;
                 display: flex;
                 flex-direction: column;
+                margin-bottom: 0.05rem;
                 .list-title {
                     width: 100%;
                     height: 1.3rem;

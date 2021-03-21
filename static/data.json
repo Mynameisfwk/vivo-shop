@@ -147,7 +147,7 @@
             "title": "热卖专区",
             "data": [
                 {
-                    "id": 1,
+                    "id": 3,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/71/4171_1496689409434hd_530x530.png",
                     "name": "X9Plus 全网通",
                     "content": "优惠200元|限量促销",
@@ -216,7 +216,7 @@
                     "homePeizhi": "<h3>包装清单</h3><span>标配</span><p>X9s Plus A *1 </p><p>取卡针 *1 </p><p>XE680线控耳机 *1</p><p>闪充充电头 *1</p><p>USB数据线</p><p>透明后盖保护壳 *1</p><p>快速入门指南 *1</p><p>重要信息和保修卡</p><h3>其他参数</h3><div><p>CPU</p><p>高通骁龙八核MSM8976SG（MSM8976pro</p></div>"
                 },
                 {
-                    "id": 2,
+                    "id": 4,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/95/4495_1509454710945hd_530x530.png",
                     "name": "Y69 全面屏手机",
                     "content": "前置2400万像素",
@@ -287,7 +287,7 @@
                     ]
                 },
                 {
-                    "id": 3,
+                    "id": 5,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/40/4440_1508723830538hd_530x530.png",
                     "name": "X20Plus 全面屏",
                     "content": "6.43英寸大屏|0.1s快速解锁",
@@ -352,7 +352,7 @@
                     ]
                 },
                 {
-                    "id": 4,
+                    "id": 6,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/66/4266_1496689781362hd_530x530.png",
                     "name": "Xplay6 128G版",
                     "content": "后置双摄|免费镭射镌刻",
@@ -423,7 +423,7 @@
                     ]
                 },
                 {
-                    "id": 5,
+                    "id": 7,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/11/4111_1492998667334hd_530x530.png",
                     "name": "Y55 全网通",
                     "content": "大屏美颜自拍",
@@ -488,7 +488,7 @@
                     ]
                 },
                 {
-                    "id": 6,
+                    "id": 8,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/80/4180_1496689544465hd_530x530.png",
                     "name": "Y66 全网通",
                     "content": "5.5英寸大屏|支持花呗分期",
@@ -562,7 +562,7 @@
             "title": "手机配件",
             "data": [
                 {
-                    "id": 7,
+                    "id": 9,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/27/5027_1526972514378hd_250x250.png",
                     "name": "乐心手环",
                     "content": "【首发价239，领券再减20，前50名下单用户送体脂秤】",
@@ -837,7 +837,7 @@
             "name": "全部",
             "data": [
                 {
-                    "id": 7,
+                    "id": 9,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/27/5027_1526972514378hd_250x250.png",
                     "name": "乐心手环",
                     "content": "【首发价239，领券再减20，前50名下单用户送体脂秤】",
@@ -1110,7 +1110,7 @@
             "name": "充电器",
             "data": [
                 {
-                    "id": 8,
+                    "id": 10,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/20/4020_1481558694236_530x530.png",
                     "name": "vivo原装闪充充电器",
                     "content": "vivo原装旅行充电头，支持双引擎闪充，不含数据线（ 不支持X9Plus/X20Plus低压闪充",
@@ -1289,7 +1289,7 @@
             "name": "耳机音响",
             "data": [
                 {
-                    "id": 9,
+                    "id": 12,
                     "img_url": "https://shopstatic.vivo.com.cn/vivoshop/commodity/82/1882_1481558960471_530x530.png",
                     "name": "vivo XE600i 原装音乐耳机",
                     "content": "【直降10元，限时促销】vivo原装HiFi耳机，适配全部vivo机型；三频均衡，让音乐更震撼；入耳式设计，有效阻隔噪音，尽享音乐时光；轻量化设计，佩戴舒适！",
