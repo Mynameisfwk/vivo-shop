@@ -163,7 +163,7 @@
 </template>
 
 <script>
-import { mapState,mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 import { Toast,MessageBox } from 'mint-ui'
 import { getData } from "@/api/data";
 import header from '@/components/header/index'

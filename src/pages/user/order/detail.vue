@@ -126,7 +126,6 @@ export default {
         width: 100%;
         height: 2.4rem;
         background: #69c1ff;
-
         p {
           color: #fff;
           font-size: 0.46rem;
@@ -134,7 +133,6 @@ export default {
           float: left;
           padding-left: 0.4rem;
         }
-
         img {
           width: 2.7rem;
           margin: 0.5rem;
@@ -143,21 +141,19 @@ export default {
       }
       .details-address {
         width: 100%;
-        height: 2.7rem;
+        height: auto;
         background: #fff;
-
+        padding-bottom: 0.45rem;
         .address-box {
           width: 87%;
           margin: auto;
           font-size: 0.4rem;
           padding-top: 0.3rem;
           padding-bottom: 0.3rem;
-
           .phone {
             float: right;
           }
         }
-
         .address-details {
           width: 87%;
           margin: auto;

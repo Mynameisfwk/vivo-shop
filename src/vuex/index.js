@@ -42,7 +42,7 @@ const mutations = {
         state.address.push(data);
         localStorage.setItem('address',JSON.stringify(state.address));
         Toast('添加成功');
-        router.push('/address')
+        router.back();
     },
     // 删除地址
     [DEL_ADDRESS](state, index) {

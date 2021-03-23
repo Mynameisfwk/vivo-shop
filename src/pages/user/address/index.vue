@@ -56,7 +56,7 @@ export default {
   },
   computed: {
     ...mapState({
-      address: state => state.address
+      address: state => state.adsdress
     })
   },
   components: {

@@ -2,13 +2,19 @@
     <div class="pay">
         <v-header title='商品详情' :headerLeftStatus="headerLeftStatus" />
         <div @click="" class="pay-address">
-            <p class="address-box">
-                <span class="name">收货人：{{address.name}}</span>
-                <span class="phone">{{address.phone}}</span>
-            </p>
-            <p class="address-details">
-                收货地址：{{address.zone}}{{address.detail}}
-            </p>
+            <div v-if="!address.name" class="saveAddress" @click="saveAddress($router.push('/add_address'))">
+                <p>添加收货地址</p>
+                <i class="iconfont icon-youjiantou"></i>
+            </div>
+            <div v-else> 
+                <p class="address-box">
+                    <span class="name">收货人：{{address.name}}</span>
+                    <span class="phone">{{address.phone}}</span>
+                </p>
+                <p class="address-details">
+                    收货地址：{{address.zone}}{{address.detail}}
+                </p>
+            </div>
         </div>
         <div class="pay-shop" v-for="(list,index) in pay" :key="index">
             <div class="pay-shop-list">
@@ -62,16 +68,16 @@
             </div>
             <div class="pay-shop-footer">
                 <p class="price">订单总金额：<span>¥{{toFixed(list.price * $route.query.value)}}</span></p>
-                <a class="order" @click="addOrder(list,index)">提交订单</a>
+                <a class="order" @click="saveOrder(list,index)">提交订单</a>
             </div>
         </div>
     </div>
 </template>
 <script>
-import header from "@/components/header/index";
 import { getData } from "@/api/data.js";
 import { Toast } from "mint-ui";
-
+import { mapState } from 'vuex'
+import header from '@/components/header/index'
 export default {
   name: "pay",
   data() {
@@ -86,7 +92,11 @@ export default {
     };
   },
   methods: {
-    addOrder(list) {
+    saveOrder(list) {
+        if(!this.address.name) {
+            Toast("请选择收货地址");
+            return false;
+        }
         if (!this.invoice) {
             Toast("请输入发票抬头");
             return false;
@@ -104,8 +114,7 @@ export default {
         list["homeValue"] = this.$route.params.value; //改变原来固定的数量 1
         list["orderNumber"] = Year + "" + Month + "" +  Day + ""  + Math.random().toFixed(15).substr(2); //订单号
         this.$store.commit("order/ADD_ORDER", list);
-        var time = setInterval(() => {
-            clearInterval(time)
+        setTimeout(() => {
             this.$router.push('/success')
         },1000)
     },
@@ -129,7 +138,7 @@ export default {
     this.orderDetail();
   },
   computed: {
-    address() {
+    address() { 
         var address = []
         this.$store.state.address.forEach(list=> {
             if(list.default) {
@@ -152,13 +161,27 @@ export default {
     }
     .pay-address {
         width: 100%;
-        min-height: 4rem;
+        height: auto;
         background: url("https://shopstatic.vivo.com.cn/vivoshop/wap/dist/images/prod/bg-addr-box-line_d380baa.png")
             #fff left bottom repeat-x;
         background-size: 1.6rem;
         padding-top: 1.45rem;
-        padding-bottom: 0.3rem;
+        padding-bottom: 0.43rem;
         display: block;
+        .saveAddress {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p {
+                font-size: 0.41rem;
+                color: #666; 
+            }
+            i {
+                font-size: 0.4rem;
+            }
+        }
         .address-box {
             width: 87%;
             margin: auto;
@@ -175,6 +198,7 @@ export default {
             margin: auto;
             color: #666;
             font-size: 0.38rem;
+            padding-bottom: 0.2rem;
         }
     }
     .pay-shop {
@@ -186,20 +210,17 @@ export default {
             background: #fff;
             margin-bottom: 10px;
             margin-top: 10px;
-
             .pay-invoice-1 {
-            width: 100%;
-            height: 1.5rem;
-            line-height: 1.5rem;
-            border-bottom: 1px solid #eaeaea;
-            font-size: 0.4rem;
-            padding-left: 0.7rem;
+                width: 100%;
+                height: 1.5rem;
+                line-height: 1.5rem;
+                border-bottom: 1px solid #eaeaea;
+                font-size: 0.4rem;
+                padding-left: 0.7rem;
             }
-
             .pay-invoice-2 {
             width: 100%;
             height: 4rem;
-
             .pay-invoice-2-1 {
                 width: 100%;
                 height: 30%;
