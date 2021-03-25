@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Vuex from 'vuex'
 import store from './vuex/index'
 import VueLazyLoad from 'vue-lazyload'
 import axios from 'axios';
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
 Vue.prototype.$axios = axios;
 
 Vue.use(VueLazyLoad,{
@@ -25,6 +27,7 @@ router.beforeEach((to,from,next) => {
   }
   next()
 })
+
 
 /* eslint-disable no-new */
 new Vue({

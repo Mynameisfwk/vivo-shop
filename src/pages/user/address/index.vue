@@ -15,10 +15,10 @@
           <span class="name">收货人：{{ list.name }}</span>
           <span v-if="!list.default" @click="setDetault(index)">设为默认</span>
           <span v-else>默认</span>
-          <span class="phone">{{ list.phone }}</span>
+          <span class="phone">{{ list.tel }}</span>
         </p>
         <p class="address-details">
-          收货地址：{{ list.zone }}{{ list.detail }}
+          收货地址：{{ list.province }}{{ list.city }}{{ list.county }}{{ list.addressDetail }}
         </p>
         <div class="address-operation">
           <p class="address-operation-box">

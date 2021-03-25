@@ -110,60 +110,13 @@
               </mt-tab-container-item>
             </mt-tab-container>
           </div>
-          <div class="goodDetailFooter">
-            <div class="left">
-              <div class="cart">
-                <div class="cartlength">
-                  {{ $store.state.cart.carts.length }}
-                </div>
-                <img
-                  src="http://p6563v2ck.bkt.clouddn.com/%E8%B4%AD%E7%89%A9%E8%BD%A6.png"
-                />
-                <span>购物车</span>
-              </div>
-              <div class="collection">
-                <div
-                  class="collection-box"
-                  @click="addCollection(list)"
-                  v-show="!$store.state.ces"
-                >
-                  <i class="iconfont icon-collection"></i>
-                  <span>收藏</span>
-                </div>
-                <div
-                  class="collection-box"
-                  @click="addCollection(goodDetail)"
-                  v-show="$store.state.ces"
-                >
-                  <i
-                    class="iconfont icon-shoucangxuanzhong1"
-                    style="color:red"
-                  ></i>
-                  <span style="color:red">取消</span>
-                </div>
-              </div>
-              <div class="shop">
-                <img
-                  src="http://p6563v2ck.bkt.clouddn.com/%E5%BA%97%E9%93%BA_2.png"
-                />
-                <!-- <i class="iconfont icon-xuanzekuangxuanzhong" v-show="!$store.state.collection"></i>
-                                <i class="iconfont icon-xuanzekuangxuanzhong" v-show="$store.state.collection" style="color:red"></i> -->
-                <span>店铺</span>
-              </div>
-            </div>
-            <div class="rigth">
-              <div class="add">
-                <a href="javascript:void(0);" @click="addCart(list, index)"
-                  >加入购物车</a
-                >
-              </div>
-              <div class="purchase">
-                <a href="javascript:void(0);" @click="jumpPay(list)"
-                  >提交订单</a
-                >
-              </div>
-            </div>
-          </div>
+          <van-goods-action>
+            <van-goods-action-icon icon="chat-o" text="客服" dot />
+            <van-goods-action-icon icon="cart-o" text="购物车" :badge="$store.state.cart.carts.length" />
+            <van-goods-action-icon icon="star-o" size="2rem" @click="addCollection(list)" text="收藏" />
+            <van-goods-action-button type="warning" @click="addCart(list)" text="加入购物车" />
+            <van-goods-action-button type="danger"  @click="jumpPay(list)" text="立即购买" />
+          </van-goods-action>
         </li>
       </ul>
     </div>
@@ -327,108 +280,6 @@ export default {
     font-size: 0.7rem;
     margin-top: 0.1rem;
   }
-  .goodDetailFooter {
-    position: fixed;
-    width: 100%;
-    bottom: 0rem;
-    height: 1.2rem;
-    background: #f6f4f7;
-    border-top: 1px solid #efefef;
-    .left {
-      width: 45%;
-      float: left;
-      position: relative;
-      font-size: 0.35rem;
-      .cart {
-        width: 33%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        float: right;
-        position: relative;
-        img {
-          width: 0.76rem;
-          height: 0.7rem;
-          display: block;
-          margin: auto;
-        }
-        span {
-          text-align: center;
-          color: #767676;
-        }
-      }
-      .shop {
-        width: 33%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        float: right;
-        img {
-          width: 0.76rem;
-          height: 0.7rem;
-          display: block;
-          margin: auto;
-        }
-        span {
-          display: block;
-          text-align: center;
-          color: #767676;
-        }
-      }
-      .collection {
-        width: 33%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        float: right;
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        color: #767676;
-        .collection-box {
-          text-align: center;
-        }
-        i {
-          font-size: 0.6rem;
-          display: block;
-          text-align: center;
-        }
-        span {
-          text-align: center;
-        }
-      }
-    }
-    .rigth {
-      width: 55%;
-      float: right;
-      .add {
-        a {
-          display: block;
-          width: 50%;
-          height: 1.2rem;
-          line-height: 1.2rem;
-          text-align: center;
-          background: #ff9800;
-          color: white;
-          font-size: 0.35rem;
-          float: left;
-        }
-      }
-      .purchase {
-        a {
-          float: left;
-          display: block;
-          width: 50%;
-          height: 1.2rem;
-          line-height: 1.2rem;
-          text-align: center;
-          color: white;
-          font-size: 0.35rem;
-          background: #e3211e;
-        }
-      }
-    }
-  }
   .category {
     width: 100%;
     height: 1.5rem;
@@ -438,12 +289,12 @@ export default {
       margin-left: 10px;
       line-height: 1.28rem;
       font-size: 0.34rem;
+      display: flex;
       i {
-        float: left;
         color: #0098df;
+        font-size: 0.5rem;
       }
       p {
-        float: left;
         color: #777;
         padding-left: 0.1rem;
       }
@@ -465,7 +316,7 @@ export default {
   }
   .layer {
     width: 100%;
-    height: 9rem;
+    height: 8.3rem;
     background: white;
     position: fixed;
     bottom: 0;
@@ -596,6 +447,7 @@ export default {
     width: 1rem;
     height: 0.8rem;
     line-height: 0.8rem;
+    font-size: 0.2rem;
     float: left;
     border: 1px solid #b2b2b2;
     text-align: center;
