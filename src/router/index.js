@@ -14,6 +14,7 @@ import collection from '@/pages/user/collections/index'
 import order from '@/pages/user/order/index'
 import orderDetail from '@/pages/user/order/detail'
 import pay from "@/pages/pay/pay"
+import select_address from '@/pages/pay/address'
 import login from "@/pages/user/login"
 import register from "@/pages/user/register"
 import main from "@/pages/user/main"
@@ -72,15 +73,15 @@ export default new Router({
       name: 'success',
       component: success
     },
-    { 
+    {
       path: '/login',
-      name: 'login', 
-      component: login 
+      name: 'login',
+      component: login
     },
-    { 
-      path: '/register', 
+    {
+      path: '/register',
       name: 'register',
-      component: register 
+      component: register
     },
     {
       path: '/main',
@@ -90,9 +91,10 @@ export default new Router({
         requireAuth: true
       },
     },
-    { path: '/collection', 
-      name: 'collection', 
-      component: collection 
+    {
+      path: '/collection',
+      name: 'collection',
+      component: collection
     },
     {
       path: '/order',
@@ -102,23 +104,23 @@ export default new Router({
         requireAuth: true
       },
     },
-    { 
-      path: '/orderDetail', 
-      name: 'orderDetail', 
+    {
+      path: '/orderDetail',
+      name: 'orderDetail',
       component: orderDetail,
       meta: {
         requireAuth: true
       },
     },
-    { 
+    {
       path: '/parts',
-      name: 'parts', 
-      component: parts 
+      name: 'parts',
+      component: parts
     },
-    { 
-      path: '/phone', 
-      name: 'phone', 
-      component: phone 
+    {
+      path: '/phone',
+      name: 'phone',
+      component: phone
     },
     {
       path: '/pay',
@@ -127,6 +129,11 @@ export default new Router({
       meta: {
         requireAuth: true
       },
+    },
+    {
+      path: '/select_address',
+      name: 'select_address',
+      component: select_address,
     }
   ]
 })
