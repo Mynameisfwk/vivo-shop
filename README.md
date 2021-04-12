@@ -1,4 +1,4 @@
-#  vue全家桶 vue+vuex+axios+miut-ui 
+#  vue全家桶 vue+vuex+axios+miut-ui + vant
 
 ### 在线预览
 项目演示地址：[线上预览 vivo商城](http://vivo.findtalk.cn/#/index)<br>
