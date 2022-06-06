@@ -58,7 +58,7 @@ v：fwk1203
 # 安装项目依赖
 npm install 
 
-# 启动服务 访问http://localhost:8080
+# 启动服务
 npm run dev
 
 # 编译打包
